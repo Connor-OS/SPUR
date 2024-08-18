@@ -1,0 +1,37 @@
+{% macro dropdown(name, items) %}
+    <div class="dropdown">
+        <input id="{{ name }}Dropdown" placeholder="Select {{name}}" onclick="showDropdown('{{ name }}Options')" class="dropinput">""</input>
+        <div id="{{ name }}Options" class="dropdown-content">
+            {% for item in items %}
+                <p onclick="selectDropdown('{{ name }}Dropdown','{{ item }}')">{{ item }}</p>
+            {% endfor %}
+        </div>
+    </div>
+{% endmacro %}
+
+{% set courseList = courseList %}
+{% set cityList = cityList %}
+{% set ageList = ageList %}
+
+
+<div class="spur-searchbanner__container">
+    <img src="/images/searchbar-illustration.png" class="spur-searchbar__illustration" alt="spur illustration">
+    <div class="spur-searchbanner__text">
+        <h2>Learn English.</h2>
+        <p>Your dreams are closer than you think.<br>We open a door to your educational journey in the United Kingdom.</p>
+    </div>
+
+    <div class="spur-searchbanner__fields">
+        <form method="post">
+
+            {{ dropdown("course", cityList) }}
+            {{ dropdown("city", ["Newcastle-Upon-Tyne", "York", "Leeds", "Manchester", "Bristol"]) }}
+            <input name="date" id="date" placeholder="Select Date" onclick="this.type='date'" onblur="this.type='text'">
+            {{ dropdown("age", ["16+", "7-16"]) }}
+
+            <input type="submit" value="Search">
+        </form>
+    </div>
+</div>
+
+
