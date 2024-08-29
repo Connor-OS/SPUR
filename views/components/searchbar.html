@@ -24,10 +24,10 @@
     <div class="spur-searchbanner__fields">
         <form method="post">
 
-            {{ dropdown("course", cityList) }}
-            {{ dropdown("city", ["Newcastle-Upon-Tyne", "York", "Leeds", "Manchester", "Bristol"]) }}
-            <input name="date" id="date" placeholder="Select Date" onclick="this.type='date'" onblur="this.type='text'">
-            {{ dropdown("age", ["16+", "7-16"]) }}
+            {{ dropdown("course", courseList) }}
+            {{ dropdown("city", cityList) }}
+            <input name="date" id="date" placeholder="Select Date" onclick="this.type='date'; this.showPicker()" onblur="this.type='text'">
+            {{ dropdown("age", ageList) }}
 
             <input type="submit" value="Search">
         </form>
