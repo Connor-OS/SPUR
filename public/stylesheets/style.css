@@ -189,3 +189,38 @@ input[type="submit"] {
   border: none;
   color: #ffffff;
 }
+
+/*carousel*/
+.destinations-carousel {
+  width: 100%;
+  padding-top: 100px;
+  margin-left: 10%;
+}
+
+.glide__track {
+  position: relative;
+}
+
+.glide__slides {
+  position:absolute;
+}
+
+.glide__arrow {
+  height: 600px;
+  width: 33%;
+  background: transparent;
+  border: none !important;
+  font-size:0;
+}
+
+.glide__arrow--left {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.glide__arrow--right {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
