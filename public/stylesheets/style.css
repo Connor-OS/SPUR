@@ -17,8 +17,13 @@ a {
 }
 
 h2 {
-  font-size: 50px;
-  font-weight: 700;
+  font-size: 56px;
+  font-weight: 600;
+}
+
+h3 {
+  font-size: 36px;
+  font-weight: 600;
 }
 
 /*   HEADER   */
@@ -192,7 +197,7 @@ input[type="submit"] {
 
 /*carousel*/
 .destinations-carousel {
-  width: 100%;
+  /*width: 100%;*/
   padding-top: 100px;
   margin-left: 10%;
 }
@@ -207,9 +212,11 @@ input[type="submit"] {
 
 .glide__arrow {
   height: 600px;
-  width: 33%;
+  /*width: 33%;*/
+  width: 408px;
   background: transparent;
   border: none !important;
+  /*border-color: red;*/
   font-size:0;
 }
 
@@ -221,6 +228,8 @@ input[type="submit"] {
 
 .glide__arrow--right {
   position: absolute;
-  right: 0;
+  width: calc(100vw - (2 * 446px));
+  right: -10%;
+  /*margin-left: 10%;*/
   top: 0;
 }

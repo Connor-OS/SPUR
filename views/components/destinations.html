@@ -1,13 +1,13 @@
 <link rel="stylesheet" type="text/css" media="all" href="/stylesheets/glide.core.css" />
 
 <div class="destinations-carousel">
-    <h2>Destinations</h2>
+    <h3>Destinations</h3>
     <div class="glide">
         <div data-glide-el="track" class="glide__track">
             <ul class="glide__slides">
-                <li class="glide__slide "><img src="/images/destinations/Newcastle.png"></li>
-                <li class="glide__slide"><img src="/images/destinations/Bristol.png"></li>
-                <li class="glide__slide"><img src="/images/destinations/Manchester.png" ></li>
+                {% for element in carousel_elements %}
+                    <li class="glide__slide ">{{ element.name }}<img src="/images/destinations/{{ element.image }}"></li>
+                {% endfor %}
             </ul>
             <div class="glide__arrows" data-glide-el="controls">
                 <button class="glide__arrow glide__arrow--left" data-glide-dir="<">prev</button>
@@ -19,7 +19,8 @@
 
 <script>
     new Glide('.glide', {
-        perView: 3,
+        perView: Number(window.innerWidth/475),
         type: "carousel",
+        gap: 35,
     }).mount()
 </script>
