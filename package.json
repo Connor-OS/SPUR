@@ -2,9 +2,10 @@
   "name": "spur",
   "version": "0.0.0",
   "private": true,
-  "main": "routes/index.js",
+  "main": "routes/index.ts",
   "scripts": {
-    "start": "node ./bin/www"
+    "build": "tsc && cp -r views public dist/",
+    "start": "node ./dist/bin/www.js"
   },
   "dependencies": {
     "@glidejs/glide": "^3.6.2",
