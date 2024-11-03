@@ -1,6 +1,6 @@
 {% macro dropdown(name, items) %}
     <div class="dropdown">
-        <input id="{{ name }}Dropdown" placeholder="Select {{name}}" onclick="showDropdown('{{ name }}Options')" class="dropinput">""</input>
+        <input id="{{ name }}Dropdown" name="{{ name }}" placeholder="Select {{name}}" onclick="showDropdown('{{ name }}Options')" class="dropinput" value="">
         <div id="{{ name }}Options" class="dropdown-content">
             {% for item in items %}
                 <p onclick="selectDropdown('{{ name }}Dropdown','{{ item }}')">{{ item }}</p>
@@ -13,16 +13,17 @@
 {% set cityList = cityList %}
 {% set ageList = ageList %}
 
-
-<div class="spur-searchbanner__container">
-    <img src="/images/searchbar-illustration.png" class="spur-searchbar__illustration" alt="spur illustration">
-    <div class="spur-searchbanner__text">
-        <h2>Learn English.</h2>
-        <p>Your dreams are closer than you think.<br>We open a door to your educational journey in the United Kingdom.</p>
-    </div>
+<div class="spur-searchbanner__container {{frontPage}}">
+    {% if frontPage == "frontpage" %}
+        <img src="/images/searchbar-illustration.png" class="spur-searchbar__illustration" alt="spur illustration">
+        <div class="spur-searchbanner__text">
+            <h2>Learn English.</h2>
+            <p>Your dreams are closer than you think.<br>We open a door to your educational journey in the United Kingdom.</p>
+        </div>
+    {% endif %}
 
     <div class="spur-searchbanner__fields">
-        <form method="post">
+        <form method="post" action="search">
 
             {{ dropdown("course", courseList) }}
             {{ dropdown("city", cityList) }}

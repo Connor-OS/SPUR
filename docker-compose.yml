@@ -1,0 +1,9 @@
+services:
+
+  mongo:
+    image: mongo
+    restart: always
+    hostname: '2717'
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: spur
+      MONGO_INITDB_ROOT_PASSWORD: gandalf

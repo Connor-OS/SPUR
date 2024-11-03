@@ -2,17 +2,21 @@
   "name": "spur",
   "version": "0.0.0",
   "private": true,
-  "main": "routes/index.ts",
+  "main": "controllers/index.controller.ts",
   "scripts": {
     "build": "tsc && cp -r views public dist/",
+    "db": "docker run -d -p 2717:27017 -v ~/Documents/typescript/SPUR/model/docker:/data/db --name spur mongo:latest",
+    "seed": "mongoimport mongodb://localhost:2717/ ./model/testData/cities.json --db spur --upsert --upsertFields id && mongoimport mongodb://localhost:2717/ ./model/testData/schools.json --db spur --upsert --upsertFields id",
     "start": "node ./dist/bin/www.js"
   },
   "dependencies": {
     "@glidejs/glide": "^3.6.2",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
+    "dotenv": "^16.4.5",
     "express": "~4.16.1",
     "http-errors": "~1.6.3",
+    "mongoose": "^8.7.2",
     "morgan": "~1.9.1",
     "nunjucks": "^3.2.4",
     "pug": "2.0.0-beta11"

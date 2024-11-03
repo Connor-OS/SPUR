@@ -6,7 +6,7 @@
         <div data-glide-el="track" class="glide__track">
             <ul class="glide__slides">
                 {% for element in carousel_elements %}
-                    <li class="glide__slide ">{{ element.name }}<img src="/images/destinations/{{ element.image }}"></li>
+                    <li class="glide__slide ">{{ element.name }}<img src="/images/cities/{{ element.name }}.png" onerror="this.src='/images/cities/Newcastle.png';"></li>
                 {% endfor %}
             </ul>
             <div class="glide__arrows" data-glide-el="controls">
