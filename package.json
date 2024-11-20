@@ -6,7 +6,8 @@
   "scripts": {
     "build": "tsc && cp -r views public dist/",
     "db": "docker run -d -p 2717:27017 -v ~/Documents/typescript/SPUR/model/docker:/data/db --name spur mongo:latest",
-    "seed": "mongoimport mongodb://localhost:2717/ ./model/testData/cities.json --db spur --upsert --upsertFields id && mongoimport mongodb://localhost:2717/ ./model/testData/schools.json --db spur --upsert --upsertFields id",
+    "seed_local": "mongoimport mongodb://localhost:2717/ ./model/testData/cities.json --db spur --upsert --upsertFields id && mongoimport mongodb://localhost:2717/ ./model/testData/schools.json --db spur --upsert --upsertFields id",
+    "seed_dev": "mongoimport mongodb+srv://connor:2Fa97mongodb57JG4@spur.ecmtx.mongodb.net/ ./model/testData/cities.json --db spur --upsert --upsertFields id && mongoimport mongodb+srv://connor:2Fa97mongodb57JG4@spur.ecmtx.mongodb.net/ ./model/testData/schools.json --db spur --upsert --upsertFields id",
     "start": "node ./dist/bin/www.js"
   },
   "dependencies": {

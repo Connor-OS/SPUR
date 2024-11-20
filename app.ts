@@ -28,7 +28,7 @@ const nunjucksEnv = nunjucks.configure([
   express: app,
 });
 
-mongoose.connect("mongodb://localhost:2717/spur").then(()=>{
+mongoose.connect("mongodb+srv://connor:2Fa97mongodb57JG4@spur.ecmtx.mongodb.net/spur").then(()=>{
   console.log("Mongo is connected successfully!")
 }).catch((error) => console.log(error))
 
