@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Search results
+{% endblock %}
+
+
+{% block content %}
+    <h1>{{ school.name }}</h1>
+    <p>{{ city }}, United Kingdom</p>
+    <img class="school_image" src="/images/schools/generic.webp" alt="Image of {{ school.name }}">
+    <div class="school_content">
+        <p>{{ school.description }}</p>
+    </div>
+{% endblock %}

@@ -1,21 +1,28 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-Landing page
+Search results
 {% endblock %}
 
 
 {% block content %}
+
     <div class="schools">
+        <h2>{{ city }}: {{ schools.length }} courses found</h2>
         {% for school in schools %}
-        <article class="school">
-            <img class="school_image" src="/images/schools/generic.webp" alt="Image of {{ school.name }}">
-            <div class="school_content">
-                <h3>{{ school.name }}</h3>
-                <p>{{ city }}, United Kingdom</p>
-                <p>{{ school.description }}</p>
-            </div>
-        </article>
+        <a href="/school?id={{ school.id }}">
+            <article class="school">
+                <img class="school_image" src="/images/schools/generic.webp" alt="Image of {{ school.name }}">
+                <div class="school_content">
+                    <h3>{{ school.name }}</h3>
+                    <p>{{ city }}, United Kingdom</p>
+                    <p>{{ school.description }}</p>
+                </div>
+                <div class="metadata">
+                    <button>Learn more</button>
+                </div>
+            </article>
+        </a>
         {% endfor %}
     </div>
 {% endblock %}
