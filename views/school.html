@@ -12,4 +12,10 @@ Search results
     <div class="school_content">
         <p>{{ school.description }}</p>
     </div>
+    {% for course in courses %}
+        <h3>{{ course.name }}</h3>
+        <p>{{course.description}}</p>
+        <p>{{course.schedule}}</p>
+        <p>{{course.price}}</p>
+    {% endfor %}
 {% endblock %}

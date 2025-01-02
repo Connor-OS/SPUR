@@ -280,6 +280,12 @@ input[type="submit"] {
   gap: 8px;
 }
 
+.school_metadata {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
 .school_content h3 {
   color: #ED0E34;
   font-size: 1.5rem;
@@ -328,3 +334,8 @@ input[type="submit"] {
   opacity: 0.95;
 }
 
+.dayNotSunday {
+  background-color: rgba(102, 102, 102, 0.05);
+  color: #666666;
+  pointer-events: none;
+}

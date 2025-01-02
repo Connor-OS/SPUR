@@ -1,3 +1,11 @@
+<script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+
+<script src="/javascripts/dropdown.js"></script>
+<script src="/javascripts/datepicker.js"></script>
+
 {% macro dropdown(name, items) %}
     <div class="dropdown">
         <input id="{{ name }}Dropdown" name="{{ name }}" placeholder="Select {{name}}" onclick="showDropdown('{{ name }}Options')" class="dropinput" value="">
@@ -27,7 +35,7 @@
 
             {{ dropdown("course", courseList) }}
             {{ dropdown("city", cityList) }}
-            <input name="date" id="date" placeholder="Select Date" onclick="this.type='date'; this.showPicker()" onblur="this.type='text'">
+            <input name="date" id="date" placeholder="Select Date" type='text'>
             {{ dropdown("age", ageList) }}
 
             <input type="submit" value="Search">

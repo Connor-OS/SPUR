@@ -12,7 +12,8 @@ export const get = async (req, res, next) => {
         courseList: courseList,
         cityList: cities.map(city => city.name),
         ageList: ageList,
-        carousel_elements: cities});
+        carousel_elements: cities
+    });
 };
 
 export const post = async (req, res) => {

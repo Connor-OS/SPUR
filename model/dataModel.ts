@@ -1,21 +1,33 @@
 const mongoose = require('mongoose');
-const { Schema } = mongoose;
 
-// City schema
-const citySchema = new mongoose.Schema({
-    // id: { type: Number, required: true, unique: true },
+const courseSchema = new mongoose.Schema({
     name: { type: String, required: true },
     description: { type: String, required: false },
-    google_maps: { type: String, required: false },
+    schedule: { type: String, required: false },
+    price_per_week: { type: Number, required: true },
+},{
+    versionKey: false
 });
 
 // School schema
 const schoolSchema = new mongoose.Schema({
-    // id: { type: Number, required: true, unique: true },
     name: { type: String, required: true },
     description: { type: String, required: false },
     google_maps: { type: String, required: false },
+    school_type: { type: Number, required: true },
+    courses: [courseSchema],
     city: { type: mongoose.Schema.Types.ObjectId, ref: 'City', required: true},
+},{
+    versionKey: false
+});
+
+// City schema
+const citySchema = new mongoose.Schema({
+    name: { type: String, required: true },
+    description: { type: String, required: false },
+    google_maps: { type: String, required: false },
+},{
+    versionKey: false
 });
 
 export enum schoolTypeEnum {
@@ -24,21 +36,6 @@ export enum schoolTypeEnum {
     'Private School' = 3,
     'Distance Learning' = 4,
 }
-
-
-// removing in favour of storing course information inside schools
-// Course schema
-// const courseSchema = new mongoose.Schema({
-//     id: { type: Number, required: true, unique: true },
-//     name: { type: String, required: true },
-//     description: { type: String, required: false },
-//     type: { type: Number, required: true },
-//     group: { type: String, required: false },
-//     schedule: { type: String, required: false },
-//     hours_per_week: { type: String, required: false },
-//     age: { type: String, required: false },
-//     school: { type: Number, ref: 'School', required: true }
-// });
 
 export const City = mongoose.model('cities', citySchema);
 export const School = mongoose.model('schools', schoolSchema);

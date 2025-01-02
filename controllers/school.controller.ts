@@ -10,7 +10,8 @@ export const get = async (req, res, next) => {
 
     res.render('school', {
         school: school,
-        city: city.name
+        city: city.name,
+        courses: school.courses
     });
 };
 
