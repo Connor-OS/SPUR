@@ -204,37 +204,37 @@ input[type="submit"] {
   margin-left: 10%;
 }
 
-.glide__track {
-  position: relative;
-}
+/*.glide__track {*/
+/*  position: relative;*/
+/*}*/
 
-.glide__slides {
-  position:absolute;
-}
+/*.glide__slides {*/
+/*  position:absolute;*/
+/*}*/
 
-.glide__arrow {
-  height: 600px;
-  /*width: 33%;*/
-  width: 408px;
-  background: transparent;
-  border: none !important;
-  /*border-color: red;*/
-  font-size:0;
-}
+/*.glide__arrow {*/
+/*  height: 600px;*/
+/*  !*width: 33%;*!*/
+/*  width: 408px;*/
+/*  background: transparent;*/
+/*  border: none !important;*/
+/*  !*border-color: red;*!*/
+/*  font-size:0;*/
+/*}*/
 
-.glide__arrow--left {
-  position: absolute;
-  left: 0;
-  top: 0;
-}
+/*.glide__arrow--left {*/
+/*  position: absolute;*/
+/*  left: 0;*/
+/*  top: 0;*/
+/*}*/
 
-.glide__arrow--right {
-  position: absolute;
-  width: calc(100vw - (2 * 446px));
-  right: -10%;
-  /*margin-left: 10%;*/
-  top: 0;
-}
+/*.glide__arrow--right {*/
+/*  position: absolute;*/
+/*  width: calc(100vw - (2 * 446px));*/
+/*  right: -10%;*/
+/*  !*margin-left: 10%;*!*/
+/*  top: 0;*/
+/*}*/
 
 /*/////    search results    /////*/
 

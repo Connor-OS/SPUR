@@ -1,4 +1,5 @@
 <link rel="stylesheet" type="text/css" media="all" href="/stylesheets/glide.core.css" />
+<link rel="stylesheet" type="text/css" media="all" href="/stylesheets/glide.theme.css" />
 
 <div class="destinations-carousel">
     <h3>Destinations</h3>
@@ -9,9 +10,24 @@
                     <li class="glide__slide ">{{ element.name }}<img src="/images/cities/{{ element.name }}.png" onerror="this.src='/images/cities/Newcastle.png';"></li>
                 {% endfor %}
             </ul>
+
+            <div class="glide__bullets" data-glide-el="controls[nav]">
+                {% for element in carousel_elements %}
+                    <button class="glide__bullet" data-glide-dir="=0"></button>
+                {% endfor %}
+            </div>
+
             <div class="glide__arrows" data-glide-el="controls">
-                <button class="glide__arrow glide__arrow--left" data-glide-dir="<">prev</button>
-                <button class="glide__arrow glide__arrow--right" data-glide-dir=">">next</button>
+                <button class="glide__arrow glide__arrow--left" data-glide-dir="<">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24">
+                        <path d="M0 12l10.975 11 2.848-2.828-6.176-6.176H24v-3.992H7.646l6.176-6.176L10.975 1 0 12z"/>
+                    </svg>
+                </button>
+                <button class="glide__arrow glide__arrow--right" data-glide-dir=">">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24">
+                        <path d="M13.025 1l-2.847 2.828 6.176 6.176h-16.354v3.992h16.354l-6.176 6.176 2.847 2.828 10.975-11z"/>
+                    </svg>
+                </button>
             </div>
         </div>
     </div>
