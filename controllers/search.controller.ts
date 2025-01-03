@@ -9,12 +9,9 @@ export const post = async (req, res) => {
         .map(([key, value]) => key);
 
     if (emptyFields.length !== 0) {
-        // TODO: Implement general validation for these fields
+        // TODO: Implement general validation for these fields, and retain inital inputs
         return res.redirect("/");
     }
-
-    //page fields
-    const course_id = schoolTypeEnum[req.body["course"] as keyof typeof schoolTypeEnum];
 
     const city = await City.findOne({"name": req.body["city"]});
     const date_range: string = req.body["date"]

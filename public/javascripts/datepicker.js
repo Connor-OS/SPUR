@@ -1,19 +1,21 @@
 $(function() {
     $('input[name="date"]').daterangepicker({
         autoUpdateInput: false,
+        autoApply: true,
         locale: {
             cancelLabel: 'Clear'
         },
         isCustomDate: function (date) {
                 const isStart = !$('input[name="date"]').data('daterangepicker').endDate; // Check if it's a start date
+                const startDate = $('input[name="date"]').data('daterangepicker').startDate._d
 
                 if (!isStart) {
                     if (date.day() !== 1) {
-                        return "dayNotSunday";
+                        return "notValidDay";
                     }
                 } else {
-                    if (date.day() !== 5) {
-                        return "dayNotSunday";
+                    if (date.day() !== 5 || date._d < startDate) {
+                        return "notValidDay";
                     }
                 }
             },

@@ -1,8 +1,5 @@
 import {City, School, schoolTypeEnum} from "../model/dataModel";
 
-const courseList = ["Language Course", "University", "Private school", "Distance Learning"];
-const ageList = ["16+", "7-16"]; //TODO: make these global variables set on initialisation
-
 /* GET home page. */
 export const get = async (req, res, next) => {
     const school = await School.findById(req.query["id"]);

@@ -334,7 +334,7 @@ input[type="submit"] {
   opacity: 0.95;
 }
 
-.dayNotSunday {
+.notValidDay {
   background-color: rgba(102, 102, 102, 0.05);
   color: #666666;
   pointer-events: none;

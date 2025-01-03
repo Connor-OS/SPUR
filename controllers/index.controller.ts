@@ -1,6 +1,6 @@
 import {City, School, schoolTypeEnum} from "../model/dataModel";
 
-const courseList = ["Language Course", "University", "Private school", "Distance Learning"];
+const languageList = ["Learn English", "Learn Spanish", "Learn French", "Learn German"];
 const ageList = ["16+", "7-16"]; //TODO: make these global variables set on initialisation
 
 /* GET home page. */
@@ -9,7 +9,7 @@ export const get = async (req, res, next) => {
 
     res.render('index', {
         frontPage: "frontpage",
-        courseList: courseList,
+        languageList: languageList,
         cityList: cities.map(city => city.name),
         ageList: ageList,
         carousel_elements: cities

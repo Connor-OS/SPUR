@@ -33,7 +33,10 @@
     <div class="spur-searchbanner__fields">
         <form method="post" action="search">
 
-            {{ dropdown("course", courseList) }}
+            {% if courseList %}
+                {{ dropdown("course", courseList) }}
+            {% endif %}
+            {{ dropdown("language", languageList) }}
             {{ dropdown("city", cityList) }}
             <input name="date" id="date" placeholder="Select Date" type='text'>
             {{ dropdown("age", ageList) }}
