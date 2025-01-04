@@ -1,4 +1,5 @@
 @import "dropdown.css";
+@import url('https://fonts.googleapis.com/css?family=Lexend');
 
 *,
 *:before,
@@ -169,13 +170,8 @@ label[for="language-picker-select"]
 }
 
 input {
-  /*padding: 12px 15px;*/
   color: rgba(35, 35, 35, 0.6);
-  /*border-width: 1px;*/
-  /*border-color: rgba(35, 35, 35, 0.4);*/
   font-size: 16px;
-  /*outline: none;*/
-  /*border-radius: 8px;*/
 
   display: flex;
   width: 168px;
@@ -203,38 +199,6 @@ input[type="submit"] {
   padding-top: 100px;
   margin-left: 10%;
 }
-
-/*.glide__track {*/
-/*  position: relative;*/
-/*}*/
-
-/*.glide__slides {*/
-/*  position:absolute;*/
-/*}*/
-
-/*.glide__arrow {*/
-/*  height: 600px;*/
-/*  !*width: 33%;*!*/
-/*  width: 408px;*/
-/*  background: transparent;*/
-/*  border: none !important;*/
-/*  !*border-color: red;*!*/
-/*  font-size:0;*/
-/*}*/
-
-/*.glide__arrow--left {*/
-/*  position: absolute;*/
-/*  left: 0;*/
-/*  top: 0;*/
-/*}*/
-
-/*.glide__arrow--right {*/
-/*  position: absolute;*/
-/*  width: calc(100vw - (2 * 446px));*/
-/*  right: -10%;*/
-/*  !*margin-left: 10%;*!*/
-/*  top: 0;*/
-/*}*/
 
 /*/////    search results    /////*/
 
@@ -291,7 +255,6 @@ input[type="submit"] {
   font-size: 1.5rem;
 }
 
-
 .school p {
   margin: 0;
   color: #666;
@@ -338,4 +301,43 @@ input[type="submit"] {
   background-color: rgba(102, 102, 102, 0.05);
   color: #666666;
   pointer-events: none;
+}
+
+.destinations-carousel .glide__slide {
+  position: relative;
+}
+
+.destinations-carousel .glide__slide h2,
+.destinations-carousel .glide__slide p {
+  position: absolute;
+  /*left: 50%;*/
+  /*transform: translateX(-50%);*/
+  text-align: left;
+  color: white; /* White font color */
+  margin: 0;
+  padding: 5px 10px;
+  width: 90%; /* Adjust width if needed */
+}
+
+/* Specific styling for h2 */
+.destinations-carousel .glide__slide h2 {
+  bottom: 15%;
+  font-size: 1.5em; /* Adjust as needed */
+  margin-bottom: 5px;
+}
+
+/* Specific styling for p */
+.destinations-carousel .glide__slide p {
+  bottom: 5%;
+  font-size: 1em; /* Adjust as needed */
+  margin-top: 0;
+}
+
+.why-spur {
+  height: 760px; /* Set height */
+  background-color: rgba(22, 194, 235, 0.05); /* Set light blue background */
+  display: flex; /* Optional: center content */
+  align-items: center; /* Optional: vertical centering */
+  justify-content: center; /* Optional: horizontal centering */
+  text-align: center; /* Optional: center text */
 }

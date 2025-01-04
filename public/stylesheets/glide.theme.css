@@ -35,14 +35,14 @@
 .glide__bullets {
     position: absolute;
     z-index: 2;
-    bottom: 2em;
+    bottom: -1em;
     left: 50%;
     display: inline-flex;
     list-style: none;
     transform: translateX(-50%);
 }
 .glide__bullet {
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: rgba(84, 81, 81, 0.5);
     width: 9px;
     height: 9px;
     padding: 0;
