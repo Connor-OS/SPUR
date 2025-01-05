@@ -8,9 +8,11 @@
             <ul class="glide__slides">
                 {% for element in carousel_elements %}
                     <li class="glide__slide ">
-                        <h2>{{ element.name }}</h2>
+                        <h3>{{ element.name }}</h3>
                         <p>{{ element.description }}</p>
-                        <img src="/images/cities/{{ element.name }}.png" onerror="this.src='/images/cities/Newcastle.png';">
+                        <a href="/city/{{element.name}}" target="blank">
+                            <img src="/images/cities/{{ element.name }}.png" onerror="this.src='/images/cities/Newcastle.png';">
+                        </a>
                     </li>
                 {% endfor %}
             </ul>

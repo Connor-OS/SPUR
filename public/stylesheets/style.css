@@ -36,7 +36,6 @@ h3 {
   align-items: center;
   height: 92px;
   padding: 28px 146px 28px 146px;
-
 }
 
 .spur-header__container_01 {
@@ -49,7 +48,7 @@ h3 {
 }
 
 .spur-header__container_01 img {
-  width: 82px;
+  /*width: 82px;*/
   height: 36px;
 }
 
@@ -74,7 +73,8 @@ h3 {
   gap: 20px;
   align-items: center;
   margin-top: auto;
-  margin-left: 400px;
+  margin-left: auto;
+
 }
 
 
@@ -267,7 +267,7 @@ input[type="submit"] {
   align-self: flex-end; /* Pushes the button to the right */
 }
 
-.school button {
+button {
   all: unset;
   cursor: pointer;
   display: flex;
@@ -303,11 +303,20 @@ input[type="submit"] {
   pointer-events: none;
 }
 
+.destinations-carousel {
+  padding-top: 150px;
+  padding-bottom: 100px;
+}
+
 .destinations-carousel .glide__slide {
   position: relative;
 }
 
-.destinations-carousel .glide__slide h2,
+.destinations-carousel h3 {
+  margin-bottom: 20px;
+}
+
+.destinations-carousel .glide__slide h3,
 .destinations-carousel .glide__slide p {
   position: absolute;
   /*left: 50%;*/
@@ -320,7 +329,7 @@ input[type="submit"] {
 }
 
 /* Specific styling for h2 */
-.destinations-carousel .glide__slide h2 {
+.destinations-carousel .glide__slide h3 {
   bottom: 15%;
   font-size: 1.5em; /* Adjust as needed */
   margin-bottom: 5px;
@@ -334,10 +343,48 @@ input[type="submit"] {
 }
 
 .why-spur {
-  height: 760px; /* Set height */
+  display: flex;
+  flex-direction: column;
   background-color: rgba(22, 194, 235, 0.05); /* Set light blue background */
   display: flex; /* Optional: center content */
   align-items: center; /* Optional: vertical centering */
+  gap: 50px;
   justify-content: center; /* Optional: horizontal centering */
   text-align: center; /* Optional: center text */
+  padding-top: 50px;
+  padding-bottom: 50px;
 }
+
+.why-spur h1 b {
+  color: #EC7A25;
+}
+
+.why-spur button {
+  width: 363px;
+}
+
+.why-spur-info-boxes {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+}
+
+.why-spur-info {
+  background-color: #FFFFFF;
+  border-radius: 8px;
+  width: 440px;
+  height: 152px;
+  filter: drop-shadow(0px 4px rgba(35, 35, 35, 0.10));
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start; /* Aligns items' centers vertically */
+  justify-content: space-between;
+  padding: 25px;
+  text-align: left;
+  gap: 10px
+}
+
+.why-spur-info img {
+  width: 40px;
+}
+
