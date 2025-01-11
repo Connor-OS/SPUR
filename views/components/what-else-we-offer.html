@@ -1,0 +1,72 @@
+<link rel="stylesheet" type="text/css" media="all" href="/stylesheets/glide.core.css" />
+<link rel="stylesheet" type="text/css" media="all" href="/stylesheets/glide.theme.css" />
+
+<div class="what-else-we-offer">
+
+    <div class="offer-container">
+
+        <div class="offer-image">
+            <img src="/images/arai_illustration.png" alt="cool founder image">
+        </div>
+
+        <div class="offer-carousel">
+            <h1>What else <b>we offer?</b></h1>
+
+            <div data-glide-el="track" class="glide__track">
+                <ul class="glide__slides">
+                    <li class="glide__slide ">
+                        <h3>SUMMER CAMPS</h3>
+                        <p>Summer camp combines interactive language lessons with exciting cultural activities, outdoor adventures, and recreational pursuits to create a well-rounded and enriching learning experience. A dynamic and effective approach to language learning, especially for kids of school ages.</p>
+                        <button>Show more</button>
+                    </li>
+
+                    <li class="glide__slide ">
+                        <h3>EXAM PREPERATION</h3>
+                        <p>These courses are designed to equip you with the knowledge, skills, and strategies needed to excel in your chosen exam. Whether you're preparing for an English language proficiency exam like IELTS, TOEFL, or Cambridge English, or tests like SAT, GRE, or GMAT, courses that are presented here will provide you with comprehensive instruction and practice materials tailored to the requirements of your chosen exam.</p>
+                        <button>Show more</button>
+                    </li>
+
+                    <li class="glide__slide ">
+                        <h3>BUSINESS ENGLISH</h3>
+                        <p>Sharpen your language skills for the business world with our specialised Business English courses. Gain confidence and fluency in professional communication to excel in your career.</p>
+                        <button>Show more</button>
+                    </li>
+
+                    <li class="glide__slide ">
+                        <h3>ONLINE ENGLISH COURSE</h3>
+                        <p>Sharpen your language skills for the business world with our specialised Business English courses. Gain confidence and fluency in professional communication to excel in your career.</p>
+                        <button>Show more</button>
+                    </li>
+                </ul>
+
+                <div class="glide__arrows" data-glide-el="controls">
+                    <button class="glide__arrow glide__arrow--left" data-glide-dir="<">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24">
+                            <path fill="currentColor" d="M0 12l10.975 11 2.848-2.828-6.176-6.176H24v-3.992H7.646l6.176-6.176L10.975 1 0 12z"/>
+                        </svg>
+                    </button>
+                    <button class="glide__arrow glide__arrow--right" data-glide-dir=">">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24">
+                            <path fill="currentColor" d="M13.025 1l-2.847 2.828 6.176 6.176h-16.354v3.992h16.354l-6.176 6.176 2.847 2.828 10.975-11z"/>
+                        </svg>
+                    </button>
+                </div>
+
+                <div class="glide__bullets" data-glide-el="controls[nav]">
+                    {% for i in range(4) %}
+                        <button class="glide__bullet" data-glide-dir="={{ loop.index0 }}"></button>
+                    {% endfor %}
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    new Glide('.offer-carousel', {
+        perView: Number(window.innerWidth/950),
+        type: "carousel",
+        gap: 35,
+    }).mount()
+</script>
