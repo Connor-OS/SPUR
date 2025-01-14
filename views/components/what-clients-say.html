@@ -1,0 +1,77 @@
+
+{% macro profile(profile) %}
+    <svg width="172" height="174" viewBox="0 0 172 174" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <g filter="url(#filter0_d_2_128)">
+            <!-- Apply the pattern as the fill for the main shape -->
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M84.5964 17.0728C101.695 17.9353 115.688 29.0506 127.717 41.2774C139.648 53.4037 151.381 67.519 150.991 84.5565C150.606 101.346 137.808 114.216 125.778 125.889C114.026 137.293 100.936 148.504 84.5964 148.981C67.8865 149.47 52.7015 140.296 40.9433 128.37C29.2541 116.513 21.8139 101.22 21.0811 84.5565C20.3133 67.099 24.9557 49.3996 36.9116 36.6967C49.1753 23.6667 66.76 16.173 84.5964 17.0728Z" fill="url(#{{ profile }})" shape-rendering="crispEdges"/>
+            <!-- Optional stroke for the shape -->
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M84.5964 17.0728C101.695 17.9353 115.688 29.0506 127.717 41.2774C139.648 53.4037 151.381 67.519 150.991 84.5565C150.606 101.346 137.808 114.216 125.778 125.889C114.026 137.293 100.936 148.504 84.5964 148.981C67.8865 149.47 52.7015 140.296 40.9433 128.37C29.2541 116.513 21.8139 101.22 21.0811 84.5565C20.3133 67.099 24.9557 49.3996 36.9116 36.6967C49.1753 23.6667 66.76 16.173 84.5964 17.0728Z" stroke="#232323" stroke-opacity="0.2" shape-rendering="crispEdges"/>
+        </g>
+        <defs>
+            <!-- Define the pattern with your image -->
+            <pattern id="{{ profile }}" patternUnits="objectBoundingBox" width="1" height="1">
+                <image href="../images/{{ profile }}" x="-75" y="-20" width="272" height="214" />
+            </pattern>
+            <!-- Shadow filter -->
+            <filter id="filter0_d_2_128" x="0.5" y="0.5" width="171" height="173" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                <feOffset dy="4"/>
+                <feGaussianBlur stdDeviation="10"/>
+                <feComposite in2="hardAlpha" operator="out"/>
+                <feColorMatrix type="matrix" values="0 0 0 0 0.137255 0 0 0 0 0.137255 0 0 0 0 0.137255 0 0 0 0.1 0"/>
+                <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_2_128"/>
+                <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_2_128" result="shape"/>
+            </filter>
+        </defs>
+    </svg>
+<!--    <img src="../images/{{ profile }}" />-->
+{% endmacro %}
+
+<div class="what-clients-say">
+    <h1>What <b>clients say</b></h1>
+    <div class="client-carousel">
+        <div data-glide-el="track" class="glide__track">
+            <ul class="glide__slides">
+                {% for review in reviews %}
+                    <li class="glide__slide ">
+                        {{ profile(review.profile) }}
+                        <p>{{ review.review }}</p>
+                        <h3>{{ review.name }}</h3>
+                        <p>{{ review.job }}</p>
+                        <p>{{ review.rating }}</p>
+                    </li>
+                {% endfor %}
+            </ul>
+
+            <div class="glide__arrows" data-glide-el="controls">
+                <button class="glide__arrow glide__arrow--left" data-glide-dir="<">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24">
+                        <path fill="currentColor" d="M0 12l10.975 11 2.848-2.828-6.176-6.176H24v-3.992H7.646l6.176-6.176L10.975 1 0 12z"/>
+                    </svg>
+                </button>
+                <button class="glide__arrow glide__arrow--right" data-glide-dir=">">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24">
+                        <path fill="currentColor" d="M13.025 1l-2.847 2.828 6.176 6.176h-16.354v3.992h16.354l-6.176 6.176 2.847 2.828 10.975-11z"/>
+                    </svg>
+                </button>
+            </div>
+
+            <div class="glide__bullets" data-glide-el="controls[nav]">
+                {% for i in range(reviews.length) %}
+                <button class="glide__bullet" data-glide-dir="={{ loop.index0 }}"></button>
+                {% endfor %}
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+<script>
+    new Glide('.client-carousel', {
+        perView: Number(window.innerWidth/650),
+        type: "carousel",
+        gap: 35,
+    }).mount()
+</script>

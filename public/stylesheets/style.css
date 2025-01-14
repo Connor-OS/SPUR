@@ -1,6 +1,17 @@
 @import "dropdown.css";
 @import url('https://fonts.googleapis.com/css?family=Lexend');
 
+:root {
+  --primary-orange: #ED7A24;
+  --primary-blue: #3B51A3;
+  --secondary-green: #00B595;
+  --secondary-red: #ED0E34;
+  --secondary-blue: #16C2EB;
+  --secondary-orange: #ED9B0E;
+  --neutral-black: #232323;
+  --neutral-white: #FFFFFF;
+}
+
 *,
 *:before,
 *:after {
@@ -14,7 +25,7 @@ body {
 }
 
 a {
-  color: #232323;;
+  color: var(--neutral-black);
 }
 
 h2 {
@@ -23,7 +34,7 @@ h2 {
 }
 
 h3 {
-  font-size: 36px;
+  font-size: 28px;
   font-weight: 600;
 }
 
@@ -77,15 +88,15 @@ h3 {
 
 
 .spur-header button {
-  border: 1px solid #00B595;
+  border: 1px solid var(--secondary-green);
   width: 132px;
   height: 40px;
   left: 126px;
   padding: 10px 16px 10px 16px;
   gap: 16px;
   border-radius: 4px;
-  color: #00B595;
-  background-color: #ffffff;
+  color: var(--secondary-green);
+  background-color: var(--neutral-white);
 }
 
 /* language select */
@@ -111,12 +122,12 @@ label[for="language-picker-select"]
   justify-content: space-around;
 
   /*Text*/
-  color: #ffffff;
+  color: var(--neutral-white);
   font-weight: normal;
 
   /*Background*/
-  background-color: #ffffff;
-  background-image: linear-gradient(to left, #11246D, #3B51A3, #11246D);
+  background-color: var(--neutral-white);
+  background-image: linear-gradient(to left, #11246D, var(--primary-blue), #11246D);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 50% 35%;
@@ -167,6 +178,11 @@ label[for="language-picker-select"]
   gap: 12px;
 }
 
+.daterangepicker.ltr.show-calendar.opensright div.drp-buttons {
+  display: flex;
+  align-items: center;
+}
+
 input {
   color: rgba(35, 35, 35, 0.6);
   font-size: 16px;
@@ -186,9 +202,9 @@ input {
 
 input[type="submit"] {
   padding: 5px 55px;
-  background-color: #EC7A25;
+  background-color: var(--primary-orange);
   border: none;
-  color: #ffffff;
+  color: var(--neutral-white);
 }
 
 /*carousel*/
@@ -222,7 +238,7 @@ input[type="submit"] {
   padding: 16px;
   border-radius: 8px;
   border: 1px solid rgba(35, 35, 35, 0.20);
-  background-color: #ffffff;
+  background-color: var(--neutral-white);
 }
 
 .school_image {
@@ -248,7 +264,7 @@ input[type="submit"] {
 }
 
 .school_content h3 {
-  color: #ED0E34;
+  color: var(--secondary-red);
   font-size: 1.5rem;
 }
 
@@ -269,7 +285,7 @@ button {
   cursor: pointer;
   display: flex;
   border-radius: 8px;
-  color: #FFFFFF;
+  color: var(--neutral-white);
   background: #EC7A25;
   width: 156px;
   height: 20px;
@@ -339,6 +355,57 @@ button {
   margin-top: 0;
 }
 
+
+.why-spur {
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(22, 194, 235, 0.05);
+  align-items: center;
+  gap: 50px;
+  justify-content: center;
+  text-align: center;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.why-spur h1 b {
+  color: #EC7A25;
+}
+
+.why-spur button,
+.what-is-waiting-for-you button {
+  width: 363px;
+}
+
+.why-spur-info-boxes {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+}
+
+.why-spur-info {
+  background-color: var(--neutral-white);
+  border-radius: 8px;
+  width: 440px;
+  height: 152px;
+  filter: drop-shadow(0px 4px rgba(35, 35, 35, 0.10));
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start; /* Aligns items' centers vertically */
+  justify-content: space-between;
+  padding: 25px;
+  text-align: left;
+  gap: 10px
+}
+
+.why-spur-info img {
+  width: 40px;
+}
+
+.what-else-we-offer {
+  padding-bottom: 50px;
+}
+
 .offer-container {
   display: flex;
   flex-direction: row;
@@ -393,14 +460,14 @@ button {
   align-items: center;
 
   border-radius: 8px;
-  border: 2px solid #00B595;
+  border: 2px solid var(--secondary-green);
   background: #FFF;
-  color: #00B595;
+  color: var(--secondary-green);
   margin-top: auto;
 }
 
 .offer-carousel .glide__slide h3 {
-  color: #00B595;
+  color: var(--secondary-green);
   margin-bottom: 20px;
 }
 
@@ -429,51 +496,138 @@ button {
 }
 
 .offer-carousel h1 b{
-  color: #16C2EB;
+  color: var(--secondary-blue);
 }
 
-.why-spur {
+.divider {
+  height: 2px;
+  width: 80%;
+  color: rgba(35, 35, 35, 0.20);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.what-is-waiting-for-you {
   display: flex;
   flex-direction: column;
-  background-color: rgba(22, 194, 235, 0.05); /* Set light blue background */
-  align-items: center; /* Optional: vertical centering */
+  align-items: center;
+  padding: 50px;
+  gap: 35px;
+}
+
+.what-is-waiting-for-you h1 b {
+  color: var(--secondary-red);
+}
+
+.what-is-waiting-selection {
+  padding: 20px;
+  display: flex;
+  gap: 35px;
+}
+
+.what-is-waiting-select {
+  width: 245px;
+  height: 179px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
+
+.selected {
+  border-radius: 16px;
+  border: 2px solid rgba(22, 194, 235, 0.20);
+  background: #FFF;
+  box-shadow: 0px 4px 40px 0px rgba(22, 194, 235, 0.12);
+}
+
+.what-is-waiting-info {
+  width: 80%;
+  height: 367px;
+  border-radius: 16px;
+  background: rgba(22, 194, 235, 0.05);
+  padding: 25px;
+}
+
+.hidden {
+  display: none;
+}
+
+.what-clients-say {
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(22, 194, 235, 0.05);
   gap: 50px;
-  justify-content: center; /* Optional: horizontal centering */
-  text-align: center; /* Optional: center text */
+  padding-left: 10%;
   padding-top: 50px;
   padding-bottom: 50px;
 }
 
-.why-spur h1 b {
-  color: #EC7A25;
-}
-
-.why-spur button {
-  width: 363px;
-}
-
-.why-spur-info-boxes {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 40px;
-}
-
-.why-spur-info {
-  background-color: #FFFFFF;
-  border-radius: 8px;
-  width: 440px;
-  height: 152px;
-  filter: drop-shadow(0px 4px rgba(35, 35, 35, 0.10));
+.client-carousel .glide__slide {
   display: flex;
-  flex-direction: row;
-  align-items: flex-start; /* Aligns items' centers vertically */
-  justify-content: space-between;
-  padding: 25px;
-  text-align: left;
-  gap: 10px
+  flex-direction: column;
+  align-content: flex-end;
+
+  position: relative;
+  border-radius: 8px;
+  border: 2px solid rgba(35, 35, 35, 0.20);
+  border-top: 10px solid var(--secondary-green);
+
+  background: #FFF;
+  box-shadow: 0px 2px 10px 0px rgba(35, 35, 35, 0.10);
+
+  height: 558px;
+  flex-shrink: 0;
+
+  padding: 20px;
 }
 
-.why-spur-info img {
-  width: 40px;
+.client-carousel .glide__slide button{
+  display: flex;
+  width: 190px;
+  height: 60px;
+  padding: 16px 24px;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 8px;
+  border: 2px solid var(--secondary-green);
+  background: #FFF;
+  color: var(--secondary-green);
+  margin-top: auto;
+}
+
+.client-carousel .glide__slide h3 {
+  color: var(--secondary-green);
+  margin-bottom: 20px;
+}
+
+.client-carousel .glide__arrow  {
+  color: rgba(0, 181, 149, 0.32);
+  margin-top: 50px;
+}
+
+.client-carousel .glide__arrow:hover  {
+  color: rgb(0, 181, 149);
+  margin-top: 50px;
+}
+
+.client-carousel {
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
+}
+.client-carousel * {
+  box-sizing: inherit;
+}
+
+.client-carousel h1 {
+  margin-bottom: 50px;
+  text-align: center; /* Centers text within the title */
+}
+
+.what-clients-say h1 b{
+  color: var(--secondary-blue);
 }
 
