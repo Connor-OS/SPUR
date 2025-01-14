@@ -1,5 +1,5 @@
 import {City, School, schoolTypeEnum} from "../model/dataModel";
-import reviews from "../model/testData/reviews.json";
+import reviews from "../model/reviews.json";
 
 const languageList = ["Learn English", "Learn Spanish", "Learn French", "Learn German"];
 const ageList = ["16+", "7-16"]; //TODO: make these global variables set on initialisation or store in db
