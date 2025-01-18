@@ -1,0 +1,48 @@
+<script src="/javascripts/faq.js"></script>
+
+{% macro plus() %}
+    <svg class="plus" onclick="expandElement(this)" width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M21.5 11.9961V21.4961H12C11.337 21.4961 10.7011 21.7595 10.2322 22.2283C9.76339 22.6972 9.5 23.3331 9.5 23.9961C9.5 24.6591 9.76339 25.295 10.2322 25.7639C10.7011 26.2327 11.337 26.4961 12 26.4961H21.5V35.9961C21.5 36.6591 21.7634 37.295 22.2322 37.7639C22.7011 38.2327 23.337 38.4961 24 38.4961C24.663 38.4961 25.2989 38.2327 25.7678 37.7639C26.2366 37.295 26.5 36.6591 26.5 35.9961V26.4961H36C36.663 26.4961 37.2989 26.2327 37.7678 25.7639C38.2366 25.295 38.5 24.6591 38.5 23.9961C38.5 23.3331 38.2366 22.6972 37.7678 22.2283C37.2989 21.7595 36.663 21.4961 36 21.4961H26.5V11.9961C26.5 11.3331 26.2366 10.6972 25.7678 10.2283C25.2989 9.75949 24.663 9.49609 24 9.49609C23.337 9.49609 22.7011 9.75949 22.2322 10.2283C21.7634 10.6972 21.5 11.3331 21.5 11.9961Z" fill="#00B595" stroke="#00B595"/>
+    </svg>
+{% endmacro %}
+
+{% macro minus() %}
+    <svg class="minus hidden" onclick="collapseElement(this)" width="32" height="7" viewBox="0 0 32 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M28 0H4C2.93913 0 1.92172 0.36875 1.17157 1.02513C0.421427 1.6815 0 2.57174 0 3.5C0 4.42826 0.421427 5.3185 1.17157 5.97487C1.92172 6.63125 2.93913 7 4 7H28C29.0609 7 30.0783 6.63125 30.8284 5.97487C31.5786 5.3185 32 4.42826 32 3.5C32 2.57174 31.5786 1.6815 30.8284 1.02513C30.0783 0.36875 29.0609 0 28 0Z" fill="#00B595"/>
+    </svg>
+{% endmacro %}
+
+{% set questions = [{'question': 'How do we work?', 'answer': "Once you've booked your desired course through our platform, your dedicated assistant will coordinate a convenient video call with you. During this call, we'll discuss your preferences and requirements and we'll provide comprehensive assistance throughout the visa application process and guide you through every stage of your study abroad journey. Your success is our priority, and we're here to support you every step of the way, starting from the moment you book on our platform."},
+                    {'question': 'Why to study English in the UK?', 'answer': "Studying English in the UK offers an immersive experience where daily life is conducted in the language, providing invaluable opportunities to master pronunciation, colloquialisms, and cultural nuances. With world-renowned universities and institutions, students benefit from top-notch English language education, accelerating language acquisition. Proficiency in English, a significant asset in the global job market, can unlock international business and career opportunities, making the UK an ideal destination for language learners."},
+                    {'question': 'Can you help to apply for a student visa?', 'answer': "Yes, upon booking your chosen course, you will receive a complimentary 1-hour visa consultation, scheduled within 24 hours of your booking. Your dedicated personal assistant will reach out to coordinate a video call, during which you will receive comprehensive guidance and have the opportunity to ask any questions. Throughout your study journey, you'll have a personal guide who will remain in contact with you, providing continuous support. Please note that there is a £50 consultation fee if you decide to have one before booking, which can be arranged through bookings@spur.co.uk"},
+                    {'question': 'Can I pay only for study program as I have sorted out accommodation myself?', 'answer': "Absolutely, you have the flexibility to handle your accommodation independently. Whether you prefer to use platforms like Airbnb, opt for a hotel stay, or explore other housing options, the choice is entirely yours. By arranging your own accommodation, you have the freedom to prioritize your preferences, whether that's enhanced comfort, cost savings, or any other considerations. We understand that each student has unique needs, and we're here to support your choices."},
+                    {'question': 'If I do not get visa will you return my money?', 'answer': "In the event that your visa application is denied, your funds will be refunded upon receipt of the visa rejection confirmation letter. It's important to note that certain educational institutions may retain admission fees, refunding the balance after deducting these fees. However, we do not charge students for our services; they are entirely free of charge. Please be aware that if you've previously booked our visa application guidance service separately before making a booking, this service charge is non-refundable."},
+                    {'question': 'How does it work for individuals under 18 years old?', 'answer':"For students under 18 years of age, we recommend considering our summer camps. These programs include dedicated adult group leaders who are responsible for the well-being and supervision of students in this age group. If you'd like to learn more about our summer camps and kids' programs, please don't hesitate to reach out to us at bookings@spur.co.uk. We are happy to provide you with further information, and please note that consultations regarding these programs are offered free of charge."}] %}
+
+<div class="faq">
+    <h3>Frequently asked questions</h3>
+    {% for question in questions %}
+        <div class="faq-box">
+            <div class="faq-question">
+                <p>{{ question.question }}</p>
+                {{ plus() }}
+                {{ minus() }}
+            </div>
+
+            <div class="faq-answer hidden">
+                <p>{{ question.answer }}</p>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+
+<div class="find-out-more">
+    <h3>To find out more about the programme you would like to study, <b>Book a free 1-hour consultation with our educational consultants.</b></h3>
+    <form action="#" class="find-out-more-form" method="POST">
+        <input type="text" id="fullName" name="fullName" placeholder="Full Name">
+        <input type="email" id="email" name="email" placeholder="Email" >
+        <input type="tel" id="phone" name="phone" placeholder="Phone" >
+        <input type="text" id="applicationTo" name="applicationTo" placeholder="Application to" >
+        <input type="submit" value="Book" >
+    </form>
+</div>

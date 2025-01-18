@@ -4,23 +4,26 @@
   Landing page
 {% endblock %}
 
-{% block destinations %}
-    {% include "components/destinations.html" %}
-{% endblock %}
-
-{% block why_spur %}
-    {% include "components/why-spur.html" %}
-{% endblock %}
-
-{% block what_we_offer %}
-    {% include "components/what-else-we-offer.html" %}
-{% endblock %}
-
-{% block what_clients_say %}
-    {% include "components/what-clients-say.html" %}
-{% endblock %}
-
-
 {% block content %}
+
+    {% block destinations %}
+        {% include "components/destinations.html" %}
+    {% endblock %}
+
+    {% block why_spur %}
+        {% include "components/why-spur.html" %}
+    {% endblock %}
+
+    {% block what_we_offer %}
+        {% include "components/what-else-we-offer.html" %}
+    {% endblock %}
+
+    {% block what_clients_say %}
+        {% include "components/what-clients-say.html" %}
+    {% endblock %}
+
+    {% block faq %}
+        {% include "components/faq.html" %}
+    {% endblock %}
 
 {% endblock %}

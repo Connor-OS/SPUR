@@ -9,7 +9,6 @@
   --secondary-blue: #16C2EB;
   --secondary-orange: #ED9B0E;
   --neutral-black: #232323;
-  --neutral-white: #FFFFFF;
 }
 
 *,
@@ -96,7 +95,7 @@ h3 {
   gap: 16px;
   border-radius: 4px;
   color: var(--secondary-green);
-  background-color: var(--neutral-white);
+  background-color: #fff;
 }
 
 /* language select */
@@ -122,11 +121,11 @@ label[for="language-picker-select"]
   justify-content: space-around;
 
   /*Text*/
-  color: var(--neutral-white);
+  color: #fff;
   font-weight: normal;
 
   /*Background*/
-  background-color: var(--neutral-white);
+  background-color: #fff;
   background-image: linear-gradient(to left, #11246D, var(--primary-blue), #11246D);
   background-size: cover;
   background-repeat: no-repeat;
@@ -204,7 +203,7 @@ input[type="submit"] {
   padding: 5px 55px;
   background-color: var(--primary-orange);
   border: none;
-  color: var(--neutral-white);
+  color: #fff;
 }
 
 /*carousel*/
@@ -238,7 +237,7 @@ input[type="submit"] {
   padding: 16px;
   border-radius: 8px;
   border: 1px solid rgba(35, 35, 35, 0.20);
-  background-color: var(--neutral-white);
+  background-color: #fff;
 }
 
 .school_image {
@@ -285,7 +284,7 @@ button {
   cursor: pointer;
   display: flex;
   border-radius: 8px;
-  color: var(--neutral-white);
+  color: #fff;
   background: #EC7A25;
   width: 156px;
   height: 20px;
@@ -384,7 +383,7 @@ button {
 }
 
 .why-spur-info {
-  background-color: var(--neutral-white);
+  background-color: #fff;
   border-radius: 8px;
   width: 440px;
   height: 152px;
@@ -631,3 +630,92 @@ button {
   color: var(--secondary-blue);
 }
 
+.faq {
+  padding-top: 45px;
+  padding-bottom: 35px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.faq h3{
+  margin-bottom: 35px;
+}
+
+.faq-box {
+  width: 75%;
+  margin-bottom: 28px;
+
+  color: var(--secondary-green);
+  border-radius: 8px;
+  border: 1px solid rgba(35, 35, 35, 0.20);
+  background: #FFF;
+  box-shadow: 0px 2px 10px 0px rgba(35, 35, 35, 0.10);
+  padding: 24px 32px;
+}
+
+.faq-question{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.faq-answer {
+  margin-top: 15px;
+  color: #232323;
+}
+
+.find-out-more {
+  padding: 10%;
+  background-color: rgba(22, 194, 235, 0.05);
+  display: flex;
+  justify-content: space-evenly;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.find-out-more h3 {
+  width: 40%;
+  padding-top: 35px;
+}
+
+.find-out-more h3 b {
+  color: var(--secondary-red);
+}
+
+.find-out-more form {
+  width: 40%;
+  border-radius: 20px;
+  background: #FFF;
+  padding: 35px;
+}
+
+.find-out-more form input {
+    margin-bottom: 20px;
+    width: auto;
+}
+
+.spur-footer {
+  height: 627px;
+  background: #132670;
+  display: flex;
+  justify-content: space-evenly;
+  padding-top: 50px;
+}
+
+.spur-footer-container {
+  color: #fff;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+
+}
+
+.spur-footer-container li {
+  margin-bottom: 25px;
+}
+
+.spur-footer-logo {
+  padding-bottom: 75px;
+}
