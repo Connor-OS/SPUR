@@ -16,7 +16,7 @@
   backface-visibility: hidden;
   transform-style: preserve-3d;
   touch-action: pan-Y;
-  overflow: hidden;
+  /*overflow: hidden;*/
   margin: 0;
   padding: 0;
   white-space: nowrap;

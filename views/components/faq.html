@@ -1,14 +1,8 @@
 <script src="/javascripts/faq.js"></script>
 
 {% macro plus() %}
-    <svg class="plus" onclick="expandElement(this)" width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg class="plus" width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M21.5 11.9961V21.4961H12C11.337 21.4961 10.7011 21.7595 10.2322 22.2283C9.76339 22.6972 9.5 23.3331 9.5 23.9961C9.5 24.6591 9.76339 25.295 10.2322 25.7639C10.7011 26.2327 11.337 26.4961 12 26.4961H21.5V35.9961C21.5 36.6591 21.7634 37.295 22.2322 37.7639C22.7011 38.2327 23.337 38.4961 24 38.4961C24.663 38.4961 25.2989 38.2327 25.7678 37.7639C26.2366 37.295 26.5 36.6591 26.5 35.9961V26.4961H36C36.663 26.4961 37.2989 26.2327 37.7678 25.7639C38.2366 25.295 38.5 24.6591 38.5 23.9961C38.5 23.3331 38.2366 22.6972 37.7678 22.2283C37.2989 21.7595 36.663 21.4961 36 21.4961H26.5V11.9961C26.5 11.3331 26.2366 10.6972 25.7678 10.2283C25.2989 9.75949 24.663 9.49609 24 9.49609C23.337 9.49609 22.7011 9.75949 22.2322 10.2283C21.7634 10.6972 21.5 11.3331 21.5 11.9961Z" fill="#00B595" stroke="#00B595"/>
-    </svg>
-{% endmacro %}
-
-{% macro minus() %}
-    <svg class="minus hidden" onclick="collapseElement(this)" width="32" height="7" viewBox="0 0 32 7" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M28 0H4C2.93913 0 1.92172 0.36875 1.17157 1.02513C0.421427 1.6815 0 2.57174 0 3.5C0 4.42826 0.421427 5.3185 1.17157 5.97487C1.92172 6.63125 2.93913 7 4 7H28C29.0609 7 30.0783 6.63125 30.8284 5.97487C31.5786 5.3185 32 4.42826 32 3.5C32 2.57174 31.5786 1.6815 30.8284 1.02513C30.0783 0.36875 29.0609 0 28 0Z" fill="#00B595"/>
     </svg>
 {% endmacro %}
 
@@ -22,11 +16,10 @@
 <div class="faq">
     <h3>Frequently asked questions</h3>
     {% for question in questions %}
-        <div class="faq-box">
+        <div class="faq-box" onclick="expandElement(this)">
             <div class="faq-question">
                 <p>{{ question.question }}</p>
                 {{ plus() }}
-                {{ minus() }}
             </div>
 
             <div class="faq-answer hidden">
