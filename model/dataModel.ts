@@ -17,6 +17,7 @@ const schoolSchema = new mongoose.Schema({
     school_type: { type: Number, required: true },
     courses: [courseSchema],
     city: { type: mongoose.Schema.Types.ObjectId, ref: 'City', required: true},
+    review_score: { type: Number, required: true },
 },{
     versionKey: false
 });
@@ -29,6 +30,8 @@ const citySchema = new mongoose.Schema({
 },{
     versionKey: false
 });
+
+// TODO: Accommodation schema here
 
 export enum schoolTypeEnum {
     'Language Course' = 1,

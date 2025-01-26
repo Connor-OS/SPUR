@@ -1,0 +1,10 @@
+{% macro dropdown(name, items) %}
+    <div class="dropdown">
+        <input id="{{ name }}Dropdown" name="{{ name }}" placeholder="{{name}}" onclick="showDropdown('{{ name }}Options')" class="dropinput" value="">
+        <div id="{{ name }}Options" class="dropdown-content">
+            {% for item in items %}
+            <p onclick="selectDropdown('{{ name }}Dropdown','{{ item }}')">{{ item }}</p>
+            {% endfor %}
+        </div>
+    </div>
+{% endmacro %}

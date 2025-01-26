@@ -230,11 +230,10 @@ input[type="submit"] {
 
 .school {
   display: flex;
-  align-items: center;
   flex-direction: row;
   gap: 20px;
   width: 100%;
-  padding: 16px;
+  padding: 28px;
   border-radius: 8px;
   border: 1px solid rgba(35, 35, 35, 0.20);
   background-color: #fff;
@@ -254,12 +253,33 @@ input[type="submit"] {
   display: flex;
   flex-direction: column;
   gap: 8px;
+  padding-right: 75px;
 }
 
 .school_metadata {
   display: flex;
   flex-direction: column;
   gap: 8px;
+  justify-content: flex-end;
+  position: static;
+}
+
+.school_metadata p {
+  font-size: 16px;
+}
+
+.school_metadata h2 {
+  margin-top: 10px;
+}
+
+.school_metadata button {
+  margin-top: auto;
+}
+
+.date_container {
+  display: flex;
+  align-items: center;
+  gap: 6px;
 }
 
 .school_content h3 {
@@ -267,9 +287,8 @@ input[type="submit"] {
   font-size: 1.5rem;
 }
 
-.school p {
+.school_content p {
   margin: 0;
-  color: #666;
   font-size: 1rem;
   line-height: 1.5;
 }
@@ -295,18 +314,30 @@ button {
   flex-shrink: 0;
 }
 
-.schools a {
-  text-decoration: none;
-  color: inherit;
-  display: block;
-}
-
 /* Optional: Add hover effect */
-.schools a:hover {
+.school:hover {
   box-shadow: 0px 4px 20px rgba(22, 194, 235, 0.15);
   text-decoration: none;
   cursor: pointer;
   opacity: 0.95;
+}
+
+.school_content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.school_content a {
+  color: var(--primary-blue);
+  font-size: 16px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.school_metadata .under_script {
+  font-size: 12px;
+  font-weight: 300;
 }
 
 .notValidDay {
@@ -654,11 +685,18 @@ button {
   margin-left: 125px;
 }
 
-.star-rating{
+.star-rating {
   display: flex;
+}
+
+.what-clients-say .star-rating{
   position: absolute;
   right: 20px;
   top: 255px;
+}
+
+.school_metadata .star-rating{
+  margin-bottom: 10px;
 }
 
 .review-meta {

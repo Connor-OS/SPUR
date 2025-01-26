@@ -1,30 +1,61 @@
 {% extends "layout.html" %}
 
+{% from "components/dropdown.html" import dropdown %}
+
 {% block pageTitle %}
 Search results
 {% endblock %}
+
+{% macro dropdown(name, items) %}
+<div class="dropdown">
+    <input id="{{ name }}Dropdown" name="sort_by" placeholder="sort by: {{ sort_by }}" onclick="showDropdown('{{ name }}Options')" class="dropinput" value="">
+    <div id="{{ name }}Options" class="dropdown-content">
+        {% for item in items %}
+        <p onclick="selectDropdown('{{ name }}Dropdown','{{ item }}'); document.getElementById('sort').submit();">{{ item }}</p>
+        {% endfor %}
+    </div>
+</div>
+{% endmacro %}
 
 
 {% block content %}
 
     <div class="schools">
         <h2>{{ city }}: {{ schools.length }} courses found</h2>
+
+        <form  id="sort" method="post" action="search">
+            {{ dropdown("sort by: ", ["Recommendation", "Low to High Price", "High to low Price"]) }}
+            <input type="hidden" name="city" value="{{ req_body.city }}">
+            <input type="hidden" name="date" value="{{ req_body.date }}">
+        </form>
+
         {% for school in schools %}
-        <a href="/school?id={{ school.id }}">
-            <article class="school">
-                <img class="school_image" src="/images/schools/generic.webp" alt="Image of {{ school.name }}">
-                <div class="school_content">
-                    <h3>{{ school.name }}</h3>
-                    <p>{{ city }}, United Kingdom</p>
-                    <p>{{ school.description }}</p>
+        <article class="school">
+            <img class="school_image" src="/images/schools/generic.webp" alt="Image of {{ school.name }}">
+            <div class="school_content">
+                <h3>{{ school.name }}</h3>
+                <p>{{ city }}, United Kingdom</p>
+                <a href="{{ school.google_maps }}" target="_blank" rel="noopener noreferrer">show on map</a>
+                <p>{{ school.course_list }}</p>
+            </div>
+            <div class="school_metadata">
+                <p>very good {{ school.review_score }}</p>
+                <div class="star-rating">
+                    {% for i in range(school.review_score) %}
+                        <p></p>
+                        <img src="/images/icons/rating-star.svg">
+                    {% endfor %}
                 </div>
-                <div class="school_metadata">
-                    <p>Selected Dates {{ date_string }}</p>
-                    <h2>From £{{ school.min_price }}</h2>
-                    <button>Learn more</button>
+                <p>Selected Dates</p>
+                <div class="date_container">
+                    <img src="/images/icons/calendar.svg" alt="Calendar icon" />
+                    <p>{{ date_string }}</p>
                 </div>
-            </article>
-        </a>
+                <h2>From £{{ school.min_price }}</h2>
+                <p class="under_script">* additional charges may apply</p>
+                <button onclick="window.location.href='/school?id={{ school.id }}'">Learn more</button>
+            </div>
+        </article>
         {% endfor %}
     </div>
 {% endblock %}

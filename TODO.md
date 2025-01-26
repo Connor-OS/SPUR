@@ -3,20 +3,21 @@
 
 ## Infrastructure
 
-- [ ] Working DB for dev environment
+- [x] Working DB for dev environment
 - [ ] Deploy to raspberry Pi
 
 ## Development
 
 ### Backend
 - [ ] Queries and data model for course page
-- [ ] Compute min price on schools
+- [x] Compute min price on schools
 - [ ] School rating and google maps
-- [ ] Sort by
+- [x] Sort by
 - [ ] Accept payments
 - [ ] Confirmation emails
+- [ ] what happens if we can't return trust pilot rating
 
 ### Front end
-- [ ] Index page content
-- [ ] search result styling
-- [ ] date picker
+- [x] Index page content
+- [x] search result styling
+- [x] date picker
