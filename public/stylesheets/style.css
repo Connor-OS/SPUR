@@ -130,6 +130,7 @@ label[for="language-picker-select"]
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 50% 35%;
+  margin-bottom: 100px;
 
   position: relative
 }
@@ -219,7 +220,6 @@ input[type="submit"] {
   flex-direction: column;
   gap: 44px;
   padding: 20px;
-  padding-top: 100px;
 }
 
 .schools h2 {
@@ -347,7 +347,6 @@ button {
 }
 
 .destinations-carousel {
-  padding-top: 150px;
   padding-bottom: 100px;
 }
 
@@ -550,7 +549,7 @@ button {
   flex-direction: column;
   align-items: center;
   padding: 50px;
-  gap: 35px;
+  gap: 36px;
 }
 
 .what-is-waiting-for-you h1 b {
@@ -560,7 +559,7 @@ button {
 .what-is-waiting-selection {
   padding: 20px;
   display: flex;
-  gap: 35px;
+  gap: 36px;
 }
 
 .what-is-waiting-select {
@@ -618,7 +617,7 @@ button {
   height: 338px;
   flex-shrink: 0;
 
-  padding: 50px 35px 35px;
+  padding: 50px 36px 36px;
   overflow: visible;
 }
 
@@ -709,7 +708,7 @@ button {
 
 .faq {
   padding-top: 45px;
-  padding-bottom: 35px;
+  padding-bottom: 36px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -717,7 +716,7 @@ button {
 }
 
 .faq h3{
-  margin-bottom: 35px;
+  margin-bottom: 36px;
 }
 
 .faq-box {
@@ -754,7 +753,7 @@ button {
 
 .find-out-more h3 {
   width: 40%;
-  padding-top: 35px;
+  padding-top: 36px;
 }
 
 .find-out-more h3 b {
@@ -765,7 +764,7 @@ button {
   width: 40%;
   border-radius: 20px;
   background: #FFF;
-  padding: 35px;
+  padding: 36px;
 }
 
 .find-out-more form input {
@@ -795,4 +794,37 @@ button {
 
 .spur-footer-logo {
   padding-bottom: 75px;
+}
+
+.school_page {
+  gap: 44px;
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+.school_page h1 {
+  color: var(--secondary-red);
+}
+
+.school_info {
+  display: flex;
+  gap: 25px;
+  margin-top: 36px;
+  margin-bottom: 36px;
+}
+
+.courses {
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+}
+
+.course {
+  padding: 24px;
+  border-radius: 8px;
+  border: 1px solid rgba(35, 35, 35, 0.20);
+}
+
+.course:hover {
+  background: rgba(22, 194, 235, 0.10);
 }

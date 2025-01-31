@@ -6,16 +6,35 @@ Search results
 
 
 {% block content %}
-    <h1>{{ school.name }}</h1>
-    <p>{{ city }}, United Kingdom</p>
-    <img class="school_image" src="/images/schools/generic.webp" alt="Image of {{ school.name }}">
-    <div class="school_content">
-        <p>{{ school.description }}</p>
+    <div class="school_page">
+
+
+        <h1>{{ school.name }}</h1>
+        <p>{{ city }}, United Kingdom</p>
+
+        <div class="school_info">
+            <img class="school_image" src="/images/schools/generic.webp" alt="Image of {{ school.name }}">
+            <div class="school_content">
+                <p>
+                    {{ school.description }} Opened in 2019, and accredited by the British
+                    Council, ILC have been providing English language
+                    learning successfully for 5 years. The school has
+                    helped international students meet their academic
+                    goals, local students meet their career goals, and
+                    everything in between. Become part of the family
+                    and join on your English language journey with ILC.
+                </p>
+                <p>
+                    A small, cozy school in the heart of beautiful Jesmond, not far from Newcastle City Centre, the
+                    school provides a professional, personal, and flexible service to meet your language learning needs.
+                </p>
+            </div>
+        </div>
+
+        <hr class="divider">
+
+        {% include "components/courses.html" %}
+
+
     </div>
-    {% for course in courses %}
-        <h3>{{ course.name }}</h3>
-        <p>{{course.description}}</p>
-        <p>{{course.schedule}}</p>
-        <p>{{course.price}}</p>
-    {% endfor %}
 {% endblock %}
