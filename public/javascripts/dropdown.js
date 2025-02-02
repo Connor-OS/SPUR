@@ -5,7 +5,7 @@ function showDropdown(name) {
 }
 
 function selectDropdown(parent, value) {
-    document.getElementById(parent).innerHTML = value;
+    document.getElementById(parent).value = value;
 }
 
 // Close the dropdown menu if the user clicks outside of it
