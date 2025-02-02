@@ -33,8 +33,23 @@ Search results
 
         <hr class="divider">
 
+        <p style="font-size: 16px; margin-left: 10%; margin-bottom: 10px;" onclick=hide_unhide("school_map")>show on map</p>
+        <iframe
+                width="80%"
+                height="350"
+                frameborder="0" style="border:0"
+                referrerpolicy="no-referrer-when-downgrade"
+                src="https://www.google.com/maps/embed/v1/place?key={{ google_api_key }}&{{ school.google_maps}}"
+                allowfullscreen
+                class="school_map"
+                id="school_map">
+        </iframe>
+
         {% include "components/courses.html" %}
 
+        <hr class="divider">
+
+        {% include "components/your-offer.html" %}
 
     </div>
 {% endblock %}

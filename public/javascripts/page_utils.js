@@ -16,3 +16,9 @@ function what_is_waiting_select(element, id_num) {
 
     document.getElementById("what-is-waiting-info" + id_num).classList.remove("hidden");
 }
+
+function hide_unhide(id) {
+    let display_style = document.getElementById(id).style.display;
+    display_style === 'none' ? display_style = 'block': display_style = 'none';
+    document.getElementById(id).style.display = display_style
+}

@@ -14,7 +14,6 @@ const app = express();
 
 dotenv.config()
 
-const PORT = process.env.PORT || 3000;
 const MONGO_URL = process.env.MONGO_URL
 
 app.set("views", path.join(__dirname, "views"));
@@ -28,7 +27,7 @@ const nunjucksEnv = nunjucks.configure([
   express: app,
 });
 
-mongoose.connect("mongodb+srv://connor:2Fa97mongodb57JG4@spur.ecmtx.mongodb.net/spur").then(()=>{
+mongoose.connect(MONGO_URL).then(()=>{
   console.log("Mongo is connected successfully!")
 }).catch((error) => console.log(error))
 

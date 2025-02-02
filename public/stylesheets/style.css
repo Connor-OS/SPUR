@@ -1,5 +1,5 @@
 @import "dropdown.css";
-@import url('https://fonts.googleapis.com/css?family=Lexend');
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@300&display=swap');
 
 :root {
   --primary-orange: #ED7A24;
@@ -542,6 +542,8 @@ button {
   color: rgba(35, 35, 35, 0.20);
   margin-left: auto;
   margin-right: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .what-is-waiting-for-you {
@@ -570,13 +572,6 @@ button {
   justify-content: center;
   text-align: center;
   align-items: center;
-}
-
-.selected {
-  border-radius: 16px;
-  border: 2px solid rgba(22, 194, 235, 0.20);
-  background: #FFF;
-  box-shadow: 0px 4px 40px 0px rgba(22, 194, 235, 0.12);
 }
 
 .what-is-waiting-info {
@@ -778,6 +773,7 @@ button {
   display: flex;
   justify-content: space-evenly;
   padding-top: 50px;
+  margin-top: 36px;
 }
 
 .spur-footer-container {
@@ -817,14 +813,105 @@ button {
   display: flex;
   flex-direction: column;
   gap: 36px;
+  margin-top: 36px;
+  margin-bottom: 36px;
 }
 
 .course {
   padding: 24px;
   border-radius: 8px;
   border: 1px solid rgba(35, 35, 35, 0.20);
+  position: relative;
 }
 
 .course:hover {
   background: rgba(22, 194, 235, 0.10);
+}
+
+.school_map {
+  display: none;
+  transition: opacity 1s ease-out;
+  margin: auto;
+}
+
+.details_list {
+  margin-top: 25px;
+  list-style-type: none;
+}
+
+.details_list li {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.course button {
+  position: absolute;
+  left: 100%;
+  transform: translate(-115%, -75%);
+  background: var(--secondary-green);
+}
+
+.selected {
+  border-radius: 8px;
+  border: 1px solid rgba(35, 35, 35, 0.20);
+  background: rgba(22, 194, 235, 0.10);
+}
+
+.important_course_info {
+  margin-top: 24px;
+  padding: 24px;
+  border-radius: 8px;
+  background: rgba(22, 194, 235, 0.05);
+}
+
+.your-details {
+  padding: 20px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  border-radius: 8px;
+  border: 1px solid rgba(35, 35, 35, 0.20);
+}
+
+.form-section {
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+
+  border-radius: 8px;
+  border: 1px solid rgba(35, 35, 35, 0.20);
+}
+
+.amount-column {
+  justify-content: flex-end;
+}
+
+.form-column {
+  flex: 1;
+  min-width: 45%;
+}
+
+.amount-column {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+
+.form-column input, select {
+  width: 50%;
+  padding: 8px;
+  margin-bottom: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.form-header {
+  padding: 12px;
+  display: flex;
+  justify-content: space-between;
 }

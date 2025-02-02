@@ -16,9 +16,4 @@ function expandElement(element) {
 
     const plus = element.getElementsByClassName('plus')[0]
     plus.classList.add('hidden')
-
-    // element.scrollIntoView({
-    //     behavior: "smooth",
-    //     block: "center", // Adjust to "start" or "center" as needed
-    // });
 }

@@ -8,7 +8,9 @@ export const get = async (req, res, next) => {
     res.render('school', {
         school: school,
         city: city.name,
-        courses: school.courses
+        courses: school.courses,
+        coursesNames: school.courses.map(course => course.name),
+        google_api_key: process.env["GOOGLE_MAPS_API"]
     });
 };
 

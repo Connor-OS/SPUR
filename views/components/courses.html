@@ -1,11 +1,23 @@
+<script src="/javascripts/courses.js"></script>
+
 <div class="courses">
     <h1>Courses</h1>
     {% for course in courses %}
-        <div class="course">
+        <div class="course" id="{{ course.name }}" onclick="select(this)" data-cost="{{ course.price_per_week }}">
             <h3>{{ course.name }}</h3>
-            <p>{{course.description}}</p>
-            <p>{{course.schedule}}</p>
-            <p>{{course.price}}</p>
+            <button id="select_button">Select</button>
+
+            <ul class="details_list">
+                <li> <img src="images/icons/team-size.svg" alt="class size"> {{ course.class_size }}</li>
+                <li> <img src="images/icons/schedule.svg" alt="schedule"> {{ course.schedule }}</li>
+                {% for detail in course.other_details %}
+                    <li> <img src="images/icons/other-detail.svg" alt="tick"> {{ detail }}</li>
+                {% endfor %}
+            </ul>
+
+            {% if course.important_info %}
+                <p class="important_course_info">{{ course.important_info }}</p>
+            {% endif %}
         </div>
     {% endfor %}
 </div>
