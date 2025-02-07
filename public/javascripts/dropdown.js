@@ -5,7 +5,9 @@ function showDropdown(name) {
 }
 
 function selectDropdown(parent, value) {
-    document.getElementById(parent).value = value;
+    let DropdownElement = document.getElementById(parent)
+    DropdownElement.value = value;
+    DropdownElement.dispatchEvent(new Event('valueChanged'));
 }
 
 // Close the dropdown menu if the user clicks outside of it

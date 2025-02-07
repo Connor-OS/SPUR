@@ -865,15 +865,24 @@ button {
   background: rgba(22, 194, 235, 0.05);
 }
 
+.your-offer {
+  display: grid;
+  grid-template-columns: 40% 60%;
+  gap: 12px;
+}
+
+.details-box {
+  padding: 20px;
+  border-radius: 8px;
+  background: rgba(22, 194, 235, 0.05);
+}
+
 .your-details {
   padding: 20px;
 
   display: flex;
   flex-direction: column;
   gap: 20px;
-
-  border-radius: 8px;
-  border: 1px solid rgba(35, 35, 35, 0.20);
 }
 
 .form-section {
@@ -886,8 +895,10 @@ button {
   border: 1px solid rgba(35, 35, 35, 0.20);
 }
 
-.amount-column {
-  justify-content: flex-end;
+.form-grid {
+  display: grid;
+  grid-auto-rows: 48px;
+  gap: 12px;
 }
 
 .form-column {
@@ -901,17 +912,32 @@ button {
   align-items: flex-end;
 }
 
+.form-row {
+  display: flex;
+  justify-content: space-between;
+}
 
-.form-column input, select {
-  width: 50%;
+.your-details input, select {
+  width: 80%;
+  max-width: 300px;
   padding: 8px;
   margin-bottom: 16px;
   border: 1px solid #ccc;
   border-radius: 4px;
 }
 
-.form-header {
-  padding: 12px;
+.offer-details {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.course-details {
+
+}
+
+.course-detail {
+  display: flex;
+  gap: 20px;
+  align-items: center;
 }

@@ -1,6 +1,6 @@
 import {City, School, schoolTypeEnum} from "../model/dataModel";
 
-const _MS_PER_WEEK = 1000 * 60 * 60 * 24 * 7;
+const _MS_PER_WEEK = 1000 * 60 * 60 * 24 * 4;
 enum sortByValues {
     'Recommendation' = 'review_score',
     'Low to High Price' = 'min_price',
@@ -37,7 +37,7 @@ export const post = async (req, res) => {
 
     // Compute some course specific info
     schools.forEach(school => {
-        school['min_price'] = Math.min(...school.courses.map(course => course.price_per_week))
+        school['min_price'] = Math.min(...school.courses.map(course => course.price_per_week * length_of_study_weeks))
         school['course_list'] = school.courses.map(course => course.name).join(" / ")}
     )
 
@@ -64,7 +64,6 @@ export const post = async (req, res) => {
         sort_by: req.body["sort_by"],
         city: city.name,
         schools: schools,
-        length_of_study: length_of_study_weeks,
         date_string: date_string,
     })
 }

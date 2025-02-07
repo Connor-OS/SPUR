@@ -1,46 +1,59 @@
 
 {% macro dropdown(name, items) %}
     <script src="/javascripts/dropdown.js"></script>
-    <input id="{{ name }}Dropdown" name="{{ name }}" placeholder="{{ name }}" onclick="showDropdown('{{ name }}Options')" class="dropinput">
-    <div id="{{ name }}Options" class="dropdown-content">
-        {% for item in items %}
-            <p onclick="select(document.getElementById('{{ item }}'))">{{ item }}</p>
-        {% endfor %}
+    <div class="dropdown">
+        <input id="{{ name }}Dropdown" name="{{ name }}" placeholder="{{ name }}" onclick="showDropdown('{{ name }}Options')" class="dropinput">
+        <div id="{{ name }}Options" class="dropdown-content">
+            {% for item in items %}
+                <p onclick="selectDropdown('{{ name }}Dropdown','{{ item }}')">{{ item }}</p>
+            {% endfor %}
+        </div>
     </div>
 {% endmacro %}
 
 <div class="your-offer">
-    <h1>Your offer</h1>
-    <form action="#" class="your-details" method="POST">
 
-        <div class="form-header">
-            <h3>Your details</h3>
-            <h3>Amount</h3>
+    <div class="offer-details">
+        <div class="details-box">
+            {{ school.name}}
+        </div>
+        <div class="details-box course-details">
+            <h3 id="course_name">Select a Course</h3>
+            <ul>
+                <div class="course-detail"> <img src="images/icons/team-size.svg" alt="class size"> <p id="course_size"></p> </div>
+                <div class="course-detail"> <img src="images/icons/schedule.svg" alt="schedule"> <p id="course_schedule"></p> </div>
+            </ul>
+        </div>
+        <div class="details-box">
+            <p>oioi</p>
         </div>
 
-        <div class="form-section">
-            <div class="form-column">
-                {{ dropdown("course", coursesNames) }}
-                <input name="date" id="course_dates" placeholder="Course start date"  type='text'>
-                <input type="number" id="weeks" name="weeks" placeholder="Number of weeks" min="1" value="1" >
-                <input type="hidden" id="cost_per_week" value="" />
+    </div>
+
+    <form action="#" class="your-details details-box" method="POST">
+
+        <div class="form-grid">
+            <div class="form-row">
+                <h3>Your details</h3>
+                <h3>Amount</h3>
             </div>
 
-            <div class="form-column amount-column">
+            {{ dropdown("course", coursesNames) }}
+            <input name="date" id="course_dates" placeholder="Course dates"  type='text'>
+            <div class="form-row">
+                <p>Course Total:</p>
                 <p>£<span id="course-total">0</span></p>
             </div>
+            <input type="hidden" id="cost_per_week" value="" />
+
+            <p>Stay with Family: Self catered</p>
+
+            {{ dropdown("Accommodation", ["family", "student house"]) }}
+            <input name="date" id="stay_dates" placeholder="Stay dates"  type='text'>
+
+
         </div>
 
-        <div class="form-section">
-            <div class="form-column">
-                {{ dropdown("accommodation", ["family", "student house"]) }}
-                <input name="date" id="stay_dates" placeholder="Course start date"  type='text'>
-            </div>
-
-            <div class="form-column amount-column">
-                <p>£560</p>
-            </div>
-        </div>
 
         <div style="flex-basis: 100%; text-align: center;">
             <p>Total to pay</p>
