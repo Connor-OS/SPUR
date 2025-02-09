@@ -1,6 +1,5 @@
 import {City, School, schoolTypeEnum} from "../model/dataModel";
 
-const _MS_PER_WEEK = 1000 * 60 * 60 * 24 * 4;
 enum sortByValues {
     'Recommendation' = 'review_score',
     'Low to High Price' = 'min_price',
@@ -30,7 +29,7 @@ export const post = async (req, res) => {
     const formatter = new Intl.DateTimeFormat("en-US", { month: "short", day: "numeric" });
     const date_string = `${formatter.format(start_date)} - ${formatter.format(end_date)}`;
 
-    let length_of_study_weeks: number = (end_date.getTime() - start_date.getTime())/_MS_PER_WEEK
+    let length_of_study_weeks = (end_date.getDate() - start_date.getDate() + 3)/ 7
 
     // get schools
     let schools = await School.find({ "city": city.id}).lean();

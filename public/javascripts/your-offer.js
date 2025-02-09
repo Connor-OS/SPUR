@@ -1,17 +1,20 @@
 const costInput = document.getElementById('cost_per_week');
 const courseInput = document.getElementById('courseDropdown');
+const courseDateInput = document.getElementById('course_dates');
 
 const total = document.getElementById('course-total')
 
 function syncCourseSelection(element) {
+    // ensure data is synced between the course selected at the top of the page and
+    // the details form at the bottom
     Array.from(
         element.parentElement.getElementsByClassName("course")
     ).forEach((item) => deSelectCourse(item));
 
     selectCourse(element)
 
-    document.getElementById("courseDropdown").value =
-        element.querySelector('h3').innerText;
+    courseInput.value = element.querySelector('h3').innerText;
+    costInput.value = element.dataset.cost
 
     document.getElementById("course_name").innerHTML =
         element.querySelector('h3').innerText;
@@ -21,6 +24,8 @@ function syncCourseSelection(element) {
 
     document.getElementById("course_schedule").innerHTML =
         element.querySelector('li:nth-of-type(2) p').innerText;
+
+    calculate_total()
 }
 
 
@@ -43,21 +48,26 @@ function selectCourse(course) {
 
 function calculate_total() {
     // Get the value from the input (convert it to a number)
-    const weeks = parseFloat(weeksInput.value);
     const cost = parseFloat(costInput.value);
 
+    const dates = courseDateInput.value.split(" - ");
+
+    const start_date = new Date(dates[0])
+    const end_date = new Date(dates[1])
+    let length_of_study_weeks = (end_date.getDate() - start_date.getDate() + 3)/ 7
+    console.log(length_of_study_weeks)
 
     // Check if the input is a valid number
-    if (!isNaN(weeks) && !isNaN(cost)) {
-        total.textContent = weeks * cost;
-    } else {
-        total.textContent = "-";
+    if (!isNaN(length_of_study_weeks) && !isNaN(cost)) {
+        total.textContent = length_of_study_weeks * cost;
     }
 }
 
 
 courseInput.addEventListener('valueChanged', (event) =>
     syncCourseSelection(document.getElementById(courseInput.value)));
-costInput.addEventListener('valueChanged', calculate_total)
+costInput.addEventListener('valueChanged', calculate_total);
+courseDateInput.addEventListener('valueChanged', calculate_total);
 
-// calculate_total();
+
+calculate_total();

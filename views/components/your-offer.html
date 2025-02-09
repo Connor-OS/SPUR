@@ -1,3 +1,4 @@
+<script src="/javascripts/datepicker.js"></script>
 
 {% macro dropdown(name, items) %}
     <script src="/javascripts/dropdown.js"></script>
@@ -32,7 +33,7 @@
 
     <form action="#" class="your-details details-box" method="POST">
 
-        <div class="form-grid">
+        <div class="form-grid" id="course_details">
             <div class="form-row">
                 <h3>Your details</h3>
                 <h3>Amount</h3>
@@ -40,11 +41,11 @@
 
             {{ dropdown("course", coursesNames) }}
             <input name="date" id="course_dates" placeholder="Course dates"  type='text'>
+            <input type="hidden" id="cost_per_week" value="" />
             <div class="form-row">
                 <p>Course Total:</p>
                 <p>£<span id="course-total">0</span></p>
             </div>
-            <input type="hidden" id="cost_per_week" value="" />
 
             <p>Stay with Family: Self catered</p>
 
