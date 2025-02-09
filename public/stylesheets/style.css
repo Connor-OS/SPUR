@@ -932,12 +932,61 @@ button {
   gap: 12px;
 }
 
-.course-details {
-
-}
-
 .course-detail {
   display: flex;
   gap: 20px;
   align-items: center;
+}
+
+.accommodation {
+  margin-bottom: 36px;
+}
+
+.accommodation_info {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  gap: 12px;
+}
+
+.accommodation_info p {
+  padding: 12px;
+}
+
+.housing_checkbox {
+  width: 44px;
+  height: 44px;
+  border-radius: 8px;
+  border: 1px solid #3B51A3;
+  appearance: none;
+  -webkit-appearance: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.housing_checkbox:checked {
+  background-image: url("../images/icons/white-tick.svg");
+  background-color: #3B51A3;
+}
+
+.housing_checkbox_div label {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 24px;
+}
+
+.housing_checkbox_div {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+#dont_need_housing {
+  color: #3B51A3;
+}
+
+.options_list {
+  margin-top: 36px;
+  display: grid;
+  gap: 24px;
+  grid-template-columns: 50% 50%;
 }

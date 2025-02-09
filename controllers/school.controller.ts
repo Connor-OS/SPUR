@@ -10,6 +10,7 @@ export const get = async (req, res, next) => {
         city: city.name,
         courses: school.courses,
         coursesNames: school.courses.map(course => course.name),
+        accommodations: school.accommodation,
         google_api_key: process.env["GOOGLE_MAPS_API"]
     });
 };

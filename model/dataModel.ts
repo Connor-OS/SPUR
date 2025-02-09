@@ -12,6 +12,16 @@ const courseSchema = new mongoose.Schema({
     versionKey: false
 });
 
+const accommodationSchema = new mongoose.Schema({
+    name: { type: String, required: true },
+    description: { type: String, required: false },
+    options: { type: {String: Number}, required: false},
+    important_info: {type: {String: String}, required: false},
+    price_per_day: { type: Number, required: true },
+},{
+    versionKey: false
+});
+
 // School schema
 const schoolSchema = new mongoose.Schema({
     name: { type: String, required: true },
@@ -19,6 +29,7 @@ const schoolSchema = new mongoose.Schema({
     google_maps: { type: String, required: false },
     school_type: { type: Number, required: true },
     courses: [courseSchema],
+    accommodation: [accommodationSchema],
     city: { type: mongoose.Schema.Types.ObjectId, ref: 'City', required: true},
     review_score: { type: Number, required: true },
 },{
