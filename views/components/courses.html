@@ -1,9 +1,9 @@
 <script src="/javascripts/courses.js"></script>
 
 <h1>Courses</h1>
-<div id="courses" class="courses">
+<div id="courses" class="selection_list">
     {% for course in courses %}
-        <div class="course" id="{{ course.name }}" onclick="syncCourseSelection(this)" data-cost="{{ course.price_per_week }}">
+        <div class="selection_box course" id="{{ course.name }}" onclick="syncCourseSelection(this)" data-cost="{{ course.price_per_week }}">
             <h3>{{ course.name }}</h3>
             <button id="select_button">Select</button>
 
