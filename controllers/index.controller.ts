@@ -1,8 +1,6 @@
 import {City, School, schoolTypeEnum} from "../model/dataModel";
 import reviews from "../model/reviews.json";
-
-const languageList = ["Learn English", "Learn Spanish", "Learn French", "Learn German"];
-const ageList = ["16+", "7-16"]; //TODO: pull these from DB instead.
+import {getSearchOptions} from "../services/searchBar.service";
 
 /* GET home page. */
 export const get = async (req, res, next) => {
@@ -10,16 +8,26 @@ export const get = async (req, res, next) => {
 
     res.render('index', {
         frontPage: "frontpage",
-        languageList: languageList,
-        cityList: cities.map(city => city.name),
-        ageList: ageList,
         carousel_elements: cities,
-        reviews: reviews
+        reviews: reviews,
+        search: await getSearchOptions(req)
     });
 };
 
 export const post = async (req, res) => {
-    console.log(req.body);
+    const emptyFields = Object.entries(req.body)
+        .filter(([key, value]) => value === "")
+        .map(([key, value]) => key);
+
+    // Validate search fields
+    if (emptyFields.length !== 0) {
+        // TODO: Implement general validation for these fields, and retain inital inputs
+        return res.redirect("/");
+    }
+
+    req.session.searchData = req.body;
+
+    return res.redirect("search")
 }
 
 

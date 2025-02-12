@@ -6,27 +6,26 @@ enum sortByValues {
     'High to low Price' = 'max_price',
 }
 
+function dateHelper(dateString) {
+    let d = dateString.split("/");
+    return new Date(d[2] + '/' + d[1] + '/' + d[0]);
+}
 
-export const post = async (req, res) => {
-
-    const emptyFields = Object.entries(req.body)
-        .filter(([key, value]) => value === "")
-        .map(([key, value]) => key);
-
-    // Validate search fields
-    if (emptyFields.length !== 0) {
-        // TODO: Implement general validation for these fields, and retain inital inputs
-        return res.redirect("/");
+export const get = async (req, res) => {
+    
+    const searchData = req.session?.searchData
+    
+    if (!searchData) {
+        res.render("search_results")
     }
 
-    const city = await City.findOne({"name": req.body["city"]});
-    const date_range: string = req.body["date"]
+    const city = await City.findOne({"name": searchData["city"]});
+    const date_range: string = searchData["date"]
     const dates: string[] = date_range.split(" - ");
+    const start_date: Date = dateHelper(dates[0])
+    const end_date: Date = dateHelper(dates[1])
 
-    const start_date: Date = new Date(dates[0])
-    const end_date: Date = new Date(dates[1])
-
-    const formatter = new Intl.DateTimeFormat("en-US", { month: "short", day: "numeric" });
+    const formatter = new Intl.DateTimeFormat("en-GB", { day: "numeric", month: "short" });
     const date_string = `${formatter.format(start_date)} - ${formatter.format(end_date)}`;
 
     let length_of_study_weeks = (end_date.getDate() - start_date.getDate() + 3)/ 7
@@ -59,7 +58,7 @@ export const post = async (req, res) => {
     }
 
     res.render("search_results", {
-        req_body: req.body,
+        searchData: searchData,
         sort_by: req.body["sort_by"],
         city: city.name,
         schools: schools,

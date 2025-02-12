@@ -6,9 +6,9 @@
 <script src="/javascripts/dropdown.js"></script>
 <script src="/javascripts/datepicker.js"></script>
 
-{% macro dropdown(name, items) %}
+{% macro dropdown(name, items, value) %}
     <div class="dropdown">
-        <input id="{{ name }}Dropdown" name="{{ name }}" placeholder="Select {{name}}" onclick="showDropdown('{{ name }}Options')" class="dropinput" value="">
+        <input id="{{ name }}Dropdown" name="{{ name }}" placeholder="Select {{name}}" onclick="showDropdown('{{ name }}Options')" class="dropinput" value="{{ value }}">
         <div id="{{ name }}Options" class="dropdown-content">
             {% for item in items %}
                 <p onclick="selectDropdown('{{ name }}Dropdown','{{ item }}')">{{ item }}</p>
@@ -31,15 +31,14 @@
     {% endif %}
 
     <div class="spur-searchbanner__fields">
-        <form method="post" action="search">
-
+        <form method="post" action="/">
             {% if courseList %}
-                {{ dropdown("course", courseList) }}
+                {{ dropdown("course", search.courses) }}
             {% endif %}
-            {{ dropdown("language", languageList) }}
-            {{ dropdown("city", cityList) }}
-            <input name="date" id="date" placeholder="Select Date" type='text'>
-            {{ dropdown("age", ageList) }}
+            {{ dropdown("language", search.languages, searchData.language) }}
+            {{ dropdown("city", search.cities, searchData.city) }}
+            <input name="date" id="date" placeholder="Select Date" data-date="{{ searchData.date }}">
+            {{ dropdown("age", search.ages, searchData.age) }}
 
             <input type="submit" value="Search">
         </form>

@@ -36,7 +36,7 @@
             </div>
 
             {{ dropdown("course", coursesNames) }}
-            <input name="date" id="course_dates" placeholder="Course dates"  type='text'>
+            <input name="date" id="course_dates" placeholder="Course dates"  type='text' data-date="{{ searchData.date }}">
             <input type="hidden" id="cost_course" value="" />
             <div class="form-row">
                 <p>Course Total:</p>
@@ -46,7 +46,7 @@
             <p>Stay with Family: Self catered</p>
 
             {{ dropdown("accommodation", ["Stay with Family", "Student house"]) }}
-            <input name="date" id="accommodation_dates" placeholder="Stay dates"  type='text'>
+            <input name="date" id="accommodation_dates" placeholder="Stay dates"  type='text' data-date="{{ searchData.date }}">
 
             <input type="hidden" id="cost_accommodation" value="" />
             <div class="form-row">

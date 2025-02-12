@@ -6,9 +6,6 @@ const accommodationInput = document.getElementById('accommodationDropdown');
 const accommodationCost = document.getElementById('cost_accommodation');
 const accommodationDateInput = document.getElementById('accommodation_dates');
 
-
-const total = document.getElementById('course-total');
-
 function syncCourseSelection(element) {
     // ensure data is synced between the course selected at the top of the page and
     // the details form at the bottom
@@ -30,17 +27,14 @@ function syncAccommodationSelection(element) {
     Array.from(
         element.parentElement.getElementsByClassName("accommodation")
     ).forEach((item) => deSelectElement(item));
-
-    courseCost.value = element.dataset.cost
-
+    
     selectElement(element);
-
-    populateDetails(element, "accommodation");
 
     accommodationCost.value = element.dataset.cost
 
-    const extraCosts = element.querySelectorAll('input[data-cost]:checked');
+    populateDetails(element, "accommodation");
     
+    const extraCosts = element.querySelectorAll('input[data-cost]:checked');
     Array.from(extraCosts).forEach((item) => accommodationCost.value = Number(accommodationCost.value) + Number(item.dataset.cost))
     calculate_total();
 }
@@ -75,14 +69,20 @@ function populateDetails(sourceElement, destination) {
     });
 }
 
+function dateHelper(dateString) {
+    let d = dateString.split("/");
+    return new Date(d[2] + '/' + d[1] + '/' + d[0]);
+}
+
+
 function calculate_total() {
     // Get the value from the input (convert it to a number)
     const coursePerWeek = parseFloat(courseCost.value);
 
     let dates = courseDateInput.value.split(" - ");
 
-    let start_date = new Date(dates[0])
-    let end_date = new Date(dates[1])
+    let start_date = dateHelper(dates[0])
+    let end_date = dateHelper(dates[1])
     const length_of_study_weeks = (end_date.getDate() - start_date.getDate() + 3)/ 7
 
     const courseTotal = document.getElementById('course-total')
@@ -94,8 +94,8 @@ function calculate_total() {
     const accommodationPerWeek = parseFloat(accommodationCost.value);
 
     dates = accommodationDateInput.value.split(" - ");
-    start_date = new Date(dates[0])
-    end_date = new Date(dates[1])
+    start_date = dateHelper(dates[0])
+    end_date = dateHelper(dates[1])
     const length_of_stay_days = end_date.getDate() - start_date.getDate()
 
     const accommodationTotal = document.getElementById('accommodation-total')

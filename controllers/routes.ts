@@ -10,7 +10,7 @@ router.get('/', index.get);
 router.post('/', index.post);
 
 // router.get('/search', search.get);
-router.post('/search', search.post);
+router.get('/search', search.get);
 
 router.get('/school', school.get);
 router.post('/school', school.post);
