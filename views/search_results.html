@@ -21,7 +21,7 @@ Search results
 {% block content %}
 
     <div class="schools">
-        <h2>{{ city }}: {{ schools.length }} courses found</h2>
+        <h2>{{ city.name }}: {{ schools.length }} courses found</h2>
 
         <form  id="sort" method="post" action="search">
             {{ dropdown("sort by: ", ["Recommendation", "Low to High Price", "High to low Price"]) }}
@@ -34,7 +34,7 @@ Search results
             <img class="school_image" src="/images/schools/generic.webp" alt="Image of {{ school.name }}">
             <div class="school_content">
                 <h3>{{ school.name }}</h3>
-                <p>{{ city }}, United Kingdom</p>
+                <p>{{ city.name }}, United Kingdom</p>
                 <a href="https://maps.google.com/?{{ school.google_maps }}" target="_blank" rel="noopener noreferrer">show on map</a>
                 <p>{{ school.course_list }}</p>
             </div>

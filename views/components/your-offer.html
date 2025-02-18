@@ -16,7 +16,7 @@
     <div class="offer-details">
         <div class="details-box">
             <h3>{{ school.name }}</h3>
-            <p>{{ city }}, United Kingdom</p>
+            <p>{{ city.name }}, United Kingdom</p>
         </div>
         <div class="details-box" id="course-details">
             <h3 id="course_name">Select a Course</h3>
@@ -27,7 +27,7 @@
 
     </div>
 
-    <form action="#" class="your-details details-box" method="POST">
+    <form action="/school?id={{ school.id }}" class="your-details details-box" method="POST">
 
         <div class="form-grid" id="course_details">
             <div class="form-row">
@@ -35,7 +35,12 @@
                 <h3>Amount</h3>
             </div>
 
-            {{ dropdown("course", coursesNames) }}
+            {% set courseNames = [] %}
+            {% for course in school.courses %}
+                {% set dummy = courseNames.push(course.name) %}
+            {% endfor %}
+            
+            {{ dropdown("course", courseNames) }}
             <input name="date" id="course_dates" placeholder="Course dates"  type='text' data-date="{{ searchData.date }}">
             <input type="hidden" id="cost_course" value="" />
             <div class="form-row">

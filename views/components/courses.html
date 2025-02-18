@@ -2,7 +2,7 @@
 
 <h1>Courses</h1>
 <div id="courses" class="selection_list">
-    {% for course in courses %}
+    {% for course in school.courses %}
         <div class="selection_box course" id="{{ course.name }}" onclick="syncCourseSelection(this)" data-cost="{{ course.price_per_week }}">
             <h3>{{ course.name }}</h3>
             <button id="select_button">Select</button>

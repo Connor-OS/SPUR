@@ -60,7 +60,7 @@ export const get = async (req, res) => {
     res.render("search_results", {
         searchData: searchData,
         sort_by: req.body["sort_by"],
-        city: city.name,
+        city: city,
         schools: schools,
         date_string: date_string,
     })
