@@ -15,6 +15,7 @@ function syncCourseSelection(element) {
 
     selectElement(element);
 
+    courseInput.value = element.querySelector('h3').innerText;
     courseCost.value = element.dataset.cost;
 
     populateDetails(element, "course");
@@ -30,10 +31,11 @@ function syncAccommodationSelection(element) {
     
     selectElement(element);
 
+    accommodationInput.value = element.querySelector('h3').innerText;
     accommodationCost.value = element.dataset.cost
 
     populateDetails(element, "accommodation");
-    
+
     const extraCosts = element.querySelectorAll('input[data-cost]:checked');
     Array.from(extraCosts).forEach((item) => accommodationCost.value = Number(accommodationCost.value) + Number(item.dataset.cost))
     calculate_total();
@@ -102,7 +104,7 @@ function calculate_total() {
     if (!isNaN(length_of_stay_days) && !isNaN(accommodationPerWeek)) {
         accommodationTotal.textContent = length_of_stay_days * accommodationPerWeek;
     }
-    
+
     document.getElementById('total').textContent = parseFloat(accommodationTotal.textContent) + parseFloat(courseTotal.textContent) + parseFloat(document.getElementById('admission_fee').textContent);
 }
 
@@ -125,6 +127,33 @@ const dateInput = document.getElementById('date');
 courseDateInput.value = dateInput.value
 accommodationDateInput.value = dateInput.value
 
+function dontNeedHousing(checkbox) {
+    const accommodationElements = document.getElementsByClassName("accommodation");
+
+    if (checkbox.checked === true) {
+        Array.from(accommodationElements).forEach((item) => item.classList.add("hidden"));
+        accommodationDateInput.classList.add("deactive");
+        document.getElementById("accommodation-details").classList.add("hidden")
+        
+        accommodationInput.value = "I do not need housing";
+        accommodationCost.value = 0
+        
+        calculate_total();
+    } else {
+        accommodationInput.value = "";
+        Array.from(accommodationElements).forEach(function (item) {
+            item.classList.remove("hidden");
+            if (item.classList.contains("selected")) {
+                accommodationInput.value = item.querySelector('h3').innerText;
+                syncAccommodationSelection(document.getElementById(accommodationInput.value))
+            }
+        })
+
+        accommodationDateInput.classList.remove("deactive");
+        document.getElementById("accommodation-details").classList.remove("hidden")
+    }
+}
+
 courseInput.addEventListener('valueChanged', (event) =>
     syncCourseSelection(document.getElementById(courseInput.value)));
 accommodationInput.addEventListener('valueChanged', (event) =>
@@ -133,6 +162,4 @@ accommodationInput.addEventListener('valueChanged', (event) =>
 courseDateInput.addEventListener('valueChanged', calculate_total);
 accommodationDateInput.addEventListener('valueChanged', calculate_total);
 
-// syncCourseSelection(document.getElementById(courseInput.value));
-// syncAccommodationSelection(document.getElementById(accommodationInput.value));
 calculate_total();

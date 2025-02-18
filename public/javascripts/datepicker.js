@@ -10,14 +10,10 @@ $(function() {
         let start_date = new Date();
         let end_date = new Date();
         if (cached_date) {
-            console.log("found cache")
             start_date = dateHelper(cached_date.split(" - ")[0]);
             end_date = dateHelper(cached_date.split(" - ")[1]);
             $(this).val(cached_date.split(" - ")[0] + ' - ' + cached_date.split(" - ")[1]);
         }
-        console.log($(this).data('date'))
-        console.log(start_date)
-        console.log(end_date)
         $(this).daterangepicker({
             autoUpdateInput: false,
             isCustomDate: function(date) {

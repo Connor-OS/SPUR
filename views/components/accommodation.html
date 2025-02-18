@@ -7,7 +7,7 @@
             not available for your dates, the school will offer another accommodation option for you to
             consider.</p>
         <div class="housing_checkbox_div">
-            <input type="checkbox" class="housing_checkbox" id="need_housing">
+            <input type="checkbox" class="housing_checkbox" id="need_housing" onclick="dontNeedHousing(this)">
             <label for="need_housing" id="dont_need_housing">I DO NOT NEED HOUSING</label>
         </div>
     </div>
@@ -56,5 +56,10 @@
         </ul>
 
         <p class="important_course_info">XXXX student house is located in Jesmond and offers bright and spacious rooms for students. This residence offers a warm and homely atmosphere with only a 15-minute walk to the school.</p>
+    </div>
+
+    <div class="hidden" id="I do not need housing">
+        <h3>I do not need housing</h3>
+        <p class="important_course_info">I will make my own arrangements for my accommodation during my studies</p>
     </div>
 </div>
