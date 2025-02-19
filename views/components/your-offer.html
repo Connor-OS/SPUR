@@ -26,51 +26,49 @@
         </div>
 
     </div>
-
-    <form action="/school?id={{ school.id }}" class="your-details details-box" method="POST">
-
-        <div class="form-grid" id="course_details">
-            <div class="form-row">
-                <h3>Your details</h3>
-                <h3>Amount</h3>
-            </div>
-
-            {% set courseNames = [] %}
-            {% for course in school.courses %}
-                {% set dummy = courseNames.push(course.name) %}
-            {% endfor %}
-            
-            {{ dropdown("course", courseNames) }}
-            <input name="date" id="course_dates" placeholder="Course dates"  type='text' data-date="{{ searchData.date }}">
-            <input type="hidden" id="cost_course" value="" />
-            <div class="form-row">
-                <p>Course Total:</p>
-                <p>£<span id="course-total">0</span></p>
-            </div>
-            
-            {{ dropdown("accommodation", ["Stay with Family", "Student house"]) }}
-            <input name="date" id="accommodation_dates" placeholder="Stay dates"  type='text' data-date="{{ searchData.date }}">
-
-            <input type="hidden" id="cost_accommodation" value="" />
-            <div class="form-row">
-                <p>Accommodation Total:</p>
-                <p>£<span id="accommodation-total">0</span></p>
-            </div>
-
-            <div class="form-row">
-                <p>School Admission fee:</p>
-                <p>£<span id="admission_fee">50</span></p>
-            </div>
-
+    <div class="form-grid" id="course_details">
+        <div class="form-row">
+            <h3>Your details</h3>
+            <h3>Amount</h3>
         </div>
 
-        <div class="total_element">
-            <p>Total to pay</p>
-            <p>£<span id="total">0</span></p>
+        {% set courseNames = [] %}
+        {% for course in school.courses %}
+            {% set dummy = courseNames.push(course.name) %}
+        {% endfor %}
+        
+        {{ dropdown("course", courseNames) }}
+        <input name="date" id="course_dates" placeholder="Course dates"  type='text' data-date="{{ searchData.date }}">
+        <input type="hidden" id="cost_course" value="" />
+        <div class="form-row">
+            <p>Course Total:</p>
+            <p>£<span id="course-total">0</span></p>
         </div>
-        <button type="submit">Book</button>
-    </form>
+        
+        {{ dropdown("accommodation", ["Stay with Family", "Student house"]) }}
+        <input name="date" id="accommodation_dates" placeholder="Stay dates"  type='text' data-date="{{ searchData.date }}">
+
+        <input type="hidden" id="cost_accommodation" value="" />
+        <div class="form-row">
+            <p>Accommodation Total:</p>
+            <p>£<span id="accommodation-total">0</span></p>
+        </div>
+
+        <div class="form-row">
+            <p>School Admission fee:</p>
+            <p>£<span id="admission_fee">50</span></p>
+        </div>
+
+    </div>
+
+    <div class="total_element">
+        <p>Total to pay</p>
+        <p>£<span id="total">0</span></p>
+    </div>
+    <div id="checkout">
+        <!-- Checkout will insert the payment form here -->
+    </div>
 </div>
 
 <script src="/javascripts/your-offer.js"></script>
-
+<script src="/javascripts/checkout.js" defer></script>
