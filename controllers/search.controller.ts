@@ -39,27 +39,8 @@ export const get = async (req, res) => {
         school['course_list'] = school.courses.map(course => course.name).join(" / ")}
     )
 
-    //TODO: consider refactoring sort by to client side
-
-    // Sort by, options: price: high->low, price: low->high, recommendation
-    let sortBy = sortByValues[req.body["sort_by"]]
-    if (sortBy === "max_price") {
-        sortBy = "min_price"
-    }
-
-    schools.sort((a, b) => {
-        if (a[sortBy] > b[sortBy]) return -1;
-        if (a[sortBy] < b[sortBy]) return 1;
-        return 0;
-    });
-
-    if (sortByValues[req.body["sort_by"]] === "min_price") {
-        schools.reverse()
-    }
-
     res.render("search_results", {
         searchData: searchData,
-        sort_by: req.body["sort_by"],
         city: city,
         schools: schools,
         date_string: date_string,

@@ -5,9 +5,6 @@ export const get = async (req, res, next) => {
     const school = await School.findById(req.query["id"]);
     const city = await City.findById(school.city);
 
-    // req.session.school = school;
-    // req.session.city = city.name;
-
     res.render('school', {
         searchData: req.session?.searchData,
         school: school,
