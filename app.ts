@@ -1,6 +1,8 @@
 const nunjucks = require('nunjucks');
 const mongoose = require("mongoose");
-import dotenv from "dotenv"
+import dotenv from "dotenv";
+import Stripe from "stripe";
+
 
 const createError = require('http-errors');
 const express = require('express');
@@ -11,9 +13,11 @@ const session = require('express-session');
 
 import router from "./controllers/routes";
 
+dotenv.config()
 const app = express();
 
-dotenv.config()
+export const stripe = new Stripe(process.env.STRIPE_SECRET_KEY as string);
+
 
 const MONGO_URL = process.env.MONGO_URL
 
