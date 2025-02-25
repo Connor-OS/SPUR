@@ -808,6 +808,9 @@ button {
 
 .school_page {
   gap: 44px;
+}
+
+.page {
   margin-left: 50px;
   margin-right: 50px;
 }
@@ -887,6 +890,13 @@ button {
 }
 
 .your-offer {
+  margin-top: 24px;
+  display: grid;
+  grid-template-columns: 40% 60%;
+  gap: 12px;
+}
+
+.your-offer-payment {
   margin-top: 24px;
   display: grid;
   grid-template-columns: 40% 60%;
@@ -1036,4 +1046,10 @@ button {
 .total_element > p:nth-child(2) {
   color: var(--primary-blue);
   font-size: 32px;
+}
+
+.date-display {
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }

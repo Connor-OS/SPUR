@@ -6,15 +6,44 @@ Payment
 
 
 {% block content %}
+    <div class="page">
+        <div class="your-offer-payment">
+            <div class="offer-details">
+                <div class="details-box">
+                    <h3>{{ school.name }}</h3>
+                    <p>{{ city.name }}, United Kingdom</p>
+                </div>
+                <div class="form-grid details-box">
+                    <h3>{{ course }}</h3>
+                    
+                    <div class="date-display">
+                        <img src="images/icons/calendar.svg" alt="class size">
+                        <p> {{ course_dates }}</p>
+                    </div>
 
-<!--    included so page can compute price-->
-    <div class="hidden">
-        {% include "components/courses.html" %}
-        {% include "components/accommodation.html" %}
-    </div>
+                    <div class="form-row">
+                        <p>Course Total:</p>
+                        <p>£ {{ course_total }}</p>
+                    </div>
+                </div>
+                <div class="form-grid details-box">
+                    <h3>{{ accommodation}}</h3>
 
-    <div>
-        <!-- this form is still subject to change and doesn't work yet -->
-        {% include "components/your-offer.html" %}
+                    <div class="date-display">
+                        <img src="images/icons/calendar.svg" alt="class size">
+                        <p> {{ accommodation_dates }}</p>
+                    </div>
+                    
+                    <div class="form-row">
+                        <p>Accommodation Total:</p>
+                        <p>£ {{ accommodation_total }}</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="details-box">
+                stripe payment box here
+            </div>
+        </div>
     </div>
 {% endblock %}

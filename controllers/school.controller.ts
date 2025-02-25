@@ -16,5 +16,8 @@ export const get = async (req, res, next) => {
 
 export const post = async (req, res) => {
     console.log(req.query.id);
+    console.log(req.body)
+
+    req.session.bookingDetails = req.body;
     res.redirect("payment" + "?id=" + req.query.id)
 }
