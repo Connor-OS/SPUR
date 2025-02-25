@@ -5,7 +5,7 @@ function dateHelper(dateString) {
 
 $(function() {
     // Loop through each date input and initialize the date range picker
-    $('input[name="date"]').each(function() {
+    $('input[class="date"]').each(function() {
         let cached_date = $(this).data('date')
         let start_date = new Date();
         let end_date = new Date();

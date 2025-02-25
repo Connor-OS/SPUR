@@ -159,6 +159,19 @@ courseInput.addEventListener('valueChanged', (event) =>
 accommodationInput.addEventListener('valueChanged', (event) =>
     syncAccommodationSelection(document.getElementById(accommodationInput.value)));
 
+document.getElementById("accommodation-total").addEventListener("DOMSubtreeModified", function () {
+    document.getElementById("accommodation-total-input").value = this.textContent;
+});
+
+document.getElementById("course-total").addEventListener("DOMSubtreeModified", function () {
+    document.getElementById("course-total-input").value = this.textContent;
+});
+
+document.getElementById("total").addEventListener("DOMSubtreeModified", function () {
+    document.getElementById("total-input").value = this.textContent;
+});
+
+
 courseDateInput.addEventListener('valueChanged', calculate_total);
 accommodationDateInput.addEventListener('valueChanged', calculate_total);
 

@@ -29,20 +29,22 @@
             <p>Your dreams are closer than you think.<br>We open a door to your educational journey in the United Kingdom.</p>
         </div>
     {% endif %}
-
-    <div class="spur-searchbanner__fields">
-        <form method="post" action="/">
-            {% if courseList %}
-                {{ dropdown("course", search.courses) }}
-            {% endif %}
-            {{ dropdown("language", search.languages, searchData.language) }}
-            {{ dropdown("city", search.cities, searchData.city) }}
-            <input name="date" id="date" placeholder="Select Date" data-date="{{ searchData.date }}">
-            {{ dropdown("age", search.ages, searchData.age) }}
-
-            <input type="submit" value="Search">
-        </form>
-    </div>
+    
+    {% if not hideSearch %}
+        <div class="spur-searchbanner__fields">
+            <form method="post" action="/">
+                {% if courseList %}
+                    {{ dropdown("course", search.courses) }}
+                {% endif %}
+                {{ dropdown("language", search.languages, searchData.language) }}
+                {{ dropdown("city", search.cities, searchData.city) }}
+                <input name="date" class="date" id="date" placeholder="Select Date" data-date="{{ searchData.date }}">
+                {{ dropdown("age", search.ages, searchData.age) }}
+    
+                <input type="submit" value="Search">
+            </form>
+        </div>
+    {% endif %}
 </div>
 
 
