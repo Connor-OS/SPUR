@@ -55,8 +55,12 @@ Payment
             </div>
             
             <div class="details-box">
-                stripe payment box here
+                <div id="checkout" data-total="{{ total }}" data-name="{{ course }} at {{ school.name }}, {{ city.name }}">
+                    <!-- Checkout will insert the payment form here -->
+                </div>
             </div>
         </div>
     </div>
+
+<script src="/javascripts/checkout.js" defer></script>
 {% endblock %}

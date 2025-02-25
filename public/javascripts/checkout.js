@@ -1,12 +1,16 @@
 // This is your test secret API key.
-const stripe = Stripe("pk_test_51Nn0dyF8kAmUKEbnsHBixVYDrsbSqguXv7lKc0ibxaCCbYj13ZtJFeQMjWzhfmUHug2DItH2D6qckM8mUlkli3QX00Pg7hvSyw");
+const stripe = Stripe("pk_test_51QuwexHFFVIxdMRvgRvDxgDurFQZ5TqXBw68IeFqfcqvU9WLyX7hA7qGVgtGdZJbaOl6BTFQxrqNp4twxzsUtM8I00zKgIChF4");
 
 initialize();
 
 // Create a Checkout Session
 async function initialize() {
+
+  const name = $('#checkout').data('name')
+  const total = $('#checkout').data('total')
+  
   const fetchClientSecret = async () => {
-    const response = await fetch("/create-checkout-session", {
+    const response = await fetch(`/create-checkout-session?name=${name}&total=${total}`, {
       method: "POST",
     });
     const { clientSecret } = await response.json();

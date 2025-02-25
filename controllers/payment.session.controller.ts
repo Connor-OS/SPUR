@@ -3,6 +3,11 @@ import { stripe } from "../app";
 
 export const post = async (req: Request, res: Response, next: NextFunction) => {
   try {
+    console.log("body: ", req.query);
+
+    const name: string = req.query["name"] as string || "";
+    const total: number = parseFloat(req.query["total"] as string || "") * 100; 
+    
     const session = await stripe.checkout.sessions.create({
       ui_mode: "embedded",
       payment_method_types: ["card"],
@@ -11,9 +16,9 @@ export const post = async (req: Request, res: Response, next: NextFunction) => {
           price_data: {
             currency: "gbp",
             product_data: {
-              name: "Your Product Name",
+              name: name,
             },
-            unit_amount: 1000, // 10.00 (amount in pence)
+            unit_amount: total, // (amount in pence)
           },
           quantity: 1,
         },
