@@ -10,7 +10,8 @@ export const get = async (req, res, next) => {
         school: school,
         city: city,
         accommodations: school.accommodation,
-        google_api_key: process.env["GOOGLE_MAPS_API"]
+        google_api_key: process.env["GOOGLE_MAPS_API"],
+        showSearch: true
     });
 };
 
@@ -19,5 +20,5 @@ export const post = async (req, res) => {
     console.log(req.body)
 
     req.session.bookingDetails = req.body;
-    res.redirect("payment" + "?id=" + req.query.id)
+    res.redirect("your-details" + "?id=" + req.query.id)
 }

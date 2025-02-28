@@ -1,10 +1,6 @@
 import {City, School} from "../model/dataModel";
 
 export const get = async (req, res, next) => {
-    
-    // if (!req.session.bookingDetails) {
-    //     res.redirect("search");
-    // }
 
     const bookingDetails = req.session.bookingDetails
     

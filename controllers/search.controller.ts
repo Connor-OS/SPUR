@@ -44,5 +44,6 @@ export const get = async (req, res) => {
         city: city,
         schools: schools,
         date_string: date_string,
+        showSearch: true
     })
 }

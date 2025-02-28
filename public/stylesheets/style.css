@@ -21,6 +21,7 @@
 
 body {
   font: 20px Lexend, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
 }
 
 a {
@@ -806,7 +807,7 @@ button {
   padding-bottom: 75px;
 }
 
-.school_page {
+.page {
   gap: 44px;
 }
 
@@ -815,8 +816,9 @@ button {
   margin-right: 50px;
 }
 
-.school_page h1 {
+.page h1 {
   color: var(--secondary-red);
+  margin-bottom: 24px;
 }
 
 .school_info {
@@ -913,7 +915,7 @@ button {
   display: none;
 }
 
-.your-details {
+.booking-details {
   padding: 20px;
 
   display: flex;
@@ -934,7 +936,7 @@ button {
 
 .form-grid {
   display: grid;
-  grid-auto-rows: 48px;
+  /*grid-auto-rows: 48px;*/
   gap: 12px;
 }
 
@@ -954,7 +956,7 @@ button {
   justify-content: space-between;
 }
 
-.your-details input, select {
+.booking-details input, select {
   width: 80%;
   max-width: 300px;
   padding: 8px;
@@ -1052,4 +1054,28 @@ button {
   display: flex;
   align-items: center;
   gap: 12px;
+}
+
+.your-details {
+  padding: 36px;
+  position: relative;
+  gap: 24px;
+}
+
+.your-details input {
+  width: 45%;
+}
+
+.your-details form-grid {
+  gap: 24px;
+}
+
+.form-row div {
+  width: 100%;
+}
+
+#basic_rules {
+  position: absolute;
+  right:36px;
+  bottom: 96px;
 }
