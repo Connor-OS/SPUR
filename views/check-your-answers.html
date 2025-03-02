@@ -1,0 +1,94 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Payment
+{% endblock %}
+
+{% block content %}
+<div class="page">
+    <div class="check-your-answers">
+        <div class="answers-box">
+            <div class="details-box">
+                <h3>{{ school.name }}</h3>
+                <p>{{ city.name }}, United Kingdom</p>
+            </div>
+            <div class="form-grid details-box">
+                <h3>{{ course }}</h3>
+
+                <div class="date-display">
+                    <img src="images/icons/calendar.svg" alt="class size">
+                    <p> {{ course_dates }}</p>
+                </div>
+
+                <div class="form-row">
+                    <p>Course Total:</p>
+                    <p>£ {{ course_total }}</p>
+                </div>
+            </div>
+
+            <div class="form-grid details-box">
+                <h3>{{ accommodation}}</h3>
+
+                <div class="date-display">
+                    <img src="images/icons/calendar.svg" alt="class size">
+                    <p> {{ accommodation_dates }}</p>
+                </div>
+
+                <div class="form-row">
+                    <p>Accommodation Total:</p>
+                    <p>£ {{ accommodation_total }}</p>
+                </div>
+            </div>
+
+            <div class="form-grid details-box">
+                <div class="form-row">
+                    <p>School Admission fee:</p>
+                    <p>£50</p>
+                </div>
+
+                <div class="total_element">
+                    <p>Total to pay</p>
+                    <p>£ {{ total }}</p>
+                </div>
+            </div>
+        </div>
+        <div class="answers-box">
+            <div class="form-grid details-box">
+                <div class="form-row">
+                    <p>First Name</p>
+                    <p>{{ first_name }}</p>
+                </div>
+                <div class="form-row">
+                    <p>Last Name</p>
+                    <p>{{ last_name }}</p>
+                </div>
+                <div class="form-row">
+                    <p>Email</p>
+                    <p>{{ email }}</p>
+                </div>
+                <div class="form-row">
+                    <p>Address</p>
+                    <p>{{ address }}</p>
+                </div>
+                <div class="form-row">
+                    <p>City</p>
+                    <p>{{ city }}</p>
+                </div>
+                <div class="form-row">
+                    <p>Postcode/Zipcode</p>
+                    <p>{{ postcode }}</p>
+                </div>
+                <div class="form-row">
+                    <p>Country</p>
+                    <p>{{ country }}</p>
+                </div>
+                <div class="form-row">
+                    <p>Phone number</p>
+                    <p>{{ phone }}</p>
+                </div>
+            </div>
+            <button onclick="window.location.href='./payment?id={{ transactionID }}'">Confirm</button>
+        </div>
+    </div>
+</div>
+{% endblock %}

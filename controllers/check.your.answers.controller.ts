@@ -5,17 +5,16 @@ export const get = async (req, res, next) => {
 
     const transaction = await Transaction.findById(req.query.id);
     const bookingDetails = transaction.bookingDetails
-    
+    const customerDetails = transaction.customerDetails;
+
     const school = await School.findById(bookingDetails.schoolID);
     const city = await City.findById(school.city);
 
-    res.render('payment', {
+    res.render('check-your-answers', {
         school: school,
         city: city,
+        transactionID: req.query.id,
         ...bookingDetails,
+        ...customerDetails,
     });
 };
-
-export const post = async (req, res) => {
-    console.log(req.body);
-}

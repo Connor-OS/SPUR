@@ -1,4 +1,6 @@
 import {City, School, schoolTypeEnum} from "../model/dataModel";
+import {Transaction} from "../model/transactionModel";
+
 
 /* GET home page. */
 export const get = async (req, res, next) => {
@@ -16,9 +18,11 @@ export const get = async (req, res, next) => {
 };
 
 export const post = async (req, res) => {
-    console.log(req.query.id);
-    console.log(req.body)
-
-    req.session.bookingDetails = req.body;
-    res.redirect("your-details" + "?id=" + req.query.id)
+    let transactionID;
+    const transaction = new Transaction({
+        "bookingDetails": {...req.body, "schoolID": req.query.id}});
+    
+    transaction.save().then(transactionID = transaction._id)
+    
+    res.redirect("your-details" + "?id=" + transactionID)
 }

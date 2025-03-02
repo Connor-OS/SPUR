@@ -131,7 +131,6 @@ label[for="language-picker-select"]
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 50% 35%;
-  margin-bottom: 100px;
 
   position: relative
 }
@@ -808,12 +807,10 @@ button {
 }
 
 .page {
-  gap: 44px;
-}
-
-.page {
+  margin-top: 50px;
   margin-left: 50px;
   margin-right: 50px;
+  gap: 44px;
 }
 
 .page h1 {
@@ -898,10 +895,10 @@ button {
   gap: 12px;
 }
 
-.your-offer-payment {
+.check-your-answers {
   margin-top: 24px;
   display: grid;
-  grid-template-columns: 40% 60%;
+  grid-template-columns: 50% 50%;
   gap: 12px;
 }
 
@@ -966,6 +963,12 @@ button {
 }
 
 .offer-details {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.answers-box{
   display: flex;
   flex-direction: column;
   gap: 12px;

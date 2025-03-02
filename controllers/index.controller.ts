@@ -10,7 +10,8 @@ export const get = async (req, res, next) => {
         frontPage: "frontpage",
         carousel_elements: cities,
         reviews: reviews,
-        search: await getSearchOptions(req)
+        search: await getSearchOptions(req),
+        showSearch: true
     });
 };
 
