@@ -8,9 +8,10 @@ async function initialize() {
 
   const name = $('#checkout').data('name')
   const total = $('#checkout').data('total')
+  const transaction = $('#checkout').data('transactionid')
   
   const fetchClientSecret = async () => {
-    const response = await fetch(`/create-checkout-session?name=${name}&total=${total}`, {
+    const response = await fetch(`/create-checkout-session?name=${name}&total=${total}&transactionID=${transaction}`, {
       method: "POST",
     });
     const { clientSecret } = await response.json();

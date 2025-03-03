@@ -8,6 +8,8 @@ export const post = async (req: Request, res: Response, next: NextFunction) => {
     const name: string = req.query["name"] as string || "";
     const total: number = parseFloat(req.query["total"] as string || "") * 100; 
     
+    const transactionID: string = req.query["transactionID"] as string;
+    
     const session = await stripe.checkout.sessions.create({
       ui_mode: "embedded",
       payment_method_types: ["card"],
@@ -24,7 +26,7 @@ export const post = async (req: Request, res: Response, next: NextFunction) => {
         },
       ],
       mode: "payment",
-      return_url: `${req.headers.origin}/return?session_id={CHECKOUT_SESSION_ID}`
+      return_url: `${req.headers.origin}/return?session_id={CHECKOUT_SESSION_ID}&transactionID=${transactionID}`
     });
 
     res.send({clientSecret: session.client_secret});

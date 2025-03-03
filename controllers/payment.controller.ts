@@ -12,6 +12,7 @@ export const get = async (req, res, next) => {
     res.render('payment', {
         school: school,
         city: city,
+        transactionID: transaction._id,
         ...bookingDetails,
     });
 };
