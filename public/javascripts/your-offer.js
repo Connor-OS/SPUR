@@ -30,6 +30,8 @@ function syncAccommodationSelection(element) {
     ).forEach((item) => deSelectElement(item));
     
     selectElement(element);
+    
+    $("#single_room").prop('checked', element.id === "Stay with Family");
 
     accommodationInput.value = element.querySelector('h3').innerText;
     accommodationCost.value = element.dataset.cost
@@ -129,8 +131,8 @@ accommodationDateInput.value = dateInput.value
 
 function dontNeedHousing(checkbox) {
     const accommodationElements = document.getElementsByClassName("accommodation");
-
     if (checkbox.checked === true) {
+        $("#need_housing").prop("checked", true)
         Array.from(accommodationElements).forEach((item) => item.classList.add("hidden"));
         accommodationDateInput.classList.add("deactive");
         document.getElementById("accommodation-details").classList.add("hidden")
@@ -140,6 +142,7 @@ function dontNeedHousing(checkbox) {
         
         calculate_total();
     } else {
+        $("#need_housing").prop("checked", false)
         accommodationInput.value = "";
         Array.from(accommodationElements).forEach(function (item) {
             item.classList.remove("hidden");
@@ -156,8 +159,11 @@ function dontNeedHousing(checkbox) {
 
 courseInput.addEventListener('valueChanged', (event) =>
     syncCourseSelection(document.getElementById(courseInput.value)));
-accommodationInput.addEventListener('valueChanged', (event) =>
-    syncAccommodationSelection(document.getElementById(accommodationInput.value)));
+accommodationInput.addEventListener('valueChanged', (event) => {
+    syncAccommodationSelection(document.getElementById(accommodationInput.value))
+    console.log(accommodationInput)
+    dontNeedHousing({checked: accommodationInput.value === "I do not need housing"})
+});
 
 document.getElementById("accommodation-total").addEventListener("DOMSubtreeModified", function () {
     document.getElementById("accommodation-total-input").value = this.textContent;

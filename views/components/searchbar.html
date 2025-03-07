@@ -3,19 +3,9 @@
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
 <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
 
-<script src="/javascripts/dropdown.js"></script>
 <script src="/javascripts/datepicker.js"></script>
 
-{% macro dropdown(name, items, value) %}
-    <div class="dropdown">
-        <input id="{{ name }}Dropdown" name="{{ name }}" placeholder="Select {{name}}" onclick="showDropdown('{{ name }}Options')" class="dropinput" value="{{ value }}">
-        <div id="{{ name }}Options" class="dropdown-content">
-            {% for item in items %}
-                <p onclick="selectDropdown('{{ name }}Dropdown','{{ item }}')">{{ item }}</p>
-            {% endfor %}
-        </div>
-    </div>
-{% endmacro %}
+{% from "components/dropdown.html" import dropdown %}
 
 {% set courseList = courseList %}
 {% set cityList = cityList %}
@@ -33,9 +23,6 @@
     {% if showSearch %}
         <div class="spur-searchbanner__fields">
             <form method="post" action="/">
-                {% if courseList %}
-                    {{ dropdown("course", search.courses) }}
-                {% endif %}
                 {{ dropdown("language", search.languages, searchData.language) }}
                 {{ dropdown("city", search.cities, searchData.city) }}
                 <input name="date" class="date" id="date" placeholder="Select Date" data-date="{{ searchData.date }}">

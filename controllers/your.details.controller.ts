@@ -4,7 +4,8 @@ import {School} from "../model/dataModel";
 export const get = async (req, res, next) => {
     
     res.render('your-details', {
-        transactionID: req.query.id});
+        transactionID: req.query.id,
+        errors: []});
 };
 
 export const post = async (req, res) => {

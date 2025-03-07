@@ -12,18 +12,32 @@ Your Details
 
         <div class="form-grid">
             <div class="form-row">
-                <input name="first_name" placeholder="First Name"  type='text'>
-                <input name="last_name" placeholder="Last Name"  type='text'>
+                <input name="first_name" value="{{ first_name }}" placeholder="First Name" autocomplete="given-name" type='text' class="{% if 'first_name' in errors %}error{% endif %}">
+                <input name="last_name" value="{{ last_name }}" placeholder="Last Name" autocomplete="family-name" type='text' class="{% if 'last_name' in errors %}error{% endif %}">
             </div>
 
-            <input name="email" placeholder="Email"  type='text'>
-            <p>Confirmation email sent to this address</p>
+            <input name="email" value="{{ email }}" placeholder="Email" autocomplete="email" type='email' class="{% if 'email' in errors %}error{% endif %}">
             
-            <input name="address" placeholder="Address"  type='text'>
-            <input name="city" placeholder="City"  type='text'>
-            <input name="postcode" placeholder="Postcode/Zipcode"  type='text'>
-            <input name="country" placeholder="Country"  type='text'>
+            <input name="address" value="{{ address }}" placeholder="Address" autocomplete="street-address" type='text' class="{% if 'address' in errors %}error{% endif %}">
+            <input name="city" value="{{ city }}" placeholder="City" autocomplete="address-level2" type='text' class="{% if 'city' in errors %}error{% endif %}">
+            <input name="postcode" value="{{ postcode }}" placeholder="Postcode/Zipcode" autocomplete="postal-code" type='text' class="{% if 'postcode' in errors %}error{% endif %}">
+            <input name="country" value="{{ country }}"  placeholder="Country" autocomplete="country" type='text' class="{% if 'country' in errors %}error{% endif %}">
+            <input name="phone" value="{{ phone }}" placeholder="Mobile Phone" autocomplete="tel" type='text' class="{% if 'phone' in errors %}error{% endif %}">
 
+            <div class="checkbox-item">
+                <input type="hidden" name="terms" value="">
+                <input name="terms" type="checkbox" id="terms" class="{% if 'terms' in errors %}error{% endif %}">
+                <label for="terms" class="{% if 'terms' in errors %}error{% endif %}">Accept terms and conditions</label>
+            </div>
+
+            <div class="checkbox-item">
+                <input type="hidden" name="data" value="">
+                <input name="data" type="checkbox" id="data" class="{% if 'data' in errors %}error{% endif %}">
+                <label for="data" class="{% if 'data' in errors %}error{% endif %}">Accept use of your data</label>
+            </div>
+
+            <button type="submit">Submit</button>
+            
             <div id="basic_rules">
                 <p>Review the Basic rules</p>
                 <ul>
@@ -32,12 +46,7 @@ Your Details
                     <li>Pets are not allowed</li>
                 </ul>
             </div>
-
-            <div class="form-row">
-                <input name="phone" placeholder="Mobile Phone"  type='text'>
-                <button type="submit">Submit</button>
-            </div>
-                
+            
         </div>
     </form>
 </div>

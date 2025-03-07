@@ -49,7 +49,7 @@
                 <input type="hidden" name="course_total" id="course-total-input" value="0">
             </div>
             
-            {{ dropdown("accommodation", ["Stay with Family", "Student house"]) }}
+            {{ dropdown("accommodation", ["Stay with Family", "Student house", "I do not need housing"]) }}
             <input name="accommodation_dates" class="date" id="accommodation_dates" placeholder="Stay dates"  type='text' data-date="{{ searchData.date }}">
 
             <input type="hidden" id="cost_accommodation" value="" />

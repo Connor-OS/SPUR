@@ -758,6 +758,7 @@ button {
   justify-content: space-evenly;
   padding-top: 50px;
   padding-bottom: 50px;
+  gap: 20px;
 }
 
 .find-out-more h3 {
@@ -779,6 +780,10 @@ button {
 .find-out-more form input {
     margin-bottom: 20px;
     width: 100%;
+}
+
+.find-out-more form .dropdown {
+  width: 100%;
 }
 
 .spur-footer {
@@ -807,7 +812,7 @@ button {
 }
 
 .page {
-  margin-top: 50px;
+  margin-top: 100px;
   margin-left: 50px;
   margin-right: 50px;
   gap: 44px;
@@ -847,7 +852,6 @@ button {
 .school_map {
   display: none;
   transition: opacity 1s ease-out;
-  margin: auto;
 }
 
 .details_list {
@@ -909,6 +913,10 @@ button {
 }
 
 .offer-details button{
+  display: none;
+}
+
+.offer-details .important_course_info{
   display: none;
 }
 
@@ -1081,4 +1089,21 @@ button {
   position: absolute;
   right:36px;
   bottom: 96px;
+}
+
+.error {
+  border-color: #e74c3c;
+  background-color: #ffe6e6;
+  box-shadow: 0 0 5px rgba(231, 76, 60, 0.5);
+}
+
+.checkbox-item {
+  display: flex;
+  align-items: center; /* Aligns checkbox with label */
+  gap: 8px; /* Adds spacing between checkbox and label */
+}
+
+.checkbox-item input {
+  height: 24px;
+  width: 24px;
 }

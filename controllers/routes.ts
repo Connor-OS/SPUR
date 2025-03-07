@@ -8,6 +8,7 @@ import * as search from "./search.controller"
 import * as answers from "./check.your.answers.controller"
 
 import { Router } from "express"
+import {mandatoryFields} from "../middleware/manditory.fields.middleware";
 
 const router = Router();
 
@@ -20,7 +21,7 @@ router.get('/school', school.get);
 router.post('/school', school.post);
 
 router.get('/your-details', details.get);
-router.post('/your-details', details.post);
+router.post('/your-details', mandatoryFields, details.post);
 
 router.get('/check-your-answers', answers.get);
 

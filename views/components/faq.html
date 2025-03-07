@@ -1,4 +1,7 @@
 <script src="/javascripts/faq.js"></script>
+<script src="/javascripts/dropdown.js"></script>
+
+{% from "components/dropdown.html" import dropdown %}
 
 {% macro plus() %}
     <svg class="plus" width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -35,7 +38,7 @@
         <input type="text" id="fullName" name="fullName" placeholder="Full Name">
         <input type="email" id="email" name="email" placeholder="Email" >
         <input type="tel" id="phone" name="phone" placeholder="Phone" >
-        <input type="text" id="applicationTo" name="applicationTo" placeholder="Application to" >
+        {{ dropdown("language ", search.languages, searchData.language) }}
         <input type="submit" value="Book" >
     </form>
 </div>
