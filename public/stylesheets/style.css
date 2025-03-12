@@ -221,6 +221,7 @@ input[type="submit"] {
 /*/////    search results    /////*/
 
 .schools {
+  margin-top: 100px;
   display: flex;
   flex-direction: column;
   gap: 44px;
