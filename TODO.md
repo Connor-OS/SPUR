@@ -45,13 +45,13 @@ Your details:
 - [ ] File upload for passport
 
 Confirm your details
-- [ ] H1 “Confirm order details”
-- [ ] Too crumpled more padding and space
-- [ ] Two boxes should be same hight
-- [ ] Confirm goes underneath
+- [x] H1 “Confirm order details”
+- [x] Too crumpled more padding and space
+- [x] Two boxes should be same hight
+- [x] Confirm goes underneath
 
 Payment:
 - [ ] If cost value is decimal stripe will error
 
 Confirmation page:
-- [ ] Complete as per design
+- [x] Complete as per design

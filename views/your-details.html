@@ -1,5 +1,10 @@
 {% extends "layout.html" %}
 
+{% macro required(name) %}
+    {% if name in errors %}error{% endif %}
+{% endmacro %}
+
+
 {% block pageTitle %}
 Your Details
 {% endblock %}
@@ -12,7 +17,7 @@ Your Details
 
         <div class="form-grid">
             <div class="form-row">
-                <input name="first_name" value="{{ first_name }}" placeholder="First Name" autocomplete="given-name" type='text' class="{% if 'first_name' in errors %}error{% endif %}">
+                <input name="first_name" value="{{ first_name }}" placeholder="First Name" autocomplete="given-name" type='text' class="{{ required(first_name) }}">
                 <input name="last_name" value="{{ last_name }}" placeholder="Last Name" autocomplete="family-name" type='text' class="{% if 'last_name' in errors %}error{% endif %}">
             </div>
 
@@ -23,6 +28,9 @@ Your Details
             <input name="postcode" value="{{ postcode }}" placeholder="Postcode/Zipcode" autocomplete="postal-code" type='text' class="{% if 'postcode' in errors %}error{% endif %}">
             <input name="country" value="{{ country }}"  placeholder="Country" autocomplete="country" type='text' class="{% if 'country' in errors %}error{% endif %}">
             <input name="phone" value="{{ phone }}" placeholder="Mobile Phone" autocomplete="tel" type='text' class="{% if 'phone' in errors %}error{% endif %}">
+
+            <label for="passport">Upload a copy of your passport:</label>
+            <input name="passport" id="passport" type="file" accept="image/png, image/jpeg" class="{% if 'passport' in errors %}error{% endif %}" />
 
             <div class="checkbox-item">
                 <input type="hidden" name="terms" value="">

@@ -792,7 +792,7 @@ button {
   display: flex;
   justify-content: space-evenly;
   padding-top: 50px;
-  margin-top: 36px;
+  margin-top: 90px;
 }
 
 .spur-footer-container {
@@ -1106,4 +1106,32 @@ button {
 .checkbox-item input {
   height: 24px;
   width: 24px;
+}
+
+.confirmation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 36px;
+}
+
+.text-group {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.confirmation button {
+  background: #FFFFFF; 
+  color: var(--primary-orange);
+  border: 2px solid var(--primary-orange);
+}
+
+.confirmation img {
+  width: 125px;
+}
+
+.confirmation h1 {
+  margin-bottom: 0;
+  color: var(--neutral-black);
 }

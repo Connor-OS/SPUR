@@ -1,5 +1,6 @@
 import {City, School, schoolTypeEnum} from "../model/dataModel";
 import {Transaction} from "../model/transactionModel";
+import {getSearchOptions} from "../services/searchBar.service";
 
 
 /* GET home page. */
@@ -8,12 +9,12 @@ export const get = async (req, res, next) => {
     const city = await City.findById(school.city);
 
     res.render('school', {
-        searchData: req.session?.searchData,
         school: school,
         city: city,
         accommodations: school.accommodation,
         google_api_key: process.env["GOOGLE_MAPS_API"],
-        showSearch: true
+        search: await getSearchOptions(req),
+        searchData: req.query,
     });
 };
 

@@ -53,7 +53,7 @@ Search results
                 </div>
                 <h2>From £{{ school.min_price }}</h2>
                 <p class="under_script">* additional charges may apply</p>
-                <button onclick="window.location.href='/school?id={{ school._id }}'">Learn more</button>
+                <button onclick="window.location.href='/school?id={{ school._id }}&{{ searchQuery }}'">Learn more</button>
             </div>
         </article>
         {% endfor %}

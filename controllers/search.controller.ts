@@ -1,4 +1,6 @@
 import {City, School, schoolTypeEnum} from "../model/dataModel";
+import {getSearchOptions} from "../services/searchBar.service";
+import {dateHelper} from "../services/dateHelper.service";
 
 enum sortByValues {
     'Recommendation' = 'review_score',
@@ -6,14 +8,10 @@ enum sortByValues {
     'High to low Price' = 'max_price',
 }
 
-function dateHelper(dateString) {
-    let d = dateString.split("/");
-    return new Date(d[2] + '/' + d[1] + '/' + d[0]);
-}
-
 export const get = async (req, res) => {
     
-    const searchData = req.session?.searchData
+    const searchData = req.query;
+    
     
     if (!searchData) {
         res.render("search_results")
@@ -40,10 +38,11 @@ export const get = async (req, res) => {
     )
 
     res.render("search_results", {
-        searchData: searchData,
         city: city,
         schools: schools,
         date_string: date_string,
-        showSearch: true
+        search: await getSearchOptions(req),
+        searchData: searchData,
+        searchQuery: new URLSearchParams(searchData).toString(),
     })
 }

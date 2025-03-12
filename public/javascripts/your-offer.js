@@ -92,7 +92,7 @@ function calculate_total() {
     const courseTotal = document.getElementById('course-total')
     // Check if the input is a valid number
     if (!isNaN(length_of_study_weeks) && !isNaN(coursePerWeek)) {
-        courseTotal.textContent = length_of_study_weeks * coursePerWeek;
+        courseTotal.textContent = (length_of_study_weeks * coursePerWeek).toFixed(2);
     }
 
     const accommodationPerWeek = parseFloat(accommodationCost.value);
@@ -104,7 +104,7 @@ function calculate_total() {
 
     const accommodationTotal = document.getElementById('accommodation-total')
     if (!isNaN(length_of_stay_days) && !isNaN(accommodationPerWeek)) {
-        accommodationTotal.textContent = length_of_stay_days * accommodationPerWeek;
+        accommodationTotal.textContent = (length_of_stay_days * accommodationPerWeek).toFixed(2);
     }
 
     document.getElementById('total').textContent = parseFloat(accommodationTotal.textContent) + parseFloat(courseTotal.textContent) + parseFloat(document.getElementById('admission_fee').textContent);

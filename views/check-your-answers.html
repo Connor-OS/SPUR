@@ -6,6 +6,7 @@ Payment
 
 {% block content %}
 <div class="page">
+    <h1>Confirm order details</h1>
     <div class="check-your-answers">
         <div class="answers-box">
             <div class="details-box">
@@ -13,30 +14,30 @@ Payment
                 <p>{{ city.name }}, United Kingdom</p>
             </div>
             <div class="form-grid details-box">
-                <h3>{{ course }}</h3>
+                <h3>{{ booking.course }}</h3>
 
                 <div class="date-display">
                     <img src="images/icons/calendar.svg" alt="class size">
-                    <p> {{ course_dates }}</p>
+                    <p> {{ booking.course_dates }}</p>
                 </div>
 
                 <div class="form-row">
                     <p>Course Total:</p>
-                    <p>£ {{ course_total }}</p>
+                    <p>£ {{ booking.course_total }}</p>
                 </div>
             </div>
 
             <div class="form-grid details-box">
-                <h3>{{ accommodation}}</h3>
+                <h3>{{ booking.accommodation}}</h3>
 
                 <div class="date-display">
                     <img src="images/icons/calendar.svg" alt="class size">
-                    <p> {{ accommodation_dates }}</p>
+                    <p> {{ booking.accommodation_dates }}</p>
                 </div>
 
                 <div class="form-row">
                     <p>Accommodation Total:</p>
-                    <p>£ {{ accommodation_total }}</p>
+                    <p>£ {{ booking.accommodation_total }}</p>
                 </div>
             </div>
 
@@ -48,47 +49,47 @@ Payment
 
                 <div class="total_element">
                     <p>Total to pay</p>
-                    <p>£ {{ total }}</p>
+                    <p>£ {{ booking.total }}</p>
                 </div>
             </div>
         </div>
         <div class="answers-box">
-            <div class="form-grid details-box">
+            <div class="form-grid details-box" style="height: 100%;">
                 <div class="form-row">
                     <p>First Name</p>
-                    <p>{{ first_name }}</p>
+                    <p>{{ customer.first_name }}</p>
                 </div>
                 <div class="form-row">
                     <p>Last Name</p>
-                    <p>{{ last_name }}</p>
+                    <p>{{ customer.last_name }}</p>
                 </div>
                 <div class="form-row">
                     <p>Email</p>
-                    <p>{{ email }}</p>
+                    <p>{{ customer.email }}</p>
                 </div>
                 <div class="form-row">
                     <p>Address</p>
-                    <p>{{ address }}</p>
+                    <p>{{ customer.address }}</p>
                 </div>
                 <div class="form-row">
                     <p>City</p>
-                    <p>{{ city }}</p>
+                    <p>{{ customer.city }}</p>
                 </div>
                 <div class="form-row">
                     <p>Postcode/Zipcode</p>
-                    <p>{{ postcode }}</p>
+                    <p>{{ customer.postcode }}</p>
                 </div>
                 <div class="form-row">
                     <p>Country</p>
-                    <p>{{ country }}</p>
+                    <p>{{ customer.country }}</p>
                 </div>
                 <div class="form-row">
                     <p>Phone number</p>
-                    <p>{{ phone }}</p>
+                    <p>{{ customer.phone }}</p>
                 </div>
             </div>
-            <button onclick="window.location.href='./payment?id={{ transactionID }}'">Confirm</button>
         </div>
+        <button onclick="window.location.href='./payment?id={{ transactionID }}'">Confirm</button>
     </div>
 </div>
 {% endblock %}

@@ -11,7 +11,6 @@ export const get = async (req, res, next) => {
         carousel_elements: cities,
         reviews: reviews,
         search: await getSearchOptions(req),
-        showSearch: true
     });
 };
 
@@ -25,10 +24,8 @@ export const post = async (req, res) => {
         // TODO: Implement general validation for these fields, and retain inital inputs
         return res.redirect("/");
     }
-
-    req.session.searchData = req.body;
-
-    return res.redirect("search")
+    
+    return res.redirect(`search?${new URLSearchParams(req.body).toString()}`);
 }
 
 

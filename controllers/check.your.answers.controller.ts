@@ -14,7 +14,7 @@ export const get = async (req, res, next) => {
         school: school,
         city: city,
         transactionID: req.query.id,
-        ...bookingDetails,
-        ...customerDetails,
+        booking: bookingDetails,
+        customer: customerDetails,
     });
 };

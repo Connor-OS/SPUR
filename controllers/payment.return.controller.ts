@@ -8,5 +8,6 @@ export const get = async (req: Request, res: Response, next: NextFunction) => {
     transaction.save();
 
     res.render('payment-return', {
+        transactionID: transaction._id
     });
 };
