@@ -6,6 +6,7 @@ Payment
 
 {% block content %}
 <div class="page">
+    {% include "components/stepper.html" %}
     <h1>Confirm order details</h1>
     <div class="check-your-answers">
         <div class="answers-box">
@@ -92,4 +93,11 @@ Payment
         <button onclick="window.location.href='./payment?id={{ transactionID }}'">Confirm</button>
     </div>
 </div>
+
+<script>
+    $(document).ready(function () {
+        window.stepper = new Stepper($('.bs-stepper')[0]);
+        window.stepper.to(2);
+    });
+</script>
 {% endblock %}

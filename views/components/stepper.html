@@ -1,0 +1,38 @@
+<div class="bs-stepper">
+  <div class="bs-stepper-header" role="tablist">
+    <!-- your steps here -->
+    <div class="step" data-target="#details-part">
+      <button type="button" class="step-trigger" role="tab" aria-controls="details-part" id="your-details-trigger">
+        <span class="bs-stepper-circle">1</span>
+        <span class="bs-stepper-label">Your Details</span>
+      </button>
+    </div>
+    <div class="line"></div>
+    <div class="step" data-target="#confirm-part">
+      <button type="button" class="step-trigger" role="tab" aria-controls="confirm-part" id="confirm-trigger">
+        <span class="bs-stepper-circle">2</span>
+        <span class="bs-stepper-label">Confirm</span>
+      </button>
+    </div>
+    <div class="line"></div>
+    <div class="step" data-target="#payment-part">
+      <button type="button" class="step-trigger" role="tab" aria-controls="payment-part" id="payment-trigger">
+        <span class="bs-stepper-circle">3</span>
+        <span class="bs-stepper-label">Payment</span>
+      </button>
+    </div>
+  </div>
+  <div class="bs-stepper-content">
+    <!-- your steps content here -->
+    <div id="details-part" class="content" role="tabpanel" aria-labelledby="details-part-trigger"></div>
+    <div id="confirm-part" class="content" role="tabpanel" aria-labelledby="confirm-part-trigger"></div>
+    <div id="payment-part" class="content" role="tabpanel" aria-labelledby="payment-part-trigger"></div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bs-stepper/dist/js/bs-stepper.min.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var stepper = new Stepper(document.querySelector('.bs-stepper'))
+  })
+</script>

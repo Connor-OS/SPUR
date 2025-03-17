@@ -813,7 +813,6 @@ button {
 }
 
 .page {
-  margin-top: 100px;
   margin-left: 50px;
   margin-right: 50px;
   gap: 44px;
@@ -1135,4 +1134,8 @@ button {
 .confirmation h1 {
   margin-bottom: 0;
   color: var(--neutral-black);
+}
+
+.bs-stepper {
+  margin-bottom: 50px;
 }
