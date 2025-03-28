@@ -13,14 +13,16 @@ Your Details
 {% block content %}
 <div class="page">
     {{ stepper(1) }}
+    {% include "components/back-link.html" %}
+    
     <h1>Enter your details</h1>
     <form action="/your-details?id={{ transactionID}}" class="your-details details-box" method="POST">
 
+        
         <div class="form-grid">
-            <div class="form-row">
-                <input name="first_name" value="{{ first_name }}" placeholder="First Name" autocomplete="given-name" type='text' class="{{ required(first_name) }}">
-                <input name="last_name" value="{{ last_name }}" placeholder="Last Name" autocomplete="family-name" type='text' class="{% if 'last_name' in errors %}error{% endif %}">
-            </div>
+
+            <input name="first_name" value="{{ first_name }}" placeholder="First Name" autocomplete="given-name" type='text' class="{{ required(first_name) }}">
+            <input name="last_name" value="{{ last_name }}" placeholder="Last Name" autocomplete="family-name" type='text' class="{% if 'last_name' in errors %}error{% endif %}">
 
             <input name="email" value="{{ email }}" placeholder="Email" autocomplete="email" type='email' class="{% if 'email' in errors %}error{% endif %}">
             
@@ -46,16 +48,10 @@ Your Details
             </div>
 
             <button type="submit">Submit</button>
-            
-            <div id="basic_rules">
-                <p>Review the Basic rules</p>
-                <ul>
-                    <li>Respect your fellow students and teachers</li>
-                    <li>No smoking / No parties, events at the staying house</li>
-                    <li>Pets are not allowed</li>
-                </ul>
-            </div>
-            
+        </div>
+
+        <div class="offer-details">
+            <img src="/images/details-screen.png">
         </div>
     </form>
 </div>

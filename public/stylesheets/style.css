@@ -1084,10 +1084,13 @@ button {
   padding: 36px;
   position: relative;
   gap: 24px;
+  
+  display: grid;
+  grid-template-columns: 50% 50%;
 }
 
 .your-details input {
-  width: 45%;
+  width: 80%;
 }
 
 .your-details form-grid {
@@ -1151,11 +1154,17 @@ button {
 }
 
 .bs-stepper {
-  margin-bottom: 50px;
+  margin-bottom: 40px;
 }
 
 .show-on-map {
   color: var(--primary-blue);
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+}
+
+.back-link{
   display: flex;
   align-items: center;
   font-size: 16px;

@@ -7,6 +7,8 @@ Payment
 {% block content %}
 <div class="page">
     {{ stepper(2) }}
+    {% include "components/back-link.html" %}
+    
     <h1>Confirm order details</h1>
     <div class="check-your-answers">
         <div class="answers-box">

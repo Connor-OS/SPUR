@@ -59,13 +59,13 @@ Confirmation page:
 
 - [x] Show on map hypertext spacing underneath, and dropdown arrow
 - [x] single enue sweet needs to be grey and always selected
-- [ ] Back buttons for the whole journey
+- [x] Back buttons for the whole journey
 - [x] Progress tracker at top of the page
 - [ ] pricing for course blocks
 - [ ] dates in separate months are calculating incorrectly
 - [ ] passport upload should accept other types than jpg
 - [ ] footer contents to change
-- [ ] confirm order details H1
+- [x] confirm order details H1
 - [\] stop chrome auto filling options on search bar
 - [ ] 2 icons for student house
-- [ ] enter your details move to left column and have pic on right
+- [x] enter your details move to left column and have pic on right
