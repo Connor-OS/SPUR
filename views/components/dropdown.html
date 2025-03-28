@@ -1,7 +1,7 @@
 {% macro dropdown(name, items, value) %}
 <script src="/javascripts/dropdown.js"></script>
 <div class="dropdown">
-    <input id="{{ name }}Dropdown" name="{{ name }}" placeholder="Select {{name}}" onclick="showDropdown('{{ name }}Options')" class="dropinput" value="{{ value }}">
+    <input id="{{ name }}Dropdown" name="{{ name }}" placeholder="Select {{name}}" onclick="showDropdown('{{ name }}Options')" class="dropinput" autocomplete="off" value="{{ value }}">
     <div id="{{ name }}Options" class="dropdown-content">
         {% for item in items %}
         <p onclick="selectDropdown('{{ name }}Dropdown','{{ item }}')">{{ item }}</p>

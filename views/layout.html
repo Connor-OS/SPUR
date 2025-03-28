@@ -1,5 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
+
+{% from "components/dropdown.html" import dropdown %}
+{% from "components/stepper.html" import stepper %}
+
 {% block head %}
 
   <link rel="stylesheet" type="text/css" media="all" href="/stylesheets/style.css"/>
@@ -15,6 +19,7 @@
 
 {% include "components/header.html" %}
 {% include "components/searchbar.html" %}
+
 
 {% block body %}
   {% block content %}{% endblock %}

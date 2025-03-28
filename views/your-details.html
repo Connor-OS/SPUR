@@ -12,7 +12,7 @@ Your Details
 
 {% block content %}
 <div class="page">
-    {% include "components/stepper.html" %}
+    {{ stepper(1) }}
     <h1>Enter your details</h1>
     <form action="/your-details?id={{ transactionID}}" class="your-details details-box" method="POST">
 
@@ -60,10 +60,4 @@ Your Details
     </form>
 </div>
 
-<script>
-    $(document).ready(function () {
-        window.stepper = new Stepper($('.bs-stepper')[0]);
-        window.stepper.to(1);
-    });
-</script>
 {% endblock %}

@@ -1,11 +1,12 @@
 <script src="/javascripts/courses.js"></script>
 
-<h1>Courses</h1>
+<h1 style="margin-top: 50px;">Courses</h1>
 <div id="courses" class="selection_list">
     {% for course in school.courses %}
         <div class="selection_box course" id="{{ course.name }}" onclick="syncCourseSelection(this)" data-cost="{{ course.price_per_week }}">
             <h3>{{ course.name }}</h3>
             <button id="select_button">Select</button>
+            <p class="price"></p>
 
             <ul class="details_list">
                 <li> <img src="images/icons/team-size.svg" alt="class size"> <p> {{ course.class_size }} </p> </li>

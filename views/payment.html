@@ -7,7 +7,7 @@ Payment
 
 {% block content %}
     <div class="page">
-        {% include "components/stepper.html" %}
+        {{ stepper(3) }}
         <div class="your-offer">
             <div class="offer-details">
                 <p>Your Last step to studying abroad!</p>
@@ -19,13 +19,6 @@ Payment
             </div>
         </div>
     </div>
-
-<script>
-    $(document).ready(function () {
-        window.stepper = new Stepper($('.bs-stepper')[0]);
-        window.stepper.to(3);
-    });
-</script>
 
 <script src="/javascripts/checkout.js" defer></script>
 {% endblock %}

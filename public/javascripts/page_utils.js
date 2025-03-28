@@ -19,6 +19,7 @@ function what_is_waiting_select(element, id_num) {
 
 function hide_unhide(id) {
     let display_style = document.getElementById(id).style.display;
-    display_style === 'none' ? display_style = 'block': display_style = 'none';
+    console.log(display_style)
+    display_style === '' ? display_style = 'block': display_style = '';
     document.getElementById(id).style.display = display_style
 }

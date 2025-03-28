@@ -5,7 +5,6 @@
 
 <script src="/javascripts/datepicker.js"></script>
 
-{% from "components/dropdown.html" import dropdown %}
 
 {% set courseList = courseList %}
 {% set cityList = cityList %}
@@ -22,7 +21,7 @@
     
     {% if search %}
         <div class="spur-searchbanner__fields">
-            <form method="post" action="/">
+            <form method="post" action="/" autocomplete="off">
                 {{ dropdown("language", search.languages, searchData.language) }}
                 {{ dropdown("city", search.cities, searchData.city) }}
                 <input name="date" class="date" id="date" placeholder="Select Date" data-date="{{ searchData.date }}">

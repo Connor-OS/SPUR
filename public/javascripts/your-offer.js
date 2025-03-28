@@ -31,7 +31,9 @@ function syncAccommodationSelection(element) {
     
     selectElement(element);
     
-    $("#single_room").prop('checked', element.id === "Stay with Family");
+    if ( element.id !== "Stay with Family") {
+        $(".housing_checkbox").prop('checked', false);
+    }
 
     accommodationInput.value = element.querySelector('h3').innerText;
     accommodationCost.value = element.dataset.cost
@@ -78,16 +80,19 @@ function dateHelper(dateString) {
     return new Date(d[2] + '/' + d[1] + '/' + d[0]);
 }
 
+function length_in_weeks(dates) {
+    let start_date = dateHelper(dates[0])
+    let end_date = dateHelper(dates[1])
+    return (end_date.getDate() - start_date.getDate() + 3)/ 7
+}
+
 
 function calculate_total() {
     // Get the value from the input (convert it to a number)
     const coursePerWeek = parseFloat(courseCost.value);
 
     let dates = courseDateInput.value.split(" - ");
-
-    let start_date = dateHelper(dates[0])
-    let end_date = dateHelper(dates[1])
-    const length_of_study_weeks = (end_date.getDate() - start_date.getDate() + 3)/ 7
+    const length_of_study_weeks = length_in_weeks(dates)
 
     const courseTotal = document.getElementById('course-total')
     // Check if the input is a valid number
@@ -98,9 +103,7 @@ function calculate_total() {
     const accommodationPerWeek = parseFloat(accommodationCost.value);
 
     dates = accommodationDateInput.value.split(" - ");
-    start_date = dateHelper(dates[0])
-    end_date = dateHelper(dates[1])
-    const length_of_stay_days = end_date.getDate() - start_date.getDate()
+    const length_of_stay_days = dateHelper(dates[1]).getDate() - dateHelper(dates[0]).getDate()
 
     const accommodationTotal = document.getElementById('accommodation-total')
     if (!isNaN(length_of_stay_days) && !isNaN(accommodationPerWeek)) {
@@ -108,6 +111,18 @@ function calculate_total() {
     }
 
     document.getElementById('total').textContent = parseFloat(accommodationTotal.textContent) + parseFloat(courseTotal.textContent) + parseFloat(document.getElementById('admission_fee').textContent);
+}
+
+function calculate_prices() {
+    let dates = courseDateInput.value.split(" - ");
+    const length_of_study_weeks = length_in_weeks(dates)
+
+    $(".course").each(function() {
+
+        let totalPrice = length_of_study_weeks * $(this).data("cost");
+        console.log(totalPrice)
+        $(this).find(".price").text(`£${totalPrice}` );
+    });
 }
 
 // ensure exclusive checkboxes
@@ -179,6 +194,8 @@ document.getElementById("total").addEventListener("DOMSubtreeModified", function
 
 
 courseDateInput.addEventListener('valueChanged', calculate_total);
+courseDateInput.addEventListener('valueChanged', calculate_prices);
 accommodationDateInput.addEventListener('valueChanged', calculate_total);
 
 calculate_total();
+calculate_prices();

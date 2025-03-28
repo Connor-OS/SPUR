@@ -221,9 +221,16 @@
 
 
 
-.active .bs-stepper-circle {
+.active.bs-stepper-circle {
 
     background-color: var(--primary-blue);
+
+}
+
+
+.done.bs-stepper-circle {
+
+    background-color: var(--primary-orange);
 
 }
 
