@@ -27,7 +27,6 @@ export const get = async (req, res) => {
     const formatter = new Intl.DateTimeFormat("en-GB", { day: "numeric", month: "short" });
     const date_string: string = `${formatter.format(start_date)} - ${formatter.format(end_date)}`;
 
-    console.log(`${start_date} - ${end_date}: ${(end_date.valueOf() - start_date.valueOf())/(1000 * 60 * 60 * 24)}`)
     let length_of_study_weeks: number = ((end_date.valueOf() - start_date.valueOf())/(1000 * 60 * 60 * 24) + 3)/ 7
 
     // get schools

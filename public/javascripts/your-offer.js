@@ -1,10 +1,14 @@
 const courseInput = document.getElementById('courseDropdown');
 const courseCost = document.getElementById('cost_course');
 const courseDateInput = document.getElementById('course_dates');
+const courseTotal = document.getElementById("course-total");
 
 const accommodationInput = document.getElementById('accommodationDropdown');
 const accommodationCost = document.getElementById('cost_accommodation');
 const accommodationDateInput = document.getElementById('accommodation_dates');
+const accommodationTotal = document.getElementById("accommodation-total");
+
+const total = document.getElementById("total")
 
 function syncCourseSelection(element) {
     // ensure data is synced between the course selected at the top of the page and
@@ -195,6 +199,22 @@ document.getElementById("total").addEventListener("DOMSubtreeModified", function
     document.getElementById("total-input").value = this.textContent;
 });
 
+
+const observer = new MutationObserver((mutations) => {
+    mutations.forEach((mutation) => {
+        if (mutation.target === courseTotal) {
+            document.getElementById("course-total-input").value = courseTotal.textContent;
+        } else if (mutation.target === accommodationTotal) {
+            document.getElementById("accommodation-total-input").value = courseTotal.textContent;
+        } else if (mutation.target === total) {
+            document.getElementById("total-input").value = total.textContent;
+        }
+    });
+});
+
+observer.observe(courseTotal, { childList: true, characterData: true, subtree: true });
+observer.observe(accommodationTotal, { childList: true, characterData: true, subtree: true });
+observer.observe(total, { childList: true, characterData: true, subtree: true });
 
 courseDateInput.addEventListener('valueChanged', calculate_total);
 courseDateInput.addEventListener('valueChanged', calculate_prices);
