@@ -1,6 +1,7 @@
 import {City, School, schoolTypeEnum} from "../model/dataModel";
 import {getSearchOptions} from "../services/searchBar.service";
 import {dateHelper} from "../services/dateHelper.service";
+import {start} from "node:repl";
 
 enum sortByValues {
     'Recommendation' = 'review_score',
@@ -24,9 +25,10 @@ export const get = async (req, res) => {
     const end_date: Date = dateHelper(dates[1])
 
     const formatter = new Intl.DateTimeFormat("en-GB", { day: "numeric", month: "short" });
-    const date_string = `${formatter.format(start_date)} - ${formatter.format(end_date)}`;
+    const date_string: string = `${formatter.format(start_date)} - ${formatter.format(end_date)}`;
 
-    let length_of_study_weeks = (end_date.getDate() - start_date.getDate() + 3)/ 7
+    console.log(`${start_date} - ${end_date}: ${(end_date.valueOf() - start_date.valueOf())/(1000 * 60 * 60 * 24)}`)
+    let length_of_study_weeks: number = ((end_date.valueOf() - start_date.valueOf())/(1000 * 60 * 60 * 24) + 3)/ 7
 
     // get schools
     let schools = await School.find({ "city": city.id}).lean();

@@ -61,8 +61,8 @@ Confirmation page:
 - [x] single enue sweet needs to be grey and always selected
 - [x] Back buttons for the whole journey
 - [x] Progress tracker at top of the page
-- [ ] pricing for course blocks
-- [ ] dates in separate months are calculating incorrectly
+- [x] pricing for course blocks
+- [x] dates in separate months are calculating incorrectly
 - [ ] passport upload should accept other types than jpg
 - [ ] footer contents to change
 - [x] confirm order details H1

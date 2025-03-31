@@ -28,9 +28,9 @@ function syncAccommodationSelection(element) {
     Array.from(
         element.parentElement.getElementsByClassName("accommodation")
     ).forEach((item) => deSelectElement(item));
-    
+
     selectElement(element);
-    
+
     if ( element.id !== "Stay with Family") {
         $(".housing_checkbox").prop('checked', false);
     }
@@ -77,44 +77,48 @@ function populateDetails(sourceElement, destination) {
 
 function dateHelper(dateString) {
     let d = dateString.split("/");
-    return new Date(d[2] + '/' + d[1] + '/' + d[0]);
+    let date = new Date(d[2] + '/' + d[1] + '/' + d[0]);
+    return new Date(Date.UTC(date.getFullYear(), date.getMonth(), date.getDate()));
+}
+
+function length_in_days(dates) {
+    let start_date = dateHelper(dates[0])
+    let end_date = dateHelper(dates[1])
+    return (end_date - start_date)/(1000 * 60 * 60 * 24);
 }
 
 function length_in_weeks(dates) {
-    let start_date = dateHelper(dates[0])
-    let end_date = dateHelper(dates[1])
-    return (end_date.getDate() - start_date.getDate() + 3)/ 7
+    return (length_in_days(dates) + 3 )/7
 }
-
 
 function calculate_total() {
     // Get the value from the input (convert it to a number)
     const coursePerWeek = parseFloat(courseCost.value);
 
-    let dates = courseDateInput.value.split(" - ");
+    let dates = courseDateInput.dataset["date"].split(" - ");
     const length_of_study_weeks = length_in_weeks(dates)
 
     const courseTotal = document.getElementById('course-total')
     // Check if the input is a valid number
     if (!isNaN(length_of_study_weeks) && !isNaN(coursePerWeek)) {
-        courseTotal.textContent = (length_of_study_weeks * coursePerWeek).toFixed(2);
+        courseTotal.textContent = (length_of_study_weeks * coursePerWeek);
     }
 
     const accommodationPerWeek = parseFloat(accommodationCost.value);
 
-    dates = accommodationDateInput.value.split(" - ");
-    const length_of_stay_days = dateHelper(dates[1]).getDate() - dateHelper(dates[0]).getDate()
+    dates = accommodationDateInput.dataset["date"].split(" - ");
+    const length_of_stay_days = length_in_days(dates);
 
     const accommodationTotal = document.getElementById('accommodation-total')
     if (!isNaN(length_of_stay_days) && !isNaN(accommodationPerWeek)) {
-        accommodationTotal.textContent = (length_of_stay_days * accommodationPerWeek).toFixed(2);
+        accommodationTotal.textContent = (length_of_stay_days * accommodationPerWeek);
     }
 
     document.getElementById('total').textContent = parseFloat(accommodationTotal.textContent) + parseFloat(courseTotal.textContent) + parseFloat(document.getElementById('admission_fee').textContent);
 }
 
 function calculate_prices() {
-    let dates = courseDateInput.value.split(" - ");
+    let dates = courseDateInput.dataset["date"].split(" - ");
     const length_of_study_weeks = length_in_weeks(dates)
 
     $(".course").each(function() {
@@ -151,10 +155,10 @@ function dontNeedHousing(checkbox) {
         Array.from(accommodationElements).forEach((item) => item.classList.add("hidden"));
         accommodationDateInput.classList.add("deactive");
         document.getElementById("accommodation-details").classList.add("hidden")
-        
+
         accommodationInput.value = "I do not need housing";
         accommodationCost.value = 0
-        
+
         calculate_total();
     } else {
         $("#need_housing").prop("checked", false)
@@ -176,7 +180,6 @@ courseInput.addEventListener('valueChanged', (event) =>
     syncCourseSelection(document.getElementById(courseInput.value)));
 accommodationInput.addEventListener('valueChanged', (event) => {
     syncAccommodationSelection(document.getElementById(accommodationInput.value))
-    console.log(accommodationInput)
     dontNeedHousing({checked: accommodationInput.value === "I do not need housing"})
 });
 
@@ -197,5 +200,7 @@ courseDateInput.addEventListener('valueChanged', calculate_total);
 courseDateInput.addEventListener('valueChanged', calculate_prices);
 accommodationDateInput.addEventListener('valueChanged', calculate_total);
 
-calculate_total();
-calculate_prices();
+document.addEventListener("DOMContentLoaded", () => {
+    calculate_total();
+    calculate_prices();
+});
