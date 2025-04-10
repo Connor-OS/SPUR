@@ -1,38 +1,47 @@
+This is a list of the minimal data we need from schools, you can add extra fields but these ones are required
+
+City
 {
-  "city": {
-    "id": 123,
-    "name": "Newcastle",
-    "description": "Newcastle is a captivating city in northeastern England that beckons...",
-    "google_maps": "!1m18!1m12!1m3!1d73226.57683136268!2d-1.8127226928617406!3d55.00237098715333!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487d857e0c6f64cd%3A0xbe252b072a76191!2sNewcastle%20upon%20Tyne!5e0!3m2!1sen!2suk!4v1728392891206!5m2!1sen!2suk",
-    "schools": [
-      223,
-      256,
-      289
-    ]
-  },
-
-  "school": {
-    "id": 223,
-    "name": "Geordie english",
-    "type": "language school",
-    "description": "Learn english the Geordie way",
-    "google_maps": "!1m18!1m12!1m3!1d1500.164929642329!2d-1.6136833865427984!3d54.967648135454105!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487e70b6e2851109%3A0x28cd368c48f6e393!2sNewcastle%20Castle!5e0!3m2!1sen!2suk!4v1728392981136!5m2!1sen!2suk",
-    "city": 123,
-    "courses": [
-      323,
-      345,
-      367
-    ]
-  },
-
-  "course": {
-    "id": 323,
-    "name": "basic geordie",
-    "description": "Alright pet..",
-    "group": "max 12 students per class",
-    "schedule": "Monday to Friday 2.00pm to 4.00pm.",
-    "hours_per_week": 20,
-    "school": 223,
-    "age": "16+"
-  }
+  "_id": "6744929e03521fcec4c137aa", // assigned by the site itself
+  "name": "Birmingham",
+  "description": "A city that really gets around, especially with its accents!",
+  "google_maps": "https://maps.google.com/?q=Birmingham" // google maps pin
 }
+
+School
+{
+  "name": "Birmingham Language Academy",
+  "description": "Where every student is a 'Birmingham' star!",
+  "google_maps": "q=Birmingham+Language+Academy", // This should be a direct pin to th school on google maps
+  "city": "Birmingham",
+  "school_type": 1, // this can be used to differentiate Lang school, summer camp, distance learning organisations but isn't used in current version of spur
+  "review_score": 4.3 // better to have a trust pilot link than a score so should change this in future 
+}
+
+Courses
+[{
+    "name": "Beginner English",
+    "description": "Start your journey and don't get lost in translation!",
+    "class_size": "max. 12 students per class",
+    "schedule": "Monday to Friday 2.00pm to 4.00pm.",
+    "other_details": ["Required level: Basic level", "free lunch :)"], // optional: zero or more details to be provided here
+    // important_info: optional
+    "important_info": "Every word you learn and every sentence you speak is a step closer to fluency—embrace the journey, celebrate small victories, and remember that progress, not perfection, is the goal. Mistakes are proof you’re growing; let curiosity guide you, and trust that each effort builds confidence and opens new worlds.",
+    "price_per_week": 250
+  },
+  {
+    "name": "Conversational English",
+    "description": "Let's get 'conversational' about it!",
+    "class_size": "Individual / Group Classes",
+    "schedule": "Full-time 21hs / Part-time 10hs\nMonday to Friday 2.00pm to 4.00pm.",
+    "price_per_week": 300
+  },
+  {
+    "name": "Business English",
+    "description": "Where your English skills will 'rise to the occasion'!",
+    "class_size": "Individual / Group Classes",
+    "schedule": "Mon-Thu",
+    "other_details": ["Required level: Intermediate to Advanced"],
+    "price_per_week": 550
+  }
+]

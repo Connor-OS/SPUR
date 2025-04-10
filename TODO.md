@@ -69,3 +69,5 @@ Confirmation page:
 - [\] stop chrome auto filling options on search bar
 - [ ] 2 icons for student house
 - [x] enter your details move to left column and have pic on right
+
+- Calendar integration with Calendly
