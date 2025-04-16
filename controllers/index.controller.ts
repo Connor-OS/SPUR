@@ -4,28 +4,26 @@ import {getSearchOptions} from "../services/searchBar.service";
 
 /* GET home page. */
 export const get = async (req, res, next) => {
-    const cities = await City.find();
+    try {
+        const cities = await City.find();
 
-    res.render('index', {
-        frontPage: "frontpage",
-        carousel_elements: cities,
-        reviews: reviews,
-        search: await getSearchOptions(req),
-    });
+        res.render('index', {
+            frontPage: "frontpage",
+            carousel_elements: cities,
+            reviews: reviews,
+            search: await getSearchOptions(req),
+        });
+    } catch (error) {
+        next(error)
+    }
 };
 
-export const post = async (req, res) => {
-    const emptyFields = Object.entries(req.body)
-        .filter(([key, value]) => value === "")
-        .map(([key, value]) => key);
-
-    // Validate search fields
-    if (emptyFields.length !== 0) {
-        // TODO: Implement general validation for these fields, and retain inital inputs
-        return res.redirect("/");
+export const post = async (req, res, next) => {
+    try {
+        return res.redirect(`search?${new URLSearchParams(req.body).toString()}`);
+    } catch (error) {
+        next(error)
     }
-    
-    return res.redirect(`search?${new URLSearchParams(req.body).toString()}`);
 }
 
 

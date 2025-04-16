@@ -9,13 +9,14 @@ import * as answers from "./check.your.answers.controller"
 
 import { Router } from "express"
 import {mandatoryFields} from "../middleware/manditory.fields.middleware";
+import {searchFields} from "../middleware/search.data.middleware";
 
 const router = Router();
 
 router.get('/', index.get);
 router.post('/', index.post);
 
-router.get('/search', search.get);
+router.get('/search', searchFields, search.get);
 
 router.get('/school', school.get);
 router.post('/school', school.post);
@@ -26,7 +27,6 @@ router.post('/your-details', mandatoryFields, details.post);
 router.get('/check-your-answers', answers.get);
 
 router.get('/payment', payment.get);
-router.post('/payment', payment.post);
 
 router.get('/session-status', paymentSession.getStatus)
 router.post('/create-checkout-session', paymentSession.post)
