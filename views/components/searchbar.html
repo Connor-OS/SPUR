@@ -2,6 +2,7 @@
 <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
 <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+<link rel="stylesheet" type="text/css" media="all" href="/stylesheets/typewriter.css">
 
 <script src="/javascripts/datepicker.js"></script>
 
@@ -14,8 +15,10 @@
     {% if frontPage == "frontpage" %}
         <img src="/images/searchbar-illustration.png" class="spur-searchbar__illustration" alt="spur illustration">
         <div class="spur-searchbanner__text">
-            <h2>Learn English.</h2>
-            <p>Your dreams are closer than you think.<br>We open a door to your educational journey in the United Kingdom.</p>
+            <div class="type-container">
+                <h2 class="typed-out" id="typed-out">Learn English.</h2>
+            </div>
+            <p>Your dreams are closer than you think.<br>We open a door to your educational journey</p>
         </div>
     {% endif %}
     
@@ -33,4 +36,4 @@
     {% endif %}
 </div>
 
-
+<script type="text/javascript" src="/javascripts/typewriter.js"></script>

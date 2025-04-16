@@ -1,0 +1,19 @@
+.typed-out {
+    overflow: hidden;
+    border-right: .1em solid orange;
+    white-space: nowrap;
+    width: 0;
+    animation: typing 3s steps(20, end) forwards;
+    animation-iteration-count: infinite;
+}
+
+@keyframes typing {
+    0% { width: 0 }
+    25% { width: 0 }
+    75% { width: 100% }
+    100% { width: 100% }
+}
+
+.type-container {
+    display: inline-block;
+}
