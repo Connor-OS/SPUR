@@ -1,0 +1,80 @@
+{
+  "name": "Test School",
+  "description": "Do not book to study at this school it is not real",
+  "google_maps": "q=Birmingham+Language+Academy",
+  "school_type": 1,
+  "review_score": 4.3,
+  "courses": [
+    {
+      "name": "Beginner English",
+      "description": "Start your journey and don't get lost in translation!",
+      "class_size": "max. 12 students per class",
+      "schedule": "Monday to Friday 2.00pm to 4.00pm.",
+      "other_details": [
+        "Required level: Basic level",
+        "free lunch :)"
+      ],
+      "important_info": "Every word you learn and every sentence you speak is a step closer to fluency—embrace the journey, celebrate small victories, and remember that progress, not perfection, is the goal. Mistakes are proof you’re growing; let curiosity guide you, and trust that each effort builds confidence and opens new worlds.",
+      "price_per_week": 267
+    },
+    {
+      "name": "Conversational English",
+      "description": "Let's get 'conversational' about it!",
+      "class_size": "Individual / Group Classes",
+      "schedule": "Full-time 21hs / Part-time 10hs\nMonday to Friday 2.00pm to 4.00pm.",
+      "other_details": [],
+      "price_per_week": 311
+    },
+    {
+      "name": "Business English",
+      "description": "Where your English skills will 'rise to the occasion'!",
+      "class_size": "Individual / Group Classes",
+      "schedule": "Mon-Thu",
+      "other_details": [
+        "Required level: Intermediate to Advanced"
+      ],
+      "price_per_week": 575
+    },
+    {
+      "name": "Advanced English",
+      "description": "Take your skills to 'advanced' heights!",
+      "class_size": "Couple of people",
+      "schedule": "18.5 hours of class lessons + 1 hour self-study + Study Club / Social Program (optional)",
+      "other_details": [],
+      "price_per_week": 5317
+    },
+    {
+      "name": "IELTS Preparation",
+      "description": "Get ready to 'ace' your test!",
+      "class_size": "Individual / Group Classes",
+      "schedule": "1000+ hours a week!",
+      "other_details": [],
+      "important_info": "The course includes a practice exam every Friday, so instructors are able to monitor student progress. Students are able to receive instant feedback and it allows them to make decisions on which areas to improve.",
+      "price_per_week": 629
+    },
+    {
+      "name": "Creative Writing",
+      "description": "Unleash your inner 'Shakespeare'!",
+      "class_size": "One to one",
+      "schedule": "turn up when you like",
+      "other_details": [],
+      "price_per_week": 344
+    }
+  ],
+  "accommodation": [
+    {
+      "name": "Stay with Family",
+      "description": "Our team meets all new families and checks all accommodation before boarding to ensure it meets our standards. Your coordinating manager will contact you after the booking to give you your options to stay with a local family.",
+      "important_info": {
+      },
+      "price_per_day": 80
+    },
+    {
+      "name": "Student house",
+      "description": "XXXX student house is located in Jesmond and offers bright and spacious rooms for students. This residence offers a warm and homely atmosphere with only a 15-minute walk to the school.",
+      "important_info": {
+      },
+      "price_per_day": 100
+    }
+  ]
+}

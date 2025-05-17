@@ -1,0 +1,40 @@
+[{
+  "name": "Manchester",
+  "description": "Mancity is known for its rich industrial history and is a global epicenter for football, home to two iconic clubs and home to prestigious universities, and a thriving music and arts scene. Wander through the Northern Quarter, catch a match at Old Trafford or Etihad, and soak up the unmistakable Mancunian vibe.",
+  "google_maps": "https://maps.google.com/?q=Manchester"
+},
+{
+  "name": "London",
+  "description": "A capital place to learn – just don't get lost in translation!",
+  "google_maps": "https://maps.google.com/?q=London"
+},
+{
+  "name": "Bristol",
+  "description": "A captivating city in southwestern England, is renowned for its rich history, world-class universities, and vibrant cultural scene. It's also celebrated as the birthplace of the elusive street artist Banksy, with several of his iconic artworks, such as \"The Mild Mild West\" and \"Girl with a Pierced Eardrum,\" adorning its streets.",
+  "google_maps": "https://maps.google.com/?q=Bristol"
+},
+{
+  "name": "Leeds",
+  "description": "It bursts with energy, from the historic Corn Exchange and Kirkgate Market to the lively bars on Call Lane. Stroll through the Victoria Quarter, catch a show at Leeds Grand Theatre, and explore the buzzing music and street food scene.",
+  "google_maps": "https://maps.google.com/?q=Leeds"
+},
+{
+  "name": "Sheffield",
+  "description": "Sheffield is known for its industrial roots, green spaces, and vibrant music scene. Stroll through the Winter Garden, explore the Millennium Gallery, hike the nearby Peak District, and experience the city’s creative, down-to-earth energy.",
+  "google_maps": "https://maps.google.com/?q=Sheffield"
+},
+{
+  "name": "Newcastle",
+  "description": "The city blends historic charm with modern energy, top universities, and iconic landmarks like the Tyne Bridge and Angel of the North. Explore nearby Alnwick Castle, famously seen in Harry Potter, and soak up the warm Geordie spirit.",
+  "google_maps": "https://maps.google.com/?q=Newcastle"
+},
+{
+  "name": "Nottingham",
+  "description": "The city is famous for the legend of Robin Hood, its historic Lace Market, and vibrant creative scene. Explore Nottingham Castle, wander through Sherwood Forest, and enjoy its lively cafes, pubs, and independent shops.",
+  "google_maps": "https://maps.google.com/?q=Notingham"
+},
+{
+  "name": "Norwich",
+  "description": "It is known for its stunning medieval architecture, vibrant arts scene, and rich literary heritage. Stroll through its cobbled streets, visit the impressive Norwich Cathedral, and explore the city’s independent shops and riverside pubs.",
+  "google_maps": "https://maps.google.com/?q=Norwich"
+}]
