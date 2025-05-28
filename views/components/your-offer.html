@@ -63,10 +63,12 @@
                 <input type="hidden" name="accommodation_total" id="accommodation-total-input" value="0">
             </div>
 
-            <div class="form-row">
-                <p>School Admission fee:</p>
-                <p>£<span id="admission_fee">50</span></p>
-            </div>
+            {% for fee in school.extra_fees %}
+                <div class="form-row">
+                    <p>{{ fee.name }}</p>
+                    <p>£<span class="extra_fee">{{ fee.amount }}</span></p>
+                </div>
+            {% endfor %}
 
         </div>
 

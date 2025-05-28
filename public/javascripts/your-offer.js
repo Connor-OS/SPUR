@@ -113,7 +113,16 @@ function calculate_total() {
         accommodationTotal.textContent = (length_of_study_weeks * accommodationPerWeek);
     }
 
-    document.getElementById('total').textContent = parseFloat(accommodationTotal.textContent) + parseFloat(courseTotal.textContent) + parseFloat(document.getElementById('admission_fee').textContent);
+    let totalFee = 0;
+
+    document.querySelectorAll('.extra_fee').forEach(el => {
+        const value = parseFloat(el.textContent);
+        if (!isNaN(value)) {
+            totalFee += value;
+        }
+    });
+
+    document.getElementById('total').textContent = parseFloat(accommodationTotal.textContent) + parseFloat(courseTotal.textContent) + totalFee;
 }
 
 function calculate_prices() {
@@ -121,9 +130,7 @@ function calculate_prices() {
     const length_of_study_weeks = length_in_weeks(dates)
 
     $(".course").each(function() {
-
         let totalPrice = length_of_study_weeks * $(this).data("cost");
-        console.log(totalPrice)
         $(this).find(".price").text(`£${totalPrice}` );
     });
 }

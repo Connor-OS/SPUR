@@ -119,5 +119,19 @@
       "description": "XXXX student house is located in Jesmond and offers bright and spacious rooms for students. This residence offers a warm and homely atmosphere with only a 15-minute walk to the school.",
       "price_per_week": 100
     }
+  ],
+  "extra_fees": [
+    {
+      "name": "School Admission fee",
+      "amount": 50
+    },
+    {
+      "name": "Textbooks",
+      "amount": 25
+    },
+    {
+      "name": "other fee",
+      "amount": 15.99
+    }
   ]
 }

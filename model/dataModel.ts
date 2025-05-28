@@ -31,6 +31,7 @@ const schoolSchema = new mongoose.Schema({
     accommodation: [accommodationSchema],
     city: { type: mongoose.Schema.Types.ObjectId, ref: 'City', required: true},
     review_score: { type: Number, required: true },
+    extra_fees: [],
 },{
     versionKey: false
 });
