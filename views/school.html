@@ -14,20 +14,11 @@
 
         <div class="school_info">
             <img class="school_image" src="/images/schools/generic.webp" alt="Image of {{ school.name }}">
-            <div class="school_content">
-                <p>
-                    {{ school.description }} Opened in 2019, and accredited by the British
-                    Council, ILC have been providing English language
-                    learning successfully for 5 years. The school has
-                    helped international students meet their academic
-                    goals, local students meet their career goals, and
-                    everything in between. Become part of the family
-                    and join on your English language journey with ILC.
+            <div id="read-more-container" class="school_content">
+                <p class="read-more-content">
+                    {{ school.description }}
                 </p>
-                <p>
-                    A small, cozy school in the heart of beautiful Jesmond, not far from Newcastle City Centre, the
-                    school provides a professional, personal, and flexible service to meet your language learning needs.
-                </p>
+                <button class="read-more-button" onclick="toggleReadMore('read-more-container')">Read more</button>
             </div>
         </div>
 

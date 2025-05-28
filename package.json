@@ -5,7 +5,7 @@
   "main": "controllers/index.controller.ts",
   "scripts": {
     "build": "tsc && cp -r views public dist/",
-    "db": "docker run -d -p 27017:27017 --name spur mongo:latest",
+    "db": "sudo docker run -d -p 27017:27017 --name spur mongo:latest",
     "start": "node ./dist/bin/www.js"
   },
   "dependencies": {

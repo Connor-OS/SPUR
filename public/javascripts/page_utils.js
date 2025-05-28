@@ -23,3 +23,18 @@ function hide_unhide(id) {
     display_style === '' ? display_style = 'block': display_style = '';
     document.getElementById(id).style.display = display_style
 }
+
+function toggleReadMore(content_id) {
+    const container = document.getElementById(content_id);
+
+    const content = container.getElementsByClassName('read-more-content')[0];
+    const button = container.getElementsByClassName('read-more-button')[0];
+
+    content.classList.toggle('expanded');
+
+    if (content.classList.contains('expanded')) {
+        button.textContent = 'Read less';
+    } else {
+        button.textContent = 'Read more';
+    }
+}

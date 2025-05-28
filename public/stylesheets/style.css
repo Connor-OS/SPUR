@@ -321,7 +321,6 @@ input[type="submit"] {
 
 .school_content p {
   margin: 0;
-  font-size: 1rem;
   line-height: 1.5;
 }
 
@@ -478,26 +477,22 @@ button {
 
 .offer-image,
 .offer-carousel {
-  /*flex: 1 1 50%; !* Ensures each takes up 50% of the width *!*/
-  max-width: 49%;
+  max-width: 45%;
 }
 
 .offer-image img {
   max-width: 100%;
   height: auto;
-  /*display: block;*/
   margin: 0 auto; /* Centers the image */
 }
 
 .offer-carousel {
   padding-top: 150px;
-  /*padding-bottom: 100px;*/
 }
 
 .offer-carousel .glide__slide {
   display: flex;
   flex-direction: column;
-  /*align-content: flex-end;*/
 
   position: relative;
   border-radius: 8px;
@@ -1195,4 +1190,20 @@ button {
   display: flex;
   align-items: center;
   font-size: 16px;
+}
+
+.read-more-content {
+  max-height: 215px;
+  overflow: hidden;
+  transition: max-height 0.2s ease;
+  position: relative;
+}
+
+.read-more-content.expanded {
+  max-height: none;
+}
+
+.read-more-button {
+  all: unset;
+  cursor: pointer;
 }
