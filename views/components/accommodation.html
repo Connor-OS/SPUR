@@ -14,49 +14,28 @@
 </div>
 
 <div id="accommodations" class="selection_list">
-    <div class="selection_box accommodation" id="Stay with Family" onclick="syncAccommodationSelection(this)" data-cost="45">
-        <h3>Stay with Family</h3>
-        <button>Select</button>
+    {% for accommodation in accommodations %}
 
-        <div class="options_list">
-            <div class="housing_checkbox_div">
-                <input type="checkbox" checked="checked" disabled="disabled" id="single_room" class="prechecked" data-group="group1">
-                <label for="single_room">Single room (non en-suit)</label>
-            </div>
+        <div class="selection_box accommodation" id="{{ accommodation.name }}" onclick="syncAccommodationSelection(this)" data-cost="{{ accommodation.price_per_week }}">
+            <h3>{{ accommodation.name }}</h3>
+            <button>Select</button>
 
-            <div class="housing_checkbox_div">
-                <input type="checkbox" id="half_board" class="housing_checkbox exclusive" data-group="group2" data-cost="35">
-                <label for="half_board">Half-board</label>
+            <div class="options_list">
+                {% for option in accommodation.options %}
+                    <div class="housing_checkbox_div">
+                        {% if option.prechecked %}
+                            <input type="checkbox" id="{{ option.name }}" checked="checked" disabled="disabled" class="prechecked" data-group="{{ option.name }}">
+                        {% else %}
+                            <input type="checkbox" id="{{ option.name }}" class="housing_checkbox exclusive" data-group="{{ option.name }}" data-cost="{{option.price_per_week}}">
+                        {% endif %}
+                        <label for="{{ option.name }}">{{ option.name }}</label>
+                    </div>
+                {% endfor %}
             </div>
-
-            <div class="housing_checkbox_div">
-                <input type="checkbox" id="breakfast_only" class="housing_checkbox exclusive" data-group="group3" data-cost="15">
-                <label for="breakfast_only">Breakfast only</label>
-            </div>
-
-            <div class="housing_checkbox_div">
-                <input type="checkbox" id="self_catering" class="housing_checkbox exclusive" data-group="group4" data-cost="0">
-                <label for="self_catering">Self-catering</label>
-            </div>
+            <p class="important_course_info">{{ accommodation.description }}</p>
         </div>
 
-        <p class="important_course_info">Our team meets all new families and checks all accommodation before boarding to ensure it meets our standards. Your coordinating manager will contact you after the booking to give you your options to stay with a local family.</p>
-    </div>
-
-    <div class="selection_box accommodation" id="Student house" onclick="syncAccommodationSelection(this)" data-cost="70">
-        <h3>Student house</h3>
-        <button>Select</button>
-
-        <ul class="options_list">
-
-        </ul>
-
-        <ul class="details_list">
-
-        </ul>
-
-        <p class="important_course_info">XXXX student house is located in Jesmond and offers bright and spacious rooms for students. This residence offers a warm and homely atmosphere with only a 15-minute walk to the school.</p>
-    </div>
+    {% endfor %}
 
     <div class="hidden" id="I do not need housing">
         <h3>I do not need housing</h3>

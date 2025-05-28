@@ -48,10 +48,14 @@
                 <p>£<span id="course-total">0</span></p>
                 <input type="hidden" name="course_total" id="course-total-input" value="0">
             </div>
-            
-            {{ dropdown("accommodation", ["Stay with Family", "Student house", "I do not need housing"]) }}
-            <input name="accommodation_dates" class="date" id="accommodation_dates" placeholder="Stay dates"  type='text' data-date="{{ searchData.date }}">
 
+            {% set accommodationOptions = [] %}
+            {% for accommodation in accommodations %}
+                {% set accommodationOptions = accommodationOptions.concat([accommodation.name]) %}
+            {% endfor %}
+            {% set accommodationOptions = accommodationOptions.concat(["I do not need accommodation"]) %}
+
+            {{ dropdown("accommodation", accommodationOptions) }}
             <input type="hidden" id="cost_accommodation" value="" />
             <div class="form-row">
                 <p>Accommodation Total:</p>

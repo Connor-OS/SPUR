@@ -35,9 +35,7 @@ function syncAccommodationSelection(element) {
 
     selectElement(element);
 
-    if ( element.id !== "Stay with Family") {
-        $(".housing_checkbox").prop('checked', false);
-    }
+    //TODO bug where checkboxes stay selected in other elements
 
     accommodationInput.value = element.querySelector('h3').innerText;
     accommodationCost.value = element.dataset.cost
@@ -110,12 +108,9 @@ function calculate_total() {
 
     const accommodationPerWeek = parseFloat(accommodationCost.value);
 
-    dates = accommodationDateInput.dataset["date"].split(" - ");
-    const length_of_stay_days = length_in_days(dates);
-
     const accommodationTotal = document.getElementById('accommodation-total')
-    if (!isNaN(length_of_stay_days) && !isNaN(accommodationPerWeek)) {
-        accommodationTotal.textContent = (length_of_stay_days * accommodationPerWeek);
+    if (!isNaN(length_of_study_weeks) && !isNaN(accommodationPerWeek)) {
+        accommodationTotal.textContent = (length_of_study_weeks * accommodationPerWeek);
     }
 
     document.getElementById('total').textContent = parseFloat(accommodationTotal.textContent) + parseFloat(courseTotal.textContent) + parseFloat(document.getElementById('admission_fee').textContent);
@@ -150,14 +145,12 @@ $(document).on('click', 'input[type="checkbox"][data-group]', function(event) {
 
 const dateInput = document.getElementById('date');
 courseDateInput.value = dateInput.value
-accommodationDateInput.value = dateInput.value
 
 function dontNeedHousing(checkbox) {
     const accommodationElements = document.getElementsByClassName("accommodation");
     if (checkbox.checked === true) {
         $("#need_housing").prop("checked", true)
         Array.from(accommodationElements).forEach((item) => item.classList.add("hidden"));
-        accommodationDateInput.classList.add("deactive");
         document.getElementById("accommodation-details").classList.add("hidden")
 
         accommodationInput.value = "I do not need housing";
@@ -175,7 +168,6 @@ function dontNeedHousing(checkbox) {
             }
         })
 
-        accommodationDateInput.classList.remove("deactive");
         document.getElementById("accommodation-details").classList.remove("hidden")
     }
 }
@@ -218,7 +210,6 @@ observer.observe(total, { childList: true, characterData: true, subtree: true })
 
 courseDateInput.addEventListener('valueChanged', calculate_total);
 courseDateInput.addEventListener('valueChanged', calculate_prices);
-accommodationDateInput.addEventListener('valueChanged', calculate_total);
 
 document.addEventListener("DOMContentLoaded", () => {
     calculate_total();

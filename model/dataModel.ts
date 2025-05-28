@@ -15,9 +15,8 @@ const courseSchema = new mongoose.Schema({
 const accommodationSchema = new mongoose.Schema({
     name: { type: String, required: true },
     description: { type: String, required: false },
-    options: { type: {String: Number}, required: false},
-    important_info: {type: {String: String}, required: false},
-    price_per_day: { type: Number, required: true },
+    options: [],
+    price_per_week: { type: Number, required: true },
 },{
     versionKey: false
 });

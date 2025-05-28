@@ -65,16 +65,59 @@
     {
       "name": "Stay with Family",
       "description": "Our team meets all new families and checks all accommodation before boarding to ensure it meets our standards. Your coordinating manager will contact you after the booking to give you your options to stay with a local family.",
-      "important_info": {
-      },
-      "price_per_day": 80
+      "options": [
+        {
+          "name": "Single Room (non en-suit)",
+          "price_per_week": 0,
+          "prechecked": true
+        },
+        {
+          "name": "Half-board",
+          "price_per_week": 100
+        },
+        {
+          "name": "Breakfast only",
+          "price_per_week": 50
+        },
+        {
+          "name": "Self-catering",
+          "price_per_week": 0
+        }
+      ],
+      "price_per_week": 80
+    },
+    {
+      "name": "Test",
+      "description": "test accommodation",
+      "options": [
+        {
+          "name": "a",
+          "price_per_week": 0,
+          "prechecked": true
+        },
+        {
+          "name": "b",
+          "price_per_week": 100
+        },
+        {
+          "name": "c",
+          "price_per_week": 50
+        },
+        {
+          "name": "d",
+          "price_per_week": 0
+        },
+        {
+          "name": "e",
+          "price_per_week": 0
+        }
+      ],
+      "price_per_week": 80
     },
     {
       "name": "Student house",
       "description": "XXXX student house is located in Jesmond and offers bright and spacious rooms for students. This residence offers a warm and homely atmosphere with only a 15-minute walk to the school.",
-      "important_info": {
-      },
-      "price_per_day": 100
+      "price_per_week": 100
     }
   ]
 }
