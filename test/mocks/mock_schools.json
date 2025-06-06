@@ -1,0 +1,234 @@
+[
+  {
+    "name": "Test School",
+    "description": "Description",
+    "google_maps": "maps_string",
+    "school_type": 1,
+    "review_score": 4.3,
+    "courses": [
+      {
+        "name": "Beginner English",
+        "description": "Start your journey and don't get lost in translation!",
+        "class_size": "max. 12 students per class",
+        "schedule": "Monday to Friday 2.00pm to 4.00pm.",
+        "important_info": "Super important info",
+        "price_per_week": 267,
+        "dynamic_pricing": [
+          {
+            "min_weeks": 5,
+            "price_per_week": 250
+          },
+          {
+            "min_weeks": 12,
+            "price_per_week": 240
+          },
+          {
+            "min_weeks": 24,
+            "price_per_week": 1000
+          }
+        ]
+      },
+      {
+        "name": "Conversational English",
+        "description": "Let's get 'conversational' about it!",
+        "class_size": "Individual / Group Classes",
+        "schedule": "Full-time 21hs / Part-time 10hs\nMonday to Friday 2.00pm to 4.00pm.",
+        "other_details": [],
+        "price_per_week": 311,
+        "dynamic_pricing": [
+          {
+            "min_weeks": 5,
+            "price_per_week": 300
+          },
+          {
+            "min_weeks": 12,
+            "price_per_week": 10
+          },
+          {
+            "min_weeks": 24,
+            "price_per_week": 300
+          }
+        ]
+      }
+    ],
+    "accommodation": [
+      {
+        "name": "Stay with Family",
+        "description": "Our team meets all new families and checks all accommodation before boarding to ensure it meets our standards. Your coordinating manager will contact you after the booking to give you your options to stay with a local family.",
+        "options": [
+          {
+            "name": "Single Room (non en-suit)",
+            "price_per_week": 0,
+            "prechecked": true
+          },
+          {
+            "name": "Half-board",
+            "price_per_week": 100
+          },
+          {
+            "name": "Breakfast only",
+            "price_per_week": 50
+          },
+          {
+            "name": "Self-catering",
+            "price_per_week": 0
+          }
+        ],
+        "price_per_week": 80
+      },
+      {
+        "name": "Test",
+        "description": "test accommodation",
+        "options": [
+          {
+            "name": "a",
+            "price_per_week": 0,
+            "prechecked": true
+          },
+          {
+            "name": "b",
+            "price_per_week": 100
+          },
+          {
+            "name": "c",
+            "price_per_week": 50
+          },
+          {
+            "name": "d",
+            "price_per_week": 0
+          },
+          {
+            "name": "e",
+            "price_per_week": 0
+          }
+        ],
+        "price_per_week": 80
+      },
+      {
+        "name": "Student house",
+        "description": "XXXX student house is located in Jesmond and offers bright and spacious rooms for students. This residence offers a warm and homely atmosphere with only a 15-minute walk to the school.",
+        "price_per_week": 100
+      }
+    ],
+    "extra_fees": [
+      {
+        "name": "School Admission fee",
+        "amount": 50
+      },
+      {
+        "name": "Textbooks",
+        "amount": 25
+      },
+      {
+        "name": "other fee",
+        "amount": 15.99
+      }
+    ]
+  },
+  {
+    "name": "Test School 2",
+    "description": "Description",
+    "google_maps": "maps_string",
+    "school_type": 1,
+    "review_score": 4.3,
+    "courses": [
+      {
+        "name": "Beginner English",
+        "description": "Start your journey and don't get lost in translation!",
+        "class_size": "max. 12 students per class",
+        "schedule": "Monday to Friday 2.00pm to 4.00pm.",
+        "important_info": "Super important info",
+        "price_per_week": 300,
+        "dynamic_pricing": [
+          {
+            "min_weeks": 5,
+            "price_per_week": 350
+          },
+          {
+            "min_weeks": 12,
+            "price_per_week": 140
+          }
+        ]
+      }
+    ],
+    "accommodation": [
+      {
+        "name": "Stay with Family",
+        "description": "Our team meets all new families and checks all accommodation before boarding to ensure it meets our standards. Your coordinating manager will contact you after the booking to give you your options to stay with a local family.",
+        "options": [
+          {
+            "name": "Single Room (non en-suit)",
+            "price_per_week": 0,
+            "prechecked": true
+          },
+          {
+            "name": "Half-board",
+            "price_per_week": 100
+          },
+          {
+            "name": "Breakfast only",
+            "price_per_week": 50
+          },
+          {
+            "name": "Self-catering",
+            "price_per_week": 0
+          }
+        ],
+        "price_per_week": 80
+      }
+    ]
+  },
+  {
+    "name": "Test School 3",
+    "description": "Description",
+    "google_maps": "maps_string",
+    "school_type": 1,
+    "review_score": 4.3,
+    "courses": [
+      {
+        "name": "Beginner English",
+        "description": "Start your journey and don't get lost in translation!",
+        "class_size": "max. 12 students per class",
+        "schedule": "Monday to Friday 2.00pm to 4.00pm.",
+        "important_info": "Super important info",
+        "price_per_week": 400,
+        "dynamic_pricing": [
+          {
+            "min_weeks": 5,
+            "price_per_week": 450
+          },
+          {
+            "min_weeks": 12,
+            "price_per_week": 120
+          }
+        ]
+      }
+    ],
+    "accommodation": [
+      {
+        "name": "Stay with Family",
+        "description": "Our team meets all new families and checks all accommodation before boarding to ensure it meets our standards. Your coordinating manager will contact you after the booking to give you your options to stay with a local family.",
+        "options": [
+          {
+            "name": "Single Room (non en-suit)",
+            "price_per_week": 0,
+            "prechecked": true
+          },
+          {
+            "name": "Half-board",
+            "price_per_week": 100
+          },
+          {
+            "name": "Breakfast only",
+            "price_per_week": 50
+          },
+          {
+            "name": "Self-catering",
+            "price_per_week": 0
+          }
+        ],
+        "price_per_week": 80
+      }
+    ]
+  }
+]

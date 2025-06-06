@@ -1,6 +1,7 @@
 import {City, School, schoolTypeEnum} from "../model/dataModel";
 import {getSearchOptions} from "../services/searchBar.service";
 import {dateHelper} from "../services/dateHelper.service";
+import {findSchoolMinPrice} from "../services/schoolInfo.service";
 import {NextFunction} from "express";
 
 enum sortByValues {
@@ -29,7 +30,7 @@ export const get = async (req, res, next: NextFunction) => {
     
         // Compute some course specific info
         schools.forEach(school => {
-                school['min_price'] = Math.min(...school.courses.map(course => course.price_per_week * length_of_study_weeks))
+                school['min_price'] = findSchoolMinPrice(school, length_of_study_weeks)
                 school['course_list'] = school.courses.map(course => course.name).join(" / ")
             }
         )

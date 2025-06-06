@@ -8,6 +8,7 @@ const courseSchema = new mongoose.Schema({
     other_details: { type: Array, required: false},
     important_info: {type: String, required: false},
     price_per_week: { type: Number, required: true },
+    dynamic_pricing: [],
 },{
     versionKey: false
 });
@@ -56,3 +57,4 @@ export enum schoolTypeEnum {
 
 export const City = mongoose.model('cities', citySchema);
 export const School = mongoose.model('schools', schoolSchema);
+export const Course = mongoose.model('course', courseSchema);

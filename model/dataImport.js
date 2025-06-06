@@ -20,13 +20,14 @@ async function uploadData() {
     await City.insertMany(data);
     console.log('Data uploaded successfully');
 
-    const school = JSON.parse(fs.readFileSync('data/spur.schools.json', 'utf8'));
+    const schools = JSON.parse(fs.readFileSync('data/spur.schools.json', 'utf8'));
     const newcastle = await City.findOne({ name: 'Newcastle' });
-    school.city = newcastle._id;
+    for (const school of schools) {
+      school.city = newcastle._id;
 
-    const insertedSchool = await School.create(school);
-    console.log('School uploaded successfully:', insertedSchool);
-
+      const insertedSchool = await School.create(school);
+      console.log('School uploaded successfully:', insertedSchool);
+    }
 
     // Disconnect
     await mongoose.disconnect();
