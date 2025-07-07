@@ -7,3 +7,10 @@ services:
     environment:
       MONGO_INITDB_ROOT_USERNAME: spur
       MONGO_INITDB_ROOT_PASSWORD: gandalf
+
+  redis:
+    image: redis
+    restart: always
+    hostname: '2718'
+    ports:
+      - '6379:6379'
