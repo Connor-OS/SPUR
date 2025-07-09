@@ -1,332 +1,233 @@
 [{
-    "name": "Test School",
-    "description": "Do not book to study at this school it is not real. \"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. \"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. \"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    "google_maps": "q=Birmingham+Language+Academy",
-    "school_type": 1,
-    "review_score": 4.3,
-    "courses": [
-      {
-        "name": "Beginner English",
-        "description": "Start your journey and don't get lost in translation!",
-        "class_size": "max. 12 students per class",
-        "schedule": "Monday to Friday 2.00pm to 4.00pm.",
-        "other_details": [
-          "Required level: Basic level",
-          "free lunch :)"
-        ],
-        "important_info": "Every word you learn and every sentence you speak is a step closer to fluency—embrace the journey, celebrate small victories, and remember that progress, not perfection, is the goal. Mistakes are proof you’re growing; let curiosity guide you, and trust that each effort builds confidence and opens new worlds.",
-        "price_per_week": 267,
-        "dynamic_pricing": [
-          {
-            "min_weeks": 5,
-            "price_per_week": 250
-          },
-          {
-            "min_weeks": 12,
-            "price_per_week": 240
-          },
-          {
-            "min_weeks": 24,
-            "price_per_week": 1000
-          }
-        ]
-      },
-      {
-        "name": "Conversational English",
-        "description": "Let's get 'conversational' about it!",
-        "class_size": "Individual / Group Classes",
-        "schedule": "Full-time 21hs / Part-time 10hs\nMonday to Friday 2.00pm to 4.00pm.",
-        "other_details": [],
-        "price_per_week": 311,
-        "dynamic_pricing": [
-          {
-            "min_weeks": 5,
-            "price_per_week": 300
-          },
-          {
-            "min_weeks": 12,
-            "price_per_week": 10
-          },
-          {
-            "min_weeks": 24,
-            "price_per_week": 300
-          }
-        ]
-      },
-      {
-        "name": "Business English",
-        "description": "Where your English skills will 'rise to the occasion'!",
-        "class_size": "Individual / Group Classes",
-        "schedule": "Mon-Thu",
-        "other_details": [
-          "Required level: Intermediate to Advanced"
-        ],
-        "price_per_week": 575
-      },
-      {
-        "name": "Advanced English",
-        "description": "Take your skills to 'advanced' heights!",
-        "class_size": "Couple of people",
-        "schedule": "18.5 hours of class lessons + 1 hour self-study + Study Club / Social Program (optional)",
-        "other_details": [],
-        "price_per_week": 5317
-      },
-      {
-        "name": "IELTS Preparation",
-        "description": "Get ready to 'ace' your test!",
-        "class_size": "Individual / Group Classes",
-        "schedule": "1000+ hours a week!",
-        "other_details": [],
-        "important_info": "The course includes a practice exam every Friday, so instructors are able to monitor student progress. Students are able to receive instant feedback and it allows them to make decisions on which areas to improve.",
-        "price_per_week": 629
-      },
-      {
-        "name": "Creative Writing",
-        "description": "Unleash your inner 'Shakespeare'!",
-        "class_size": "One to one",
-        "schedule": "turn up when you like",
-        "other_details": [],
-        "price_per_week": 344
-      }
-    ],
-    "accommodation": [
-      {
-        "name": "Stay with Family",
-        "description": "Our team meets all new families and checks all accommodation before boarding to ensure it meets our standards. Your coordinating manager will contact you after the booking to give you your options to stay with a local family.",
-        "options": [
-          {
-            "name": "Single Room (non en-suit)",
-            "price_per_week": 0,
-            "prechecked": true
-          },
-          {
-            "name": "Half-board",
-            "price_per_week": 100
-          },
-          {
-            "name": "Breakfast only",
-            "price_per_week": 50
-          },
-          {
-            "name": "Self-catering",
-            "price_per_week": 0
-          }
-        ],
-        "price_per_week": 80
-      },
-      {
-        "name": "Test",
-        "description": "test accommodation",
-        "options": [
-          {
-            "name": "a",
-            "price_per_week": 0,
-            "prechecked": true
-          },
-          {
-            "name": "b",
-            "price_per_week": 100
-          },
-          {
-            "name": "c",
-            "price_per_week": 50
-          },
-          {
-            "name": "d",
-            "price_per_week": 0
-          },
-          {
-            "name": "e",
-            "price_per_week": 0
-          }
-        ],
-        "price_per_week": 80
-      },
-      {
-        "name": "Student house",
-        "description": "XXXX student house is located in Jesmond and offers bright and spacious rooms for students. This residence offers a warm and homely atmosphere with only a 15-minute walk to the school.",
-        "price_per_week": 100
-      }
-    ],
-    "extra_fees": [
-      {
-        "name": "School Admission fee",
-        "amount": 50
-      },
-      {
-        "name": "Textbooks",
-        "amount": 25
-      },
-      {
-        "name": "other fee",
-        "amount": 15.99
-      }
-    ]
-  },
-  {
-    "name": "Test School 2",
-    "description": "Do not book to study at this school it is not real. \"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. \"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. \"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    "google_maps": "q=Birmingham+Language+Academy",
-    "school_type": 1,
-    "review_score": 4.3,
-    "courses": [
-      {
-        "name": "Beginner English",
-        "description": "Start your journey and don't get lost in translation!",
-        "class_size": "max. 12 students per class",
-        "schedule": "Monday to Friday 2.00pm to 4.00pm.",
-        "other_details": [
-          "Required level: Basic level",
-          "free lunch :)"
-        ],
-        "important_info": "Every word you learn and every sentence you speak is a step closer to fluency—embrace the journey, celebrate small victories, and remember that progress, not perfection, is the goal. Mistakes are proof you’re growing; let curiosity guide you, and trust that each effort builds confidence and opens new worlds.",
-        "price_per_week": 267,
-        "dynamic_pricing": [
-          {
-            "min_weeks": 5,
-            "price_per_week": 250
-          },
-          {
-            "min_weeks": 12,
-            "price_per_week": 10
-          },
-          {
-            "min_weeks": 24,
-            "price_per_week": 10
-          }
-        ]
-      },
-      {
-        "name": "Conversational English",
-        "description": "Let's get 'conversational' about it!",
-        "class_size": "Individual / Group Classes",
-        "schedule": "Full-time 21hs / Part-time 10hs\nMonday to Friday 2.00pm to 4.00pm.",
-        "other_details": [],
-        "price_per_week": 311,
-        "dynamic_pricing": [
-          {
-            "min_weeks": 5,
-            "price_per_week": 300
-          },
-          {
-            "min_weeks": 12,
-            "price_per_week": 10
-          },
-          {
-            "min_weeks": 24,
-            "price_per_week": 10
-          }
-        ]
-      },
-      {
-        "name": "Business English",
-        "description": "Where your English skills will 'rise to the occasion'!",
-        "class_size": "Individual / Group Classes",
-        "schedule": "Mon-Thu",
-        "other_details": [
-          "Required level: Intermediate to Advanced"
-        ],
-        "price_per_week": 575
-      },
-      {
-        "name": "Advanced English",
-        "description": "Take your skills to 'advanced' heights!",
-        "class_size": "Couple of people",
-        "schedule": "18.5 hours of class lessons + 1 hour self-study + Study Club / Social Program (optional)",
-        "other_details": [],
-        "price_per_week": 5317
-      },
-      {
-        "name": "IELTS Preparation",
-        "description": "Get ready to 'ace' your test!",
-        "class_size": "Individual / Group Classes",
-        "schedule": "1000+ hours a week!",
-        "other_details": [],
-        "important_info": "The course includes a practice exam every Friday, so instructors are able to monitor student progress. Students are able to receive instant feedback and it allows them to make decisions on which areas to improve.",
-        "price_per_week": 629
-      },
-      {
-        "name": "Creative Writing",
-        "description": "Unleash your inner 'Shakespeare'!",
-        "class_size": "One to one",
-        "schedule": "turn up when you like",
-        "other_details": [],
-        "price_per_week": 344
-      }
-    ],
-    "accommodation": [
-      {
-        "name": "Stay with Family",
-        "description": "Our team meets all new families and checks all accommodation before boarding to ensure it meets our standards. Your coordinating manager will contact you after the booking to give you your options to stay with a local family.",
-        "options": [
-          {
-            "name": "Single Room (non en-suit)",
-            "price_per_week": 0,
-            "prechecked": true
-          },
-          {
-            "name": "Half-board",
-            "price_per_week": 100
-          },
-          {
-            "name": "Breakfast only",
-            "price_per_week": 50
-          },
-          {
-            "name": "Self-catering",
-            "price_per_week": 0
-          }
-        ],
-        "price_per_week": 80
-      },
-      {
-        "name": "Test",
-        "description": "test accommodation",
-        "options": [
-          {
-            "name": "a",
-            "price_per_week": 0,
-            "prechecked": true
-          },
-          {
-            "name": "b",
-            "price_per_week": 100
-          },
-          {
-            "name": "c",
-            "price_per_week": 50
-          },
-          {
-            "name": "d",
-            "price_per_week": 0
-          },
-          {
-            "name": "e",
-            "price_per_week": 0
-          }
-        ],
-        "price_per_week": 80
-      },
-      {
-        "name": "Student house",
-        "description": "XXXX student house is located in Jesmond and offers bright and spacious rooms for students. This residence offers a warm and homely atmosphere with only a 15-minute walk to the school.",
-        "price_per_week": 100
-      }
-    ],
-    "extra_fees": [
-      {
-        "name": "School Admission fee",
-        "amount": 50
-      },
-      {
-        "name": "Textbooks",
-        "amount": 25
-      },
-      {
-        "name": "other fee",
-        "amount": 15.99
-      }
-    ]
-  }
+  "name": "Bayswater College Brighton",
+  "description": "For over 70 years, Bayswater has inspired global explorers through high-quality international education. The merger of Eurocentres and Bayswater marks a new chapter in the sector, combining decades of experience to form a leading force in global learning. Bayswater Education is dedicated to building vibrant communities of international thinkers and adventurers from all backgrounds. The organisation was founded with the vision of encouraging learners to discover new cultures, explore diverse perspectives, and embrace the spirit of global citizenship. With modern, well-equipped classrooms and a network of international centres, Bayswater offers more than just language education. Its programmes are designed to equip students with valuable vocational skills, foster life-changing experiences, and promote a mindset of giving back to communities worldwide. Bayswater continues to support and inspire learners across the globe, offering education that goes beyond the classroom and into the heart of global culture.",
+  "google_maps": "https://maps.app.goo.gl/9B1cmJYoFV4zvo5e8",
+  "school_type": 1,
+  "review_score": 4.3,
+  "courses": [
+    {
+      "name": "General English",
+      "description": "The General English course at Bayswater uses market-leading materials to deliver engaging, interactive lessons. Teachers combine a variety of methods to build practical communication skills through relevant, real-life themes. In addition to speaking, students develop reading, writing, and listening skills. Each lesson includes a dynamic mix of grammar, vocabulary, and communication activities, designed to keep learners motivated and prepared for everyday situations in a connected, global world.",
+      "class_size": "average. 8 - max 15",
+      "schedule": "15 hours a week",
+      "other_details": [
+        "Suitable for Beginner (A1) to Advanced (C1)",
+        "Required to purchase a course book"
+      ],
+      "important_info": "minimum 2 week course",
+      "price_per_week": 330,
+      "dynamic_pricing": [
+        {
+          "min_weeks": 12,
+          "price_per_week": 325
+        },
+        {
+          "min_weeks": 24,
+          "price_per_week": 285
+        }
+      ]
+    },
+    {
+      "name": "Intensive General English",
+      "description": "The General English course at Bayswater uses market-leading materials to deliver engaging, interactive lessons. Teachers combine a variety of methods to build practical communication skills through relevant, real-life themes. In addition to speaking, students develop reading, writing, and listening skills. Each lesson includes a dynamic mix of grammar, vocabulary, and communication activities, designed to keep learners motivated and prepared for everyday situations in a connected, global world.",
+      "class_size": "average. 10 - max 16",
+      "schedule": "18.75 hours a week",
+      "other_details": [
+        "Suitable for Beginner (A1) to Advanced (C1)",
+        "Required to purchase a course book"
+      ],
+      "important_info": "minimum 2 week course",
+      "price_per_week": 405,
+      "dynamic_pricing": [
+        {
+          "min_weeks": 12,
+          "price_per_week": 360
+        },
+        {
+          "min_weeks": 24,
+          "price_per_week": 325
+        }
+      ]
+    },
+    {
+      "name": "Super Intensive General English",
+      "description": "The General English course at Bayswater uses market-leading materials to deliver engaging, interactive lessons. Teachers combine a variety of methods to build practical communication skills through relevant, real-life themes. In addition to speaking, students develop reading, writing, and listening skills. Each lesson includes a dynamic mix of grammar, vocabulary, and communication activities, designed to keep learners motivated and prepared for everyday situations in a connected, global world.",
+      "class_size": "average. 10 - max 15",
+      "schedule": "22.5 hours a week",
+      "other_details": [
+        "Suitable for Beginner (A1) to Advanced (C1)",
+        "Required to purchase a course book"
+      ],
+      "important_info": "minimum 2 week course",
+      "price_per_week": 450,
+      "dynamic_pricing": [
+        {
+          "min_weeks": 12,
+          "price_per_week": 305
+        },
+        {
+          "min_weeks": 24,
+          "price_per_week": 360
+        }
+      ]
+    },
+    {
+      "name": "Exam Preperation",
+      "description": "Bayswater’s exam preparation courses are designed for students from Intermediate to Proficiency level (CEFRL B1 to C2), offering focused training for Academic IELTS, FCE, CAE, and CPE exams. Lessons combine exam strategies with language development to boost confidence and performance. Progress is tracked through weekly reviews, revision weeks, mock exams, and tutorials. A course book is required. IELTS scores typically range from 6.5 to 9.0, depending on individual progress and study commitment.",
+      "class_size": "average. 10 - max 15",
+      "schedule": "18.75 hours a week",
+      "other_details": [
+        "Suitable for at least IELTS 5.5-6.0, CEFRL C1, or equivalent"
+      ],
+      "important_info": "minimum 2 week course",
+      "price_per_week": 405,
+      "dynamic_pricing": [
+        {
+          "min_weeks": 12,
+          "price_per_week": 360
+        },
+        {
+          "min_weeks": 24,
+          "price_per_week": 315
+        }
+      ]
+    },
+    {
+      "name": "Intensive Exam Preperation",
+      "description": "Bayswater’s exam preparation courses are designed for students from Intermediate to Proficiency level (CEFRL B1 to C2), offering focused training for Academic IELTS, FCE, CAE, and CPE exams. Lessons combine exam strategies with language development to boost confidence and performance. Progress is tracked through weekly reviews, revision weeks, mock exams, and tutorials. A course book is required. IELTS scores typically range from 6.5 to 9.0, depending on individual progress and study commitment.",
+      "class_size": "average. 10 - max 15",
+      "schedule": "22.5 hours a week",
+      "other_details": [
+        "Suitable for at least Level 4 Bayswater, CEFRL B1, or equivalent"
+      ],
+      "important_info": "minimum 2 week course",
+      "price_per_week": 450,
+      "dynamic_pricing": [
+        {
+          "min_weeks": 12,
+          "price_per_week": 405
+        },
+        {
+          "min_weeks": 24,
+          "price_per_week": 360
+        }
+      ]
+    },
+    {
+      "name": "Cambridge Exam Preperation",
+      "description": "",
+      "class_size": "average. 10 - max 15",
+      "schedule": "15 hours a week",
+      "other_details": [
+        "Suitable for at least First (FCE) min. B2 (Level 6), Advanced (CAE) min. C1 (Level 8)",
+        "Can be combined with 5 or 10 General English lessons",
+        "8 week or 10 week courses"
+      ],
+      "important_info": "2025 start dates: 31st March, or 15th September",
+      "price_per_week": 285,
+      "dynamic_pricing": [
+        {
+          "min_weeks": 10,
+          "price_per_week": 360
+        }
+      ]
+    },
+    {
+      "name": "Professional Course - Digital marketing",
+      "description": "",
+      "class_size": "average. 10 - max 15",
+      "schedule": "4 week Duration",
+      "other_details": [
+        "Suitable for at leastLevel 5 (Bayswater) or B1+ (CEFR)",
+        "Can be combined with 5 or 10 General English lessons"
+      ],
+      "important_info": "2025 start dates: 3 Feb, 3 Mar, 7 Apr, 6 May, 2 June, 7 July, 4 Aug, 1 Sept, 6 Oct, 3 Nov",
+      "price_per_week": 525
+    },
+    {
+      "name": "Professional Course - International Business Management",
+      "description": "",
+      "class_size": "average. 10 - max 15",
+      "schedule": "4 week Duration",
+      "other_details": [
+        "Suitable for at leastLevel 5 (Bayswater) or B1+ (CEFR)",
+        "Can be combined with 5 or 10 General English lessons"
+      ],
+      "important_info": "2025 start dates: 6 Jan, 3 Mar, 6 May, 2 June, 7 July, 4 Aug, 1 Sept, 6 Oct, 3 Nov",
+      "price_per_week": 525
+    }
+  ],
+  "accommodation": [
+    {
+      "name": "Stay with family",
+      "description": "All new homestay families are personally met by the team of the college, and accommodation is inspected in advance to ensure it meets quality standards. After booking, your coordinating manager will contact you to provide available options and help arrange a suitable match with a local host family.\n Twin rooms are only available for two people traveling together\nStudents in a single room may be housed in the same homestay as other students\nStudents under 18 in a homestay must book at least Half Board, a return transfer and provide a parental consent form\nExtra nights: billed on a pro-rata basis\n16+",
+      "options": [
+        {
+          "name": "Single room shared bathroom",
+          "price_per_week": 0,
+          "prechecked": true
+        },
+        {
+          "name": "Zone 4-5",
+          "price_per_week": 240
+        },
+        {
+          "name": "Zone 3",
+          "price_per_week": 260
+        },
+        {
+          "name": "Zone 2",
+          "price_per_week": 270
+        },
+        {
+          "name": "Bed and Breakfast",
+          "price_per_week": 0
+        },
+        {
+          "name": "Half Board",
+          "price_per_week": 30
+        }
+      ],
+      "price_per_week": 250
+    },
+    {
+      "name": "Student house",
+      "description": "Student house accommodation offers a more independent living experience, ideal for students aged 18 and above. All properties are inspected to ensure they meet safety and comfort standards. After booking, a coordinating manager will share available options and assist in placing students in a suitable residence.\nEn-suite: Shared kitchen and communal living spaces, toilet and shower or bath can be accessed from within your room\nAge 18+\nStudio: En suite bathroom, with kitchenette\nSelf-catering only\nArrival and Departure day: Sunday to Saturday",
+      "options": [
+        {
+          "name": "Zone 1-2 Standard single studio",
+          "price_per_week": 425
+        },
+        {
+          "name": "Zone 1-4 Standard single en-suite",
+          "price_per_week": 475
+        },
+        {
+          "name": "Zone 1-4 Premiun single en-suite",
+          "price_per_week": 595
+        }
+      ],
+      "price_per_week": 0
+    }
+  ],
+  "extra_fees": [
+    {
+      "name": "Registration fee",
+      "amount": 95
+    },
+    {
+      "name": "Bank charges",
+      "amount": 12
+    },
+    {
+      "name": "Accommodation booking fee",
+      "amount": 50
+    },
+    {
+      "name": "Course material fee",
+      "amount": 7
+    }
+  ]
+}
 ]
 

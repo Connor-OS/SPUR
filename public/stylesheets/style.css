@@ -1207,3 +1207,51 @@ button {
   all: unset;
   cursor: pointer;
 }
+
+/* Admin page spacing */
+#admin-form {
+  margin-top: 2em;
+  margin-bottom: 2em;
+  padding: 2em 2em 2em 2em;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+}
+#admin-form .form-grid > * {
+  margin-bottom: 1.5em;
+}
+#admin-form h3 {
+  margin-top: 2em;
+  margin-bottom: 1em;
+}
+#admin-form hr {
+  margin: 2em 0;
+}
+#admin-form button[type="button"] {
+  margin-bottom: 1.5em;
+  margin-top: 0.5em;
+}
+#admin-form .course-block,
+#admin-form .accommodation-block,
+#admin-form .fee-block {
+  margin-bottom: 1.5em;
+  padding: 1em;
+  border-radius: 6px;
+  background: #f8f9fa;
+  border: 1px solid #e0e0e0;
+}
+#admin-form input,
+#admin-form select,
+#admin-form textarea {
+  margin-bottom: 0.7em;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+#admin-form label {
+  margin-bottom: 0.3em;
+  display: block;
+}
+#admin-form .alert {
+  margin-bottom: 2em;
+}
