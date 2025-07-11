@@ -1,0 +1,17 @@
+# Use the same base as your main app
+FROM node:18
+
+WORKDIR /app
+
+COPY package*.json ./
+RUN npm install
+
+COPY . .
+
+RUN npm run build
+
+# Expose SMTP port if needed (e.g., 587)
+EXPOSE 587
+
+# Start the worker process
+CMD ["npm", "run", "startWorker"]
