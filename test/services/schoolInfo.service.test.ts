@@ -56,5 +56,5 @@ describe("Test school info service", () => {
 
     test(`test schools price returned via dynamic pricing`, async () => {
         let result = findSchoolMinPrice(school, 1);
-    }
-}
+    });
+});
