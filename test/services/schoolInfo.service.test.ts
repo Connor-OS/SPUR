@@ -62,5 +62,6 @@ describe("Test school info service", () => {
 
         result = findSchoolMinPrice(school, 10);
         expect(result).toEqual(40*10)
-    })
-})
+
+    });
+});
