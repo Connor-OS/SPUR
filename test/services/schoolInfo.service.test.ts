@@ -1,5 +1,4 @@
-import {describe, jest, test} from "@jest/globals";
-import {getSearchOptions} from "../../services/searchBar.service";
+import {describe, expect, jest, test} from "@jest/globals";
 
 const findSchoolMinPrice = require("../../services/schoolInfo.service").findSchoolMinPrice;
 
@@ -63,5 +62,6 @@ describe("Test school info service", () => {
 
         result = findSchoolMinPrice(school, 10);
         expect(result).toEqual(40*10)
+
     });
 });

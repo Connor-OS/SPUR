@@ -6,6 +6,7 @@ import * as school from "./school.controller"
 import * as details from "./your.details.controller"
 import * as search from "./search.controller"
 import * as answers from "./check.your.answers.controller"
+import * as admin from "./admin.controller"
 
 import { Router } from "express"
 import {mandatoryFields} from "../middleware/manditory.fields.middleware";
@@ -33,5 +34,7 @@ router.post('/create-checkout-session', paymentSession.post)
 
 router.get('/return', paymentReturn.get)
 
+router.get('/admin', admin.get);
+router.post('/admin', admin.post);
 
 export default router;

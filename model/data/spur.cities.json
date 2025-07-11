@@ -37,4 +37,40 @@
   "name": "Norwich",
   "description": "It is known for its stunning medieval architecture, vibrant arts scene, and rich literary heritage. Stroll through its cobbled streets, visit the impressive Norwich Cathedral, and explore the city’s independent shops and riverside pubs.",
   "google_maps": "https://maps.google.com/?q=Norwich"
-}]
+},
+{
+  "name": "Brighton",
+  "description": "",
+  "google_maps": "https://maps.google.com/?q=Brighton"
+},
+{
+  "name": "Bournemouth",
+  "description": "",
+  "google_maps": "https://maps.google.com/?q=Bournemouth"
+},
+{
+  "name": "Vancouver",
+  "description": "",
+  "google_maps": "https://maps.google.com/?q=Vancouver"
+},
+{
+  "name": "Toronto",
+  "description": "",
+  "google_maps": "https://maps.google.com/?q=Toronto"
+},
+{
+  "name": "Calgary",
+  "description": "",
+  "google_maps": "https://maps.google.com/?q=Calgary"
+},
+{
+  "name": "Cape Town",
+  "description": "",
+  "google_maps": "https://maps.google.com/?q=Cape+Town"
+},
+{
+  "name": "Limassol",
+  "description": "",
+  "google_maps": "https://maps.google.com/?q=Limassol"
+}
+]

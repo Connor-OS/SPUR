@@ -1,0 +1,107 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}Admin: Add School{% endblock %}
+
+{% block content %}
+<div class="page">
+  <h1>Add a New School</h1>
+  {% if success %}
+    <div class="alert alert-success">School added successfully!</div>
+  {% endif %}
+  <form action="/admin" method="POST" id="admin-form">
+    <div class="form-grid">
+      <input name="name" placeholder="School Name" required>
+      <textarea name="description" placeholder="Description" rows="4"></textarea>
+      <input name="google_maps" placeholder="Google Maps URL">
+      <input name="review_score" placeholder="Review Score" type="number" step="0.1" min="0" max="5" required>
+      <div>
+        <label>City</label>
+        <select name="city" required>
+          {% for city in cities %}
+            <option value="{{ city._id }}">{{ city.name }}</option>
+          {% endfor %}
+        </select>
+      </div>
+      <div>
+        <label>School Type</label>
+        <select name="school_type" required>
+          {% for type in schoolTypes %}
+            <option value="{{ type.value }}">{{ type.name }}</option>
+          {% endfor %}
+        </select>
+      </div>
+    </div>
+    <hr>
+    <h3>Courses</h3>
+    <div id="courses-list"></div>
+    <button type="button" onclick="addCourse()">Add Course</button>
+    <hr>
+    <h3>Accommodation</h3>
+    <div id="accommodation-list"></div>
+    <button type="button" onclick="addAccommodation()">Add Accommodation</button>
+    <hr>
+    <h3>Extra Fees</h3>
+    <div id="fees-list"></div>
+    <button type="button" onclick="addFee()">Add Extra Fee</button>
+    <hr>
+    <button type="submit">Submit</button>
+  </form>
+</div>
+<script>
+let courseIdx = 0, accIdx = 0, feeIdx = 0;
+function addCourse() {
+  const html = `<div class='course-block'>
+    <input name='courses[${courseIdx}][name]' placeholder='Course Name' required>
+    <textarea name='courses[${courseIdx}][description]' placeholder='Description' rows='3'></textarea>
+    <input name='courses[${courseIdx}][class_size]' placeholder='Class Size'>
+    <input name='courses[${courseIdx}][schedule]' placeholder='Schedule'>
+    <input name='courses[${courseIdx}][important_info]' placeholder='Important Info'>
+    <input name='courses[${courseIdx}][price_per_week]' placeholder='Price/Week' type='number'>
+    <textarea name='courses[${courseIdx}][other_details]' placeholder='Other Details (comma separated)'></textarea>
+    <button type='button' onclick='this.parentElement.remove()'>Remove</button>
+  </div>`;
+  document.getElementById('courses-list').insertAdjacentHTML('beforeend', html);
+  courseIdx++;
+}
+function addAccommodation() {
+  const idx = accIdx;
+  const html = `<div class='accommodation-block' id='accommodation-block-${idx}'>
+    <input name='accommodation[${idx}][name]' placeholder='Accommodation Name' required>
+    <textarea name='accommodation[${idx}][description]' placeholder='Description' rows='3'></textarea>
+    <input name='accommodation[${idx}][price_per_week]' placeholder='Price/Week' type='number'>
+    <div class='options-list' id='options-list-${idx}'></div>
+    <button type='button' onclick='addOption(${idx})'>Add Option</button>
+    <button type='button' onclick='this.parentElement.remove()'>Remove Accommodation</button>
+  </div>`;
+  document.getElementById('accommodation-list').insertAdjacentHTML('beforeend', html);
+  accIdx++;
+}
+function addOption(accIdx) {
+  const optionsList = document.getElementById(`options-list-${accIdx}`);
+  if (!optionsList) return;
+  const optionIdx = optionsList.children.length;
+  const html = `<div class='option-block'>
+    <input name='accommodation[${accIdx}][options][${optionIdx}][name]' placeholder='Option Name' required>
+    <input name='accommodation[${accIdx}][options][${optionIdx}][price_per_week]' placeholder='Price/Week' type='number'>
+    <label style='font-weight:normal;display:inline;'>Prechecked <input name='accommodation[${accIdx}][options][${optionIdx}][prechecked]' type='checkbox' value='true'></label>
+    <button type='button' onclick='this.parentElement.remove()'>Remove Option</button>
+  </div>`;
+  optionsList.insertAdjacentHTML('beforeend', html);
+}
+function addFee() {
+  const html = `<div class='fee-block'>
+    <input name='extra_fees[${feeIdx}][name]' placeholder='Fee Name' required>
+    <input name='extra_fees[${feeIdx}][amount]' placeholder='Amount' type='number' required>
+    <button type='button' onclick='this.parentElement.remove()'>Remove</button>
+  </div>`;
+  document.getElementById('fees-list').insertAdjacentHTML('beforeend', html);
+  feeIdx++;
+}
+</script>
+<style>
+.form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1em; }
+.course-block, .accommodation-block, .fee-block { border: 1px solid #ccc; padding: 1em; margin-bottom: 1em; }
+.options-list { margin: 1em 0 1em 1em; padding-left: 1em; border-left: 2px solid #eee; }
+.option-block { margin-bottom: 0.7em; background: #f3f3f3; padding: 0.7em; border-radius: 4px; }
+</style>
+{% endblock %}
