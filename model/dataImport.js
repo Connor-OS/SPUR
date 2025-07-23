@@ -1,6 +1,6 @@
 import mongoose from 'mongoose'
 import fs from 'fs';
-import {City, School, schoolTypeEnum} from "../dist/model/dataModel.js";
+import {Country, City, School, schoolTypeEnum} from "../dist/model/dataModel.js";
 
 
 // MongoDB connection string (replace with your actual URI)
@@ -13,20 +13,25 @@ async function uploadData() {
     await mongoose.connect(mongoURI);
     console.log('Connected to MongoDB');
 
-    // Read JSON file
-    const data = JSON.parse(fs.readFileSync('data/spur.cities.json', 'utf8'));
-
-    // Insert data into the collection
-    await City.insertMany(data);
+    // Country Data
+    const countries = JSON.parse(fs.readFileSync('data/spur.countries.json', 'utf8'));
+    await Country.insertMany(countries);
     console.log('Data uploaded successfully');
 
-    const schools = JSON.parse(fs.readFileSync('data/spur.schools.json', 'utf8'));
-    const newcastle = await City.findOne({ name: 'Newcastle' });
-    for (const school of schools) {
-      school.city = newcastle._id;
+    // City Data
+    const cities = JSON.parse(fs.readFileSync('data/spur.cities.json', 'utf8'));
+    await City.insertMany(cities);
+    console.log('Data uploaded successfully');
 
-      const insertedSchool = await School.create(school);
-      console.log('School uploaded successfully:', insertedSchool);
+    // School Data
+    const schools = JSON.parse(fs.readFileSync('data/spur.schools.json', 'utf8'));
+    for (const city of cities) {
+      for (const school of schools) {
+        school.city = city["_id"];
+
+        const insertedSchool = await School.create(school);
+        console.log('School uploaded successfully:', insertedSchool);
+      }
     }
 
     // Disconnect

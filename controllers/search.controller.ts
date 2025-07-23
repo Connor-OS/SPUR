@@ -1,7 +1,6 @@
-import {City, School, schoolTypeEnum} from "../model/dataModel";
+import {Country, City, School, schoolTypeEnum} from "../model/dataModel";
 import {getSearchOptions} from "../services/searchBar.service";
 import {dateHelper} from "../services/dateHelper.service";
-import {findSchoolMinPrice} from "../services/schoolInfo.service";
 import {NextFunction} from "express";
 
 enum sortByValues {
@@ -12,6 +11,7 @@ enum sortByValues {
 
 export const get = async (req, res, next: NextFunction) => {
     try {
+        // TODO: users should be more free to search by city or even country, or other params
         const searchData = req.query;
     
         const city = await City.findOne({"name": searchData["city"]});
@@ -25,13 +25,15 @@ export const get = async (req, res, next: NextFunction) => {
     
         let length_of_study_weeks: number = ((end_date.valueOf() - start_date.valueOf()) / (1000 * 60 * 60 * 24) + 3) / 7
     
-        // get schools
-        let schools = await School.find({"city": city.id}).lean();
+        // get schools, an populate city + country
+        let schools: [typeof School] = await School.find({"city": city.id}).populate({
+            path: 'city',
+            populate: { path: 'country' }
+        });
     
-        // Compute some course specific info
+        // Enrich schools with price info
         schools.forEach(school => {
-                school['min_price'] = findSchoolMinPrice(school, length_of_study_weeks)
-                school['course_list'] = school.courses.map(course => course.name).join(" / ")
+                school['min_price'] = school.getMinPrice(length_of_study_weeks)
             }
         )
     

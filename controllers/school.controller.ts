@@ -7,8 +7,10 @@ import {dateHelper} from "../services/dateHelper.service";
 /* GET home page. */
 export const get = async (req, res, next) => {
     try {
-        const school = await School.findById(req.query["id"]);
-        const city = await City.findById(school.city);
+        const school = await School.findById(req.query["id"]).populate({
+            path: 'city',
+            populate: { path: 'country' }
+        });
 
         const searchData = req.query;
 
@@ -28,7 +30,6 @@ export const get = async (req, res, next) => {
 
         res.render('school', {
             school: school,
-            city: city,
             accommodations: school.accommodation,
             google_api_key: process.env["GOOGLE_MAPS_API"],
             search: await getSearchOptions(req),

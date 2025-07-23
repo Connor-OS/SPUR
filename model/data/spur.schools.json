@@ -1,13 +1,13 @@
 [{
-  "name": "Bayswater College Brighton",
-  "description": "For over 70 years, Bayswater has inspired global explorers through high-quality international education. The merger of Eurocentres and Bayswater marks a new chapter in the sector, combining decades of experience to form a leading force in global learning. Bayswater Education is dedicated to building vibrant communities of international thinkers and adventurers from all backgrounds. The organisation was founded with the vision of encouraging learners to discover new cultures, explore diverse perspectives, and embrace the spirit of global citizenship. With modern, well-equipped classrooms and a network of international centres, Bayswater offers more than just language education. Its programmes are designed to equip students with valuable vocational skills, foster life-changing experiences, and promote a mindset of giving back to communities worldwide. Bayswater continues to support and inspire learners across the globe, offering education that goes beyond the classroom and into the heart of global culture.",
+  "name": "Bunswater College",
+  "description": "For over 70 years, Bunswater has inspired global explorers through high-quality international education. The merger of Eurocentres and Bunswater marks a new chapter in the sector, combining decades of experience to form a leading force in global learning. Bunswater Education is dedicated to building vibrant communities of international thinkers and adventurers from all backgrounds. The organisation was founded with the vision of encouraging learners to discover new cultures, explore diverse perspectives, and embrace the spirit of global citizenship. With modern, well-equipped classrooms and a network of international centres, Bunswater offers more than just language education. Its programmes are designed to equip students with valuable vocational skills, foster life-changing experiences, and promote a mindset of giving back to communities worldwide. Bunswater continues to support and inspire learners across the globe, offering education that goes beyond the classroom and into the heart of global culture.",
   "google_maps": "https://maps.app.goo.gl/9B1cmJYoFV4zvo5e8",
   "school_type": 1,
   "review_score": 4.3,
   "courses": [
     {
       "name": "General English",
-      "description": "The General English course at Bayswater uses market-leading materials to deliver engaging, interactive lessons. Teachers combine a variety of methods to build practical communication skills through relevant, real-life themes. In addition to speaking, students develop reading, writing, and listening skills. Each lesson includes a dynamic mix of grammar, vocabulary, and communication activities, designed to keep learners motivated and prepared for everyday situations in a connected, global world.",
+      "description": "The General English course at Bunswater uses market-leading materials to deliver engaging, interactive lessons. Teachers combine a variety of methods to build practical communication skills through relevant, real-life themes. In addition to speaking, students develop reading, writing, and listening skills. Each lesson includes a dynamic mix of grammar, vocabulary, and communication activities, designed to keep learners motivated and prepared for everyday situations in a connected, global world.",
       "class_size": "average. 8 - max 15",
       "schedule": "15 hours a week",
       "other_details": [
@@ -29,7 +29,7 @@
     },
     {
       "name": "Intensive General English",
-      "description": "The General English course at Bayswater uses market-leading materials to deliver engaging, interactive lessons. Teachers combine a variety of methods to build practical communication skills through relevant, real-life themes. In addition to speaking, students develop reading, writing, and listening skills. Each lesson includes a dynamic mix of grammar, vocabulary, and communication activities, designed to keep learners motivated and prepared for everyday situations in a connected, global world.",
+      "description": "The General English course at Bunswater uses market-leading materials to deliver engaging, interactive lessons. Teachers combine a variety of methods to build practical communication skills through relevant, real-life themes. In addition to speaking, students develop reading, writing, and listening skills. Each lesson includes a dynamic mix of grammar, vocabulary, and communication activities, designed to keep learners motivated and prepared for everyday situations in a connected, global world.",
       "class_size": "average. 10 - max 16",
       "schedule": "18.75 hours a week",
       "other_details": [
@@ -51,7 +51,7 @@
     },
     {
       "name": "Super Intensive General English",
-      "description": "The General English course at Bayswater uses market-leading materials to deliver engaging, interactive lessons. Teachers combine a variety of methods to build practical communication skills through relevant, real-life themes. In addition to speaking, students develop reading, writing, and listening skills. Each lesson includes a dynamic mix of grammar, vocabulary, and communication activities, designed to keep learners motivated and prepared for everyday situations in a connected, global world.",
+      "description": "The General English course at Bunswater uses market-leading materials to deliver engaging, interactive lessons. Teachers combine a variety of methods to build practical communication skills through relevant, real-life themes. In addition to speaking, students develop reading, writing, and listening skills. Each lesson includes a dynamic mix of grammar, vocabulary, and communication activities, designed to keep learners motivated and prepared for everyday situations in a connected, global world.",
       "class_size": "average. 10 - max 15",
       "schedule": "22.5 hours a week",
       "other_details": [
@@ -73,7 +73,7 @@
     },
     {
       "name": "Exam Preperation",
-      "description": "Bayswater’s exam preparation courses are designed for students from Intermediate to Proficiency level (CEFRL B1 to C2), offering focused training for Academic IELTS, FCE, CAE, and CPE exams. Lessons combine exam strategies with language development to boost confidence and performance. Progress is tracked through weekly reviews, revision weeks, mock exams, and tutorials. A course book is required. IELTS scores typically range from 6.5 to 9.0, depending on individual progress and study commitment.",
+      "description": "Bunswater’s exam preparation courses are designed for students from Intermediate to Proficiency level (CEFRL B1 to C2), offering focused training for Academic IELTS, FCE, CAE, and CPE exams. Lessons combine exam strategies with language development to boost confidence and performance. Progress is tracked through weekly reviews, revision weeks, mock exams, and tutorials. A course book is required. IELTS scores typically range from 6.5 to 9.0, depending on individual progress and study commitment.",
       "class_size": "average. 10 - max 15",
       "schedule": "18.75 hours a week",
       "other_details": [
@@ -94,11 +94,11 @@
     },
     {
       "name": "Intensive Exam Preperation",
-      "description": "Bayswater’s exam preparation courses are designed for students from Intermediate to Proficiency level (CEFRL B1 to C2), offering focused training for Academic IELTS, FCE, CAE, and CPE exams. Lessons combine exam strategies with language development to boost confidence and performance. Progress is tracked through weekly reviews, revision weeks, mock exams, and tutorials. A course book is required. IELTS scores typically range from 6.5 to 9.0, depending on individual progress and study commitment.",
+      "description": "Bunswater’s exam preparation courses are designed for students from Intermediate to Proficiency level (CEFRL B1 to C2), offering focused training for Academic IELTS, FCE, CAE, and CPE exams. Lessons combine exam strategies with language development to boost confidence and performance. Progress is tracked through weekly reviews, revision weeks, mock exams, and tutorials. A course book is required. IELTS scores typically range from 6.5 to 9.0, depending on individual progress and study commitment.",
       "class_size": "average. 10 - max 15",
       "schedule": "22.5 hours a week",
       "other_details": [
-        "Suitable for at least Level 4 Bayswater, CEFRL B1, or equivalent"
+        "Suitable for at least Level 4 Bunswater, CEFRL B1, or equivalent"
       ],
       "important_info": "minimum 2 week course",
       "price_per_week": 450,
@@ -138,7 +138,7 @@
       "class_size": "average. 10 - max 15",
       "schedule": "4 week Duration",
       "other_details": [
-        "Suitable for at leastLevel 5 (Bayswater) or B1+ (CEFR)",
+        "Suitable for at leastLevel 5 (Bunswater) or B1+ (CEFR)",
         "Can be combined with 5 or 10 General English lessons"
       ],
       "important_info": "2025 start dates: 3 Feb, 3 Mar, 7 Apr, 6 May, 2 June, 7 July, 4 Aug, 1 Sept, 6 Oct, 3 Nov",
@@ -150,7 +150,7 @@
       "class_size": "average. 10 - max 15",
       "schedule": "4 week Duration",
       "other_details": [
-        "Suitable for at leastLevel 5 (Bayswater) or B1+ (CEFR)",
+        "Suitable for at leastLevel 5 (Bunswater) or B1+ (CEFR)",
         "Can be combined with 5 or 10 General English lessons"
       ],
       "important_info": "2025 start dates: 6 Jan, 3 Mar, 6 May, 2 June, 7 July, 4 Aug, 1 Sept, 6 Oct, 3 Nov",

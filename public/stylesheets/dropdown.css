@@ -44,6 +44,11 @@
     line-height: normal;
 }
 
+.dropdown .tiered-item {
+    background-color: #3B51A3;
+    color: #e0e0e0;
+}
+
 /* Change color of dropdown links on hover */
 .dropdown-content p:hover {background-color: rgba(22, 194, 235, 0.20);}
 

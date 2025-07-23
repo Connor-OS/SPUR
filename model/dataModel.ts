@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+import {findSchoolMinPrice} from "../services/schoolInfo.service";
 
 const courseSchema = new mongoose.Schema({
     name: { type: String, required: true },
@@ -30,18 +31,34 @@ const schoolSchema = new mongoose.Schema({
     school_type: { type: Number, required: true },
     courses: [courseSchema],
     accommodation: [accommodationSchema],
-    city: { type: mongoose.Schema.Types.ObjectId, ref: 'City', required: true},
+    city: { type: mongoose.Schema.Types.ObjectId, ref: 'city', required: true},
     review_score: { type: Number, required: true },
     extra_fees: [],
 },{
     versionKey: false
 });
 
+schoolSchema.virtual('course_list').get(function() {
+    return this.courses.map(course => course.name).join(' / ');
+});
+
+schoolSchema.methods.getMinPrice = function(length_of_study_weeks: number) {
+    return findSchoolMinPrice(this, length_of_study_weeks);
+};
+
 // City schema
 const citySchema = new mongoose.Schema({
     name: { type: String, required: true },
     description: { type: String, required: false },
     google_maps: { type: String, required: false },
+    country: { type: mongoose.Schema.Types.ObjectId, ref: 'country', required: true},
+},{
+    versionKey: false
+});
+
+// Country schema
+const countrySchema = new mongoose.Schema({
+    name: { type: String, required: true },
 },{
     versionKey: false
 });
@@ -55,6 +72,7 @@ export enum schoolTypeEnum {
     'Distance Learning' = 4,
 }
 
-export const City = mongoose.model('cities', citySchema);
-export const School = mongoose.model('schools', schoolSchema);
+export const City = mongoose.model('city', citySchema);
+export const School = mongoose.model('school', schoolSchema);
 export const Course = mongoose.model('course', courseSchema);
+export const Country = mongoose.model('country', countrySchema);

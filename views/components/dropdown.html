@@ -9,3 +9,18 @@
     </div>
 </div>
 {% endmacro %}
+
+{% macro tiered_dropdown(name, items, value) %}
+<script src="/javascripts/dropdown.js"></script>
+<div class="dropdown">
+    <input id="{{ name }}Dropdown" name="{{ name }}" placeholder="Select {{name}}" onclick="showDropdown('{{ name }}Options')" class="dropinput" autocomplete="off" value="{{ value }}">
+    <div id="{{ name }}Options" class="dropdown-content">
+        {% for item, sub_items in items %}
+            <p class="tiered-item" onclick="selectDropdown('{{ name }}Dropdown','{{ item }}')">{{ item }}</p>
+            {% for sub_item in sub_items %}
+                <p onclick="selectDropdown('{{ name }}Dropdown','{{ sub_item }}')">{{ sub_item }}</p>
+            {% endfor %}
+        {% endfor %}
+    </div>
+</div>
+{% endmacro %}

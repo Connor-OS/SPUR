@@ -1,76 +1,113 @@
 [{
   "name": "Manchester",
+  "_id": "24b0f0a4c1a1b1a100000001",
   "description": "Mancity is known for its rich industrial history and is a global epicenter for football, home to two iconic clubs and home to prestigious universities, and a thriving music and arts scene. Wander through the Northern Quarter, catch a match at Old Trafford or Etihad, and soak up the unmistakable Mancunian vibe.",
-  "google_maps": "https://maps.google.com/?q=Manchester"
+  "google_maps": "https://maps.google.com/?q=Manchester",
+  "country": "64b0f0a4c1a1b1a100000001"
 },
 {
   "name": "London",
+  "_id": "24b0f0a4c1a1b1a100000002",
   "description": "A capital place to learn – just don't get lost in translation!",
-  "google_maps": "https://maps.google.com/?q=London"
+  "google_maps": "https://maps.google.com/?q=London",
+  "country": "64b0f0a4c1a1b1a100000001"
 },
 {
   "name": "Bristol",
+  "_id": "24b0f0a4c1a1b1a100000003",
   "description": "A captivating city in southwestern England, is renowned for its rich history, world-class universities, and vibrant cultural scene. It's also celebrated as the birthplace of the elusive street artist Banksy, with several of his iconic artworks, such as \"The Mild Mild West\" and \"Girl with a Pierced Eardrum,\" adorning its streets.",
-  "google_maps": "https://maps.google.com/?q=Bristol"
+  "google_maps": "https://maps.google.com/?q=Bristol",
+  "country": "64b0f0a4c1a1b1a100000001"
 },
 {
   "name": "Leeds",
+  "_id": "24b0f0a4c1a1b1a100000004",
   "description": "It bursts with energy, from the historic Corn Exchange and Kirkgate Market to the lively bars on Call Lane. Stroll through the Victoria Quarter, catch a show at Leeds Grand Theatre, and explore the buzzing music and street food scene.",
-  "google_maps": "https://maps.google.com/?q=Leeds"
+  "google_maps": "https://maps.google.com/?q=Leeds",
+  "country": "64b0f0a4c1a1b1a100000001"
 },
 {
   "name": "Sheffield",
+  "_id": "24b0f0a4c1a1b1a100000005",
   "description": "Sheffield is known for its industrial roots, green spaces, and vibrant music scene. Stroll through the Winter Garden, explore the Millennium Gallery, hike the nearby Peak District, and experience the city’s creative, down-to-earth energy.",
-  "google_maps": "https://maps.google.com/?q=Sheffield"
+  "google_maps": "https://maps.google.com/?q=Sheffield",
+  "country": "64b0f0a4c1a1b1a100000001"
 },
 {
   "name": "Newcastle",
+  "_id": "24b0f0a4c1a1b1a100000006",
   "description": "The city blends historic charm with modern energy, top universities, and iconic landmarks like the Tyne Bridge and Angel of the North. Explore nearby Alnwick Castle, famously seen in Harry Potter, and soak up the warm Geordie spirit.",
-  "google_maps": "https://maps.google.com/?q=Newcastle"
+  "google_maps": "https://maps.google.com/?q=Newcastle",
+  "country": "64b0f0a4c1a1b1a100000001"
 },
 {
   "name": "Nottingham",
+  "_id": "24b0f0a4c1a1b1a100000007",
   "description": "The city is famous for the legend of Robin Hood, its historic Lace Market, and vibrant creative scene. Explore Nottingham Castle, wander through Sherwood Forest, and enjoy its lively cafes, pubs, and independent shops.",
-  "google_maps": "https://maps.google.com/?q=Notingham"
+  "google_maps": "https://maps.google.com/?q=Notingham",
+  "country": "64b0f0a4c1a1b1a100000001"
 },
 {
   "name": "Norwich",
+  "_id": "24b0f0a4c1a1b1a100000008",
   "description": "It is known for its stunning medieval architecture, vibrant arts scene, and rich literary heritage. Stroll through its cobbled streets, visit the impressive Norwich Cathedral, and explore the city’s independent shops and riverside pubs.",
-  "google_maps": "https://maps.google.com/?q=Norwich"
+  "google_maps": "https://maps.google.com/?q=Norwich",
+  "country": "64b0f0a4c1a1b1a100000001"
 },
 {
   "name": "Brighton",
+  "_id": "24b0f0a4c1a1b1a100000009",
   "description": "",
-  "google_maps": "https://maps.google.com/?q=Brighton"
+  "google_maps": "https://maps.google.com/?q=Brighton",
+  "country": "64b0f0a4c1a1b1a100000001"
 },
 {
   "name": "Bournemouth",
+  "_id": "24b0f0a4c1a1b1a100000010",
   "description": "",
-  "google_maps": "https://maps.google.com/?q=Bournemouth"
+  "google_maps": "https://maps.google.com/?q=Bournemouth",
+  "country": "64b0f0a4c1a1b1a100000001"
 },
 {
   "name": "Vancouver",
+  "_id": "24b0f0a4c1a1b1a100000011",
   "description": "",
-  "google_maps": "https://maps.google.com/?q=Vancouver"
+  "google_maps": "https://maps.google.com/?q=Vancouver",
+  "country": "64b0f0a4c1a1b1a100000005"
 },
 {
   "name": "Toronto",
+  "_id": "24b0f0a4c1a1b1a100000012",
   "description": "",
-  "google_maps": "https://maps.google.com/?q=Toronto"
+  "google_maps": "https://maps.google.com/?q=Toronto",
+  "country": "64b0f0a4c1a1b1a100000005"
 },
 {
   "name": "Calgary",
+  "_id": "24b0f0a4c1a1b1a100000013",
   "description": "",
-  "google_maps": "https://maps.google.com/?q=Calgary"
+  "google_maps": "https://maps.google.com/?q=Calgary",
+  "country": "64b0f0a4c1a1b1a100000005"
 },
 {
-  "name": "Cape Town",
+  "name": "Almaty",
+  "_id": "24b0f0a4c1a1b1a100000014",
   "description": "",
-  "google_maps": "https://maps.google.com/?q=Cape+Town"
+  "google_maps": "https://maps.google.com/?q=Almaty",
+  "country": "64b0f0a4c1a1b1a100000003"
 },
 {
-  "name": "Limassol",
+  "name": "Paris",
+  "_id": "24b0f0a4c1a1b1a100000015",
   "description": "",
-  "google_maps": "https://maps.google.com/?q=Limassol"
+  "google_maps": "https://maps.google.com/?q=Paris",
+  "country": "64b0f0a4c1a1b1a100000004"
+},
+{
+  "name": "Tokyo",
+  "_id": "24b0f0a4c1a1b1a100000016",
+  "description": "",
+  "google_maps": "https://maps.google.com/?q=Tokyo",
+  "country": "64b0f0a4c1a1b1a100000002"
 }
 ]

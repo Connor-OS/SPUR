@@ -26,7 +26,7 @@
         <div class="spur-searchbanner__fields">
             <form method="post" action="/" autocomplete="off">
                 {{ dropdown("language", search.languages, searchData.language) }}
-                {{ dropdown("city", search.cities, searchData.city) }}
+                {{ tiered_dropdown("city", search.countries, searchData.city) }}
                 <input name="date" class="date" id="date" placeholder="Select Date" data-date="{{ searchData.date }}">
                 {{ dropdown("age", search.ages, searchData.age) }}
     

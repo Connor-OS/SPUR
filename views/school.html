@@ -10,7 +10,7 @@
 
 
         <h1>{{ school.name }}</h1>
-        <p>{{ city.name }}, United Kingdom</p>
+        <p>{{ school.city.name }}, {{ school.city.country.name }}</p>
 
         <div class="school_info">
             <img class="school_image" src="/images/schools/generic.webp" alt="Image of {{ school.name }}">

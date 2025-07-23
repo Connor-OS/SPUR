@@ -7,12 +7,13 @@ export const get = async (req, res, next) => {
         const bookingDetails = transaction.bookingDetails
         const customerDetails = transaction.customerDetails;
 
-        const school = await School.findById(bookingDetails.schoolID);
-        const city = await City.findById(school.city);
+        const school = await School.findById(bookingDetails.schoolID).populate({
+            path: 'city',
+            populate: { path: 'country' }
+        });
 
         res.render('check-your-answers', {
             school: school,
-            city: city,
             transactionID: req.query.id,
             booking: bookingDetails,
             customer: customerDetails,
