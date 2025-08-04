@@ -5,47 +5,79 @@
 {% block content %}
 <div class="page">
   <h1>Add a New School</h1>
-  {% if success %}
-    <div class="alert alert-success">School added successfully!</div>
-  {% endif %}
-  <form action="/admin" method="POST" id="admin-form">
-    <div class="form-grid">
-      <input name="name" placeholder="School Name" required>
-      <textarea name="description" placeholder="Description" rows="4"></textarea>
-      <input name="google_maps" placeholder="Google Maps URL">
-      <input name="review_score" placeholder="Review Score" type="number" step="0.1" min="0" max="5" required>
-      <div>
-        <label>City</label>
-        <select name="city" required>
-          {% for city in cities %}
-            <option value="{{ city._id }}">{{ city.name }}</option>
-          {% endfor %}
-        </select>
+<!--  {% if success %}-->
+<!--    <div class="alert alert-success">School added successfully!</div>-->
+<!--    <a href="/admin">-->
+<!--      <button type="button">Add another</button>-->
+<!--    </a>-->
+<!--  {% else %}-->
+    <form action="/admin" method="POST" id="admin-form">
+      <div class="form-grid">
+
+        <div>
+          <label for="name" >School Name</label>
+          <input name="name" id="name" placeholder="School Name" required>
+        </div>
+
+        <div>
+          <label for="google_maps" >Google Maps</label>
+          <input name="google_maps" id="google_maps" placeholder="Google Maps URL">
+        </div>
+
+        <div>
+          <label for="review_score" >Review Score</label>
+          <input name="review_score" id="review_score" placeholder="Review Score" type="number" step="0.1" min="0" max="5" required>
+        </div>
+
+        <div>
+
+        </div>
+
+        <div>
+          <label>City</label>
+          <select name="city" required>
+            {% for city in cities %}
+              <option value="{{ city._id }}">{{ city.name }}</option>
+            {% endfor %}
+          </select>
+        </div>
+
+        <div>
+          <label>School Type</label>
+          <select name="school_type" required>
+            {% for type in schoolTypes %}
+              <option value="{{ type.value }}">{{ type.name }}</option>
+            {% endfor %}
+          </select>
+        </div>
       </div>
+
       <div>
-        <label>School Type</label>
-        <select name="school_type" required>
-          {% for type in schoolTypes %}
-            <option value="{{ type.value }}">{{ type.name }}</option>
-          {% endfor %}
-        </select>
+        <label for="description" >Description</label>
+        <textarea name="description" id="description" placeholder="Description" rows="4"></textarea>
       </div>
-    </div>
-    <hr>
-    <h3>Courses</h3>
-    <div id="courses-list"></div>
-    <button type="button" onclick="addCourse()">Add Course</button>
-    <hr>
-    <h3>Accommodation</h3>
-    <div id="accommodation-list"></div>
-    <button type="button" onclick="addAccommodation()">Add Accommodation</button>
-    <hr>
-    <h3>Extra Fees</h3>
-    <div id="fees-list"></div>
-    <button type="button" onclick="addFee()">Add Extra Fee</button>
-    <hr>
-    <button type="submit">Submit</button>
-  </form>
+
+      <hr>
+
+      <h3>Courses</h3>
+      <div id="courses-list"></div>
+        <button type="button" onclick="addCourse()">Add Course</button>
+      <hr>
+
+      <h3>Accommodation</h3>
+      <div id="accommodation-list"></div>
+        <button type="button" onclick="addAccommodation()">Add Accommodation</button>
+      <hr>
+
+      <h3>Extra Fees</h3>
+      <div id="fees-list"></div>
+        <button type="button" onclick="addFee()">Add Extra Fee</button>
+      <hr>
+      <button type="submit">Submit</button>
+    </form>
+
+
+<!--  {% endif %}-->
 </div>
 <script>
 let courseIdx = 0, accIdx = 0, feeIdx = 0;

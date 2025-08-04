@@ -3,6 +3,7 @@ import * as payment from "./payment.controller"
 import * as paymentReturn from "./payment.return.controller"
 import * as paymentSession from "./payment.session.controller"
 import * as school from "./school.controller"
+import * as city from "./city.controller"
 import * as details from "./your.details.controller"
 import * as search from "./search.controller"
 import * as answers from "./check.your.answers.controller"
@@ -21,6 +22,8 @@ router.get('/search', searchFields, search.get);
 
 router.get('/school', school.get);
 router.post('/school', school.post);
+
+router.get('/city/:name', city.get);
 
 router.get('/your-details', details.get);
 router.post('/your-details', mandatoryFields, details.post);

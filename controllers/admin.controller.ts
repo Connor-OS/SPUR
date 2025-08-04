@@ -1,5 +1,6 @@
 import { City, School, schoolTypeEnum } from "../model/dataModel";
 import { Request, Response, NextFunction } from "express";
+import {getSearchOptions} from "../services/searchBar.service";
 
 // Helper to get school type list
 function getSchoolTypeList() {
@@ -23,55 +24,53 @@ export const get = async (req: Request, res: Response, next: NextFunction) => {
   }
 };
 
+
+export function parseFormInput(formData: object) {
+
+  const result = {};
+
+  // pass the flat HTML form Data into a nested JSON structure
+  for (const formKey in formData) {
+    const value = formData[formKey];
+    const keys: Array<any> = formKey.match(/[^\[\]]+/g);
+
+    let current = result;
+
+    for (let i = 0; i < keys.length; i++) {
+      const key = isFinite(keys[i]) ? Number(keys[i]) : keys[i];
+
+      // Last key: set the value
+      if (i === keys.length - 1) {
+        if (Array.isArray(current)) {
+          current[key] = value;
+        } else {
+          current[key] = value;
+        }
+      } else {
+        const nextKey = isFinite(keys[i + 1]) ? Number(keys[i + 1]) : keys[i + 1];
+        const isNextArray = typeof nextKey === 'number';
+
+        if (current[key] === undefined) {
+          current[key] = isNextArray ? [] : {};
+        }
+
+        current = current[key];
+      }
+    }
+  }
+
+  // split course other details on comma
+  result["courses"].map(course => {course.other_details = course.other_details
+      .split(",")
+      .map(s => s.trim())
+      .filter(Boolean);})
+
+  return result;
+}
+
 export const post = async (req: Request, res: Response, next: NextFunction) => {
   try {
-    // Parse nested arrays from form data
-    const parseArray = (prefix: string, nestedKeys: string[] = []) => {
-      const arr = [];
-      let i = 0;
-      while (req.body[`${prefix}[${i}][name]`]) {
-        const obj: any = {};
-        for (const key in req.body) {
-          const match = key.match(new RegExp(`^${prefix}\\[${i}\\]\\[(.+)\\]$`));
-          if (match) {
-            const field = match[1];
-            if (nestedKeys.includes(field)) {
-              // Parse nested array for this field
-              obj[field] = parseArray(`${prefix}[${i}][${field}]`);
-            } else {
-              obj[field] = req.body[key];
-            }
-          }
-        }
-        arr.push(obj);
-        i++;
-      }
-      return arr;
-    };
-
-    let courses = parseArray("courses");
-    courses = courses.map(course => {
-      if (typeof course.other_details === "string") {
-        course.other_details = course.other_details
-          .split(",")
-          .map(s => s.trim())
-          .filter(Boolean);
-      }
-      return course;
-    });
-
-    const schoolData: any = {
-      name: req.body.name,
-      description: req.body.description,
-      google_maps: req.body.google_maps,
-      school_type: req.body.school_type,
-      review_score: req.body.review_score,
-      city: req.body.city,
-      courses: courses,
-      accommodation: parseArray("accommodation", ["options"]),
-      extra_fees: parseArray("extra_fees"),
-    };
-
+    const schoolData: any = parseFormInput(req.body);
     await School.create(schoolData);
     res.redirect("/admin?success=1");
   } catch (error) {
