@@ -3,7 +3,6 @@
     "name": "Test School",
     "description": "Description",
     "google_maps": "maps_string",
-    "school_type": 1,
     "review_score": 4.3,
     "courses": [
       {
@@ -129,7 +128,6 @@
     "name": "Test School 2",
     "description": "Description",
     "google_maps": "maps_string",
-    "school_type": 1,
     "review_score": 4.3,
     "courses": [
       {
@@ -182,7 +180,6 @@
     "name": "Test School 3",
     "description": "Description",
     "google_maps": "maps_string",
-    "school_type": 1,
     "review_score": 4.3,
     "courses": [
       {

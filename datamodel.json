@@ -4,7 +4,7 @@ City
 {
   "_id": "6744929e03521fcec4c137aa", // assigned by the site itself
   "name": "Birmingham",
-  "description": "A city that really gets around, especially with its accents!",
+  "description": "A city that really gets around, especially with its accents!", // 1500 charactres
   "google_maps": "https://maps.google.com/?q=Birmingham" // google maps pin
 }
 
@@ -14,14 +14,13 @@ School
   "description": "Where every student is a 'Birmingham' star!",
   "google_maps": "q=Birmingham+Language+Academy", // This should be a direct pin to th school on google maps
   "city": "Birmingham",
-  "school_type": 1, // this can be used to differentiate Lang school, summer camp, distance learning organisations but isn't used in current version of spur
-  "review_score": 4.3 // better to have a trust pilot link than a score so should change this in future 
+  "review_score": 4.3 // better to have a trust pilot link than a score so should change this in future
 }
 
 Courses
 [{
     "name": "Beginner English",
-    "description": "Start your journey and don't get lost in translation!",
+    "description": "Start your journey and don't get lost in translation!", // 500 characters
     "class_size": "max. 12 students per class",
     "schedule": "Monday to Friday 2.00pm to 4.00pm.",
     "other_details": ["Required level: Basic level", "free lunch :)"], // optional: zero or more details to be provided here

@@ -1,6 +1,6 @@
 import mongoose from 'mongoose'
 import fs from 'fs';
-import {Country, City, School, schoolTypeEnum} from "../dist/model/dataModel.js";
+import {Country, City, School} from "../dist/model/dataModel.js";
 
 
 // MongoDB connection string (replace with your actual URI)

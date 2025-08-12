@@ -5,48 +5,48 @@
 {% block content %}
 <div class="page">
   <h1>Add a New School</h1>
-<!--  {% if success %}-->
-<!--    <div class="alert alert-success">School added successfully!</div>-->
-<!--    <a href="/admin">-->
-<!--      <button type="button">Add another</button>-->
-<!--    </a>-->
-<!--  {% else %}-->
+
+    <form method="GET" action="/admin">
+      <label>Or edit and Existing School</label>
+      <select name="school" required>
+        {% for school in schools %}
+          <option value="{{ school._id }}">{{ school.name }}, {{ school.city.name }}</option>
+        {% endfor %}
+      </select>
+      <button type="submit">Load</button>
+    </form>
+
     <form action="/admin" method="POST" id="admin-form">
       <div class="form-grid">
 
+        <input type="hidden" name="id" value="{{ school._id }}">
+
         <div>
           <label for="name" >School Name</label>
-          <input name="name" id="name" placeholder="School Name" required>
+          <input name="name" id="name" placeholder="School Name" required
+                 value="{{ school.name if school else '' }}">
         </div>
 
         <div>
           <label for="google_maps" >Google Maps</label>
-          <input name="google_maps" id="google_maps" placeholder="Google Maps URL">
+          <input name="google_maps" id="google_maps" placeholder="Google Maps URL"
+                 value="{{ school.google_maps if school else '' }}">
+
         </div>
 
         <div>
           <label for="review_score" >Review Score</label>
-          <input name="review_score" id="review_score" placeholder="Review Score" type="number" step="0.1" min="0" max="5" required>
-        </div>
-
-        <div>
-
+          <input name="review_score" id="review_score" placeholder="Review Score" type="number" step="0.1" min="0" max="5" required
+                 value="{{ school.review_score if school else '' }}">
         </div>
 
         <div>
           <label>City</label>
           <select name="city" required>
             {% for city in cities %}
-              <option value="{{ city._id }}">{{ city.name }}</option>
-            {% endfor %}
-          </select>
-        </div>
-
-        <div>
-          <label>School Type</label>
-          <select name="school_type" required>
-            {% for type in schoolTypes %}
-              <option value="{{ type.value }}">{{ type.name }}</option>
+            <option value="{{ city._id }}" {% if city._id|string == school.city %}selected{% endif %}>
+              {{ city.name }}
+            </option>
             {% endfor %}
           </select>
         </div>
@@ -54,33 +54,82 @@
 
       <div>
         <label for="description" >Description</label>
-        <textarea name="description" id="description" placeholder="Description" rows="4"></textarea>
+        <textarea name="description" id="description" placeholder="Description" rows="10">{{ school.description }}</textarea>
       </div>
 
       <hr>
 
       <h3>Courses</h3>
-      <div id="courses-list"></div>
-        <button type="button" onclick="addCourse()">Add Course</button>
+      <div id="courses-list">
+
+        {% for course in school.courses %}
+          <div class='course-block'>
+            <input name='courses[{{ loop.index0 }}][name]' value="{{ course.name }}" required>
+            <textarea name='courses[{{ loop.index0 }}][description]' rows='3'>{{ course.description }} </textarea>
+            <input name='courses[{{ loop.index0 }}][class_size]' value="{{ course.class_size }}">
+            <input name='courses[{{ loop.index0 }}][schedule]' value="{{ course.schedule }}" >
+            <input name='courses[{{ loop.index0 }}][important_info]' value="{{ course.important_info }}">
+            <input name='courses[{{ loop.index0 }}][price_per_week]' value="{{ course.price_per_week }}"  type='number'>
+            <textarea name='courses[{{ loop.index0 }}][other_details]' >{{ course.other_details.join(",") }}</textarea>
+            <button type='button' onclick='this.parentElement.remove()'>Remove</button>
+          </div>
+        {% endfor %}
+      </div>
+
+      <button type="button" onclick="addCourse()">Add Course</button>
       <hr>
 
       <h3>Accommodation</h3>
-      <div id="accommodation-list"></div>
+      <div id="accommodation-list">
+        {% for accommodation in school.accommodation %}
+          {% set accIdx = loop.index0 %}
+          <div class='accommodation-block' id='accommodation-block-{{ accIdx }}'>
+            <input name='accommodation[{{ accIdx }}][name]' value="{{ accommodation.name}}" required>
+            <textarea name='accommodation[{{ accIdx }}][description]' placeholder='Description' rows='3'>{{ accommodation.description}}</textarea>
+            <input name='accommodation[{{ accIdx }}][price_per_week]' value="{{ accommodation.price_per_week}}" type='number'>
+            <div class='options-list' id='options-list-{{ accIdx }}'>
+              {% for option in accommodation.options %}
+                <div class='option-block'>
+                  <input name='accommodation[{{ accIdx }}][options][{{ loop.index0 }}][name]' value="{{ option.name}}" required>
+                  <input name='accommodation[{{ accIdx }}][options][{{ loop.index0 }}][price_per_week]' value="{{ option.price_per_week}}" type='number'>
+                  <label style='font-weight:normal;display:inline;'>Prechecked
+                    <input name='accommodation[{{ accIdx }}][options][{{ loop.index0 }}][prechecked]' type='checkbox' value='true' {% if option.prechecked %}checked{% endif %}>
+                  </label>
+                  <button type='button' onclick='this.parentElement.remove()'>Remove Option</button>
+                </div>
+              {% endfor %}
+            </div>
+            <button type='button' onclick='addOption("{{ accIdx }}")'>Add Option</button>
+            <button type='button' onclick='this.parentElement.remove()'>Remove Accommodation</button>
+          </div>
+        {% endfor %}
+
+      </div>
         <button type="button" onclick="addAccommodation()">Add Accommodation</button>
       <hr>
 
       <h3>Extra Fees</h3>
-      <div id="fees-list"></div>
+      <div id="fees-list">
+        {% for fee in school.extra_fees %}
+          <div class='fee-block'>
+            <input name='extra_fees[{{ loop.index0 }}][name]' value="{{ fee.name }}" required>
+            <input name='extra_fees[{{ loop.index0 }}][amount]' value="{{ fee.amount }}" type='number' required>
+            <button type='button' onclick='this.parentElement.remove()'>Remove</button>
+          </div>
+        {% endfor %}
+
+      </div>
         <button type="button" onclick="addFee()">Add Extra Fee</button>
       <hr>
       <button type="submit">Submit</button>
     </form>
 
 
-<!--  {% endif %}-->
 </div>
 <script>
-let courseIdx = 0, accIdx = 0, feeIdx = 0;
+let courseIdx = document.getElementsByClassName("course-block").length
+let accIdx = document.getElementsByClassName("accommodation-block").length
+let feeIdx = document.getElementsByClassName("fee-block").length
 function addCourse() {
   const html = `<div class='course-block'>
     <input name='courses[${courseIdx}][name]' placeholder='Course Name' required>

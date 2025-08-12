@@ -1,23 +1,19 @@
-import { City, School, schoolTypeEnum } from "../model/dataModel";
+import { City, School } from "../model/dataModel";
 import { Request, Response, NextFunction } from "express";
-import {getSearchOptions} from "../services/searchBar.service";
-
-// Helper to get school type list
-function getSchoolTypeList() {
-  return Object.entries(schoolTypeEnum)
-    .filter(([k, v]) => typeof v === "string")
-    .map(([k, v]) => ({ name: v, value: schoolTypeEnum[v as keyof typeof schoolTypeEnum] }));
-}
 
 export const get = async (req: Request, res: Response, next: NextFunction) => {
   try {
     const cities = await City.find();
-    const schoolTypes = getSchoolTypeList();
+    const schools = await School.find().populate('city');
+
+    const hydratedFormData = req.query.school ? await School.findById(req.query.school): {};
+
     res.render("admin", {
       cities,
-      schoolTypes,
+      schools,
       errors: [],
       success: req.query.success,
+      school: hydratedFormData,
     });
   } catch (error) {
     next(error);
@@ -71,7 +67,11 @@ export function parseFormInput(formData: object) {
 export const post = async (req: Request, res: Response, next: NextFunction) => {
   try {
     const schoolData: any = parseFormInput(req.body);
-    await School.create(schoolData);
+    if (schoolData.id) {
+      await School.findByIdAndUpdate(schoolData.id, schoolData, { new: true });
+    } else {
+      await School.create(schoolData);
+    }
     res.redirect("/admin?success=1");
   } catch (error) {
     next(error);

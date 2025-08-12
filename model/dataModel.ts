@@ -28,7 +28,6 @@ const schoolSchema = new mongoose.Schema({
     name: { type: String, required: true },
     description: { type: String, required: false },
     google_maps: { type: String, required: false },
-    school_type: { type: Number, required: true },
     courses: [courseSchema],
     accommodation: [accommodationSchema],
     city: { type: mongoose.Schema.Types.ObjectId, ref: 'city', required: true},
@@ -62,15 +61,6 @@ const countrySchema = new mongoose.Schema({
 },{
     versionKey: false
 });
-
-// TODO: Accommodation schema here
-
-export enum schoolTypeEnum {
-    'Language Course' = 1,
-    'University' = 2,
-    'Private School' = 3,
-    'Distance Learning' = 4,
-}
 
 export const City = mongoose.model('city', citySchema);
 export const School = mongoose.model('school', schoolSchema);

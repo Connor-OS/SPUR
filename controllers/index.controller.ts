@@ -1,4 +1,4 @@
-import {City, School, schoolTypeEnum} from "../model/dataModel";
+import {City} from "../model/dataModel";
 import reviews from "../model/reviews.json";
 import {getSearchOptions} from "../services/searchBar.service";
 

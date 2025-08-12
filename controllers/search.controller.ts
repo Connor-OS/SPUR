@@ -1,4 +1,4 @@
-import {Country, City, School, schoolTypeEnum} from "../model/dataModel";
+import {Country, City, School} from "../model/dataModel";
 import {getSearchOptions} from "../services/searchBar.service";
 import {dateHelper} from "../services/dateHelper.service";
 import {NextFunction} from "express";
